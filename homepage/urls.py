@@ -9,4 +9,3 @@ urlpatterns = [
 	url(r'^plumbing/', views.plumbing, name='plumbing'),
 	url(r'^garden/', include('garden.urls')),
 ]
-

@@ -15,4 +15,4 @@ def electric(request):
 def plumbing(request):
 	return render(request, 'problems/plumbing.html')
 def garden(request):
-	return render(request, 'problems/garden.html') 
+	return render(request, 'garden/garden_list.html') 
