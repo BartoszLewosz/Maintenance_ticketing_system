@@ -4,10 +4,20 @@
 {% endblock title %}
 
 {% block content %}
+<div>
+	<h3><a href="/", <button type="button" class="btn btn-warning"></button>Homepage</a></h3>
+</div>
 
-   
-    
-        <p>This is garden list
-    </p>
+	{% for problem in problems %}
+    	
+    	<div>
+       		<h4><a href="">{{ problem.location }}</a></h4>
+    		<p>{{ problem.descr }}</p>
+    		<p>published: {{ problem.date }}</p>
+    	</div>
+
+    {% endfor %}
+
+
 
 {% endblock content %}
