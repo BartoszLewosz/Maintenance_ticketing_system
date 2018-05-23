@@ -6,6 +6,6 @@ urlpatterns = [
 	url(r'^contact/', views.contact, name='contact'),
 	url(r'^maintenance/', views.maintenance, name='maintenance'),
 	url(r'^electric/', views.electric, name='electric'),
-	url(r'^plumbing/', views.plumbing, name='plumbing'),
+	url(r'^plumbing/', include('plumbing.urls')),
 	url(r'^garden/', include('garden.urls')),
 ]
