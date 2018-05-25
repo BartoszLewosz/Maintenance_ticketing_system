@@ -9,3 +9,5 @@ from .models import Problem
 def garden(request):
 	problems = Problem.objects.order_by('-date')
 	return render(request, 'garden/garden_list.html', {'problems': problems})
+def garden_detail(request):
+	return render(request, 'garden/garden_detail.html')

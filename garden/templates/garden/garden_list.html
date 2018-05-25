@@ -12,7 +12,7 @@
 	{% for problem in problems %}
     	
     	<div>
-       		<h4><a href="">{{ problem.location }}</a></h4>
+       		<h4><a href="{{problem.id}}">{{ problem.location }}</a></h4>
     		<p>{{ problem.descr }}</p>
     		<p>published: {{ problem.date }} by: {{ problem.author }}<br></p>
     	</div>
