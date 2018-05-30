@@ -6,3 +6,16 @@ body {
 	font-variant: small-caps;
 	color: red;
 }
+
+.garden_title  {
+	text-decoration: underline;
+	text-decoration-color: pink;
+	text-decoration-style: double;
+}
+
+.back {
+	text-decoration: underline;
+	text-decoration-color: gray;
+	text-decoration-style: double;
+	color: yellow;
+}

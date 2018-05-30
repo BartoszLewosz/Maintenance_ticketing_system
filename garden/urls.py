@@ -6,6 +6,7 @@ from . import views
 urlpatterns = [
 	url(r'^$', views.garden, name='garden'),
 	url(r'^(?P<pk>\d+)$', DetailView.as_view(model = Problem,
-		template_name='garden/garden_detail.html'))
+		template_name='garden/garden_detail.html')),
+	url(r'^problem_new/', views.problem_new, name='problem_new'),
 ]
 

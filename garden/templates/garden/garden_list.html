@@ -1,12 +1,12 @@
 {% extends 'homepage/base.html' %}
 {% load staticfiles %}
 {% block title %}
-    Homepage - {{ block.super }}
+    Garden - {{ block.super }}
 {% endblock title %}
 
 {% block content %}
-<div>
-	<h3><a href="/", <button type="button" class="btn btn-warning"></button>Homepage</a></h3>
+<div class="back">
+	<h4><a href="/"><span class="glyphicon glyphicon-arrow-left">Back</span></a></h4>
 </div>
 
 	{% for problem in problems %}
@@ -15,6 +15,9 @@
        		<h4><a href="{{problem.id}}">{{ problem.location }}</a></h4>
     		<p>{{ problem.descr }}</p>
     		<p>published: {{ problem.date }} by: {{ problem.author }}<br></p>
+            <div>
+                <a href="{% url 'problem_new' %}">New</a>
+            </div>
     	</div>
 
     {% endfor %}
