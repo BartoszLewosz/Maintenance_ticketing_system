@@ -9,15 +9,20 @@
 	<h4><a href="/"><span class="glyphicon glyphicon-arrow-left">Back</span></a></h4>
 </div>
 
+<div>
+    <a href="{% url 'problem_new' %}">New</a>
+
+</div>
+
 	{% for problem in problems %}
     	
     	<div>
        		<h4><a href="{{problem.id}}">{{ problem.location }}</a></h4>
+           <a href="{% url 'garden_edit' pk=problem.pk %}">Edit</a>
     		<p>{{ problem.descr }}</p>
     		<p>published: {{ problem.date }} by: {{ problem.author }}<br></p>
-            <div>
-                <a href="{% url 'problem_new' %}">New</a>
-            </div>
+
+            
     	</div>
 
     {% endfor %}
