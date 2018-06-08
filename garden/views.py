@@ -38,3 +38,10 @@ def garden_edit(request, pk):
 	else:
 		form = ProblemForm(instance=problem)
 	return render(request, 'garden/garden_edit.html', {'form': form})
+
+def garden_delete(request, pk):
+	problem = get_object_or_404(Problem, pk=pk)
+	if request.method == "POST":
+		problem.delete()
+		return redirect('garden')
+	return render(request, 'garden/garden_delete.html', {'problem': problem})

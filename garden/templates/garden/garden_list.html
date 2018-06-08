@@ -13,20 +13,67 @@
     <a href="{% url 'problem_new' %}">New</a>
 
 </div>
+<div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Location/Where</th>
+                    <th>Description/What</th>
+                    <th>Date/When</th>
+                    <th>Posted by:/Who</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{problem.id}}</td>
+                    <td><a href="{{problem.id}}">{{ problem.location }}</a></td>
+                    <td>{{ problem.descr }}</td>
+                </tr>
+            </tbody>
+        </table>
+</div>
 
 	{% for problem in problems %}
     	
     	<div>
-       		<h4><a href="{{problem.id}}">{{ problem.location }}</a></h4>
-           <a href="{% url 'garden_edit' pk=problem.pk %}">Edit</a>
-    		<p>{{ problem.descr }}</p>
-    		<p>published: {{ problem.date }} by: {{ problem.author }}<br></p>
 
-            
-    	</div>
+            <h4><a href="{{problem.id}}">{{ problem.location }}</a></h4>
+           <a href="{% url 'garden_edit' pk=problem.pk %}">Edit</a><br>
+           <a href="{% url 'garden_delete' pk=problem.pk %}">Done</a>
+            <p>{{ problem.descr }}</p>
+            <p>published: {{ problem.date }} by: {{ problem.author }}<br></p>
+        </div>
+       		
+
 
     {% endfor %}
 
+<!--
+    <div class="table-responsive">          
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Age</th>
+        <th>City</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Anna</td>
+        <td>Pitt</td>
+        <td>35</td>
+        <td>New York</td>
+        <td>USA</td>
+      </tr>
+    </tbody>
+  </table>
 
+-->
 
 {% endblock content %}

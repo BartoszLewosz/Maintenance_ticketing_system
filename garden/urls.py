@@ -9,5 +9,6 @@ urlpatterns = [
 		template_name='garden/garden_detail.html')),
 	url(r'^problem_new/', views.problem_new, name='problem_new'),
 	url(r'^(?P<pk>\d+)/edit/$', views.garden_edit, name='garden_edit'),
+	url(r'^(?P<pk>\d+)/delete/$', views.garden_delete, name='garden_delete'),
 ]
 
