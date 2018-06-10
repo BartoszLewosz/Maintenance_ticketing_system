@@ -9,7 +9,9 @@
 	</title>
 	<meta charset="utf-8" />
 	{% load staticfiles %}
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="{% static 'homepage/css/main.css' %}">
 	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
 	
@@ -58,22 +60,29 @@
       
       	{% if user.is_authenticated %}
 
-	        <li class="active"><a href="/">Home</a></li>
-	        <li><a href="#">Maintenance</a></li>
-	        <li><a href="#">Electric</a></li>
-	        <li><a href="{% url 'plumbing' %}">Plumbing</a></li>
+	        <li><a href="/">Home</a></li>
 	        <li><a href="{% url 'garden' %}">Garden</a></li>
-
+	        <li><a href="#">Maintenance</a></li>
+	        <li><a href="{% url 'plumbing' %}">Plumbing</a></li>
         {% else %}
 
-        	<li class="active"><a href="/">Home</a></li>
+        	<li class="active"><a href="/">Home234</a></li>
 
         {% endif %}
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        {% if user.is_authenticated %}
+        
+        	<li><a href="/logout/"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+
+        {% else %}
+
+        	<li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+
+        {% endif %}
+        
       </ul>
     </div>
   </div>

@@ -10,70 +10,39 @@
 </div>
 
 <div>
-    <a href="{% url 'problem_new' %}">New</a>
+    <a href="{% url 'problem_new' %}"><span class="glyphicon glyphicon-plus-sign">New</span></a>
 
 </div>
 <div class="table-responsive">
         <table class="table">
-            <thead>
-                <tr>
-                    <th>No.</th>
-                    <th>Location/Where</th>
-                    <th>Description/What</th>
-                    <th>Date/When</th>
-                    <th>Posted by:/Who</th>
-                </tr>
-            </thead>
+        <h2>Problem</h2>
+        <thead>
+            <tr>
+                <th>No. by date</th>
+                <th>Where</th>
+                <th>what</th>
+                <th>When</th>
+                <th>Who</th>
+                <th>Edit</th>
+                <th>Done</th>
+            </tr>
+        </thead>
             <tbody>
+                {% for problem in problems %}
                 <tr>
-                    <td>{{problem.id}}</td>
+                    <td>{{ problem.id }}</td>
                     <td><a href="{{problem.id}}">{{ problem.location }}</a></td>
                     <td>{{ problem.descr }}</td>
+                    <td>{{ problem.date }}</td>
+                    <td>{{ problem.author }}</td>
+                    <td><a href="{% url 'garden_edit' pk=problem.pk %}"><span class="glyphicon glyphicon-edit"></span>Edit</a></td>
+                    <td><a href="{% url 'garden_delete' pk=problem.pk %}"><span class="glyphicon glyphicon-check"></span>Done</a></td>
                 </tr>
+                {% endfor %}
             </tbody>
         </table>
+            
 </div>
 
-	{% for problem in problems %}
-    	
-    	<div>
-
-            <h4><a href="{{problem.id}}">{{ problem.location }}</a></h4>
-           <a href="{% url 'garden_edit' pk=problem.pk %}">Edit</a><br>
-           <a href="{% url 'garden_delete' pk=problem.pk %}">Done</a>
-            <p>{{ problem.descr }}</p>
-            <p>published: {{ problem.date }} by: {{ problem.author }}<br></p>
-        </div>
-       		
-
-
-    {% endfor %}
-
-<!--
-    <div class="table-responsive">          
-  <table class="table">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Age</th>
-        <th>City</th>
-        <th>Country</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>Anna</td>
-        <td>Pitt</td>
-        <td>35</td>
-        <td>New York</td>
-        <td>USA</td>
-      </tr>
-    </tbody>
-  </table>
-
--->
 
 {% endblock content %}
