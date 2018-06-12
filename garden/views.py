@@ -9,11 +9,11 @@ from .forms import ProblemForm
 
 # Create your views here.
 def garden(request):
-	problems = Problem.objects.order_by('-date')
+	problems = Problem.objects.order_by('-date')[:7]
 	return render(request, 'garden/garden_list.html', {'problems': problems})
 def garden_detail(request):
 	return render(request, 'garden/garden_detail.html')
-def problem_new(request):
+def garden_new(request):
 	if request.method == "POST":
 		form = ProblemForm(request.POST)
 		if form.is_valid:
