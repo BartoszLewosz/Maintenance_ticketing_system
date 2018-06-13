@@ -7,7 +7,7 @@ body {
 	color: red;
 }
 
-.garden_title  {
+.problem_title  {
 	text-decoration: underline;
 	text-decoration-color: blue;
 	text-decoration-style: double;
@@ -24,4 +24,8 @@ body {
 }
 h2 {
 	text-align: center;
+}
+.problem_options {
+	text-align: right;
+	color: black;
 }

@@ -36,3 +36,9 @@ def plumbing_edit(request, pk):
 	else:
 		form = ProblemForm(instance=problem)
 	return render(request, 'plumbing/plumbing_edit.html', {'form': form})
+def plumbing_delete(request, pk):
+	problem = get_object_or_404(Problem, pk=pk)
+	if request.method == "POST":
+		problem.delete()
+		return redirect('plumbing')
+	return render(request, 'plumbing/plumbing_delete.html', {'problem': problem })

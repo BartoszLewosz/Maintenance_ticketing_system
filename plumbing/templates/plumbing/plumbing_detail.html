@@ -9,8 +9,18 @@
 
 
 
-<h2>Plumbing detail</h2>
+<div class="problem_title">
+<h3>{{problem.location}}</h3>
+</div>
+    {{ problem.description|safe|linebreaks }}
+    <div class="detail">
+        <h6>on {{problem.date}}, posted by {{problem.author}}</h6>
+        <div class="problem_options">
+        	<a href="{% url 'plumbing_edit' pk=problem.pk %}"><span class="glyphicon glyphicon-edit"></span>Edit</a><br><a href="{% url 'plumbing_delete' pk=problem.pk %}"><span class="glyphicon glyphicon-check"></span>Delete</a>
+        </div>
 
+    </div>
+    
 
 
 {% endblock content %}
