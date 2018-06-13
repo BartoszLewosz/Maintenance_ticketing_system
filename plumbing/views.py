@@ -12,8 +12,17 @@ def plumbing(request):
 def plumbing_detail(request):
 	return render(request, 'plumbing/plumbing_detail.html')
 def plumbing_new(request):
-	form = ProblemForm()
+	if request.method == "POST":
+		form = ProblemForm(request.POST)
+		problem = form.save(commit=False)
+		problem.author = str(request.user)
+		problem.date = timezone.now()
+		problem.save()
+		return redirect('plumbing')
+	else:
+		form = ProblemForm()
 	return render(request, 'plumbing/plumbing_new.html', {'form': form})
+
 def plumbing_edit(request, pk):
 	problem = get_object_or_404(Problem, pk=pk)
 	if request.method == "POST":
