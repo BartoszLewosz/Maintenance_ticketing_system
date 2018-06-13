@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render, redirect
 from garden.models import Problem
+#from plumbing.models import Problem
 # Create your views here.
 def index(request):
 	problems = Problem.objects.order_by('-date')[:7]
