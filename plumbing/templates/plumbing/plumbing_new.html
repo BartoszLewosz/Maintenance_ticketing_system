@@ -1,0 +1,16 @@
+{% extends 'homepage/base.html' %}
+{% load staticfiles %}
+{% block title %}
+    Add New - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+<h4>Add new problem</h4>
+<form method="POST">{% csrf_token %}
+{{ form.as_p}}
+<button type="submit" class="save btn btn-default">Save</button></form>
+
+
+
+
+{% endblock content %}

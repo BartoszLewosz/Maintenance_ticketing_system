@@ -9,9 +9,41 @@
 	<h4>
 		<a href="/"><span class="glyphicon glyphicon-arrow-left">Back</span></a>
 	</h4>
+    <a href="{% url 'plumbing_new' %}"><span class="glyphicon glyphicon-plus-sign">New</span></a>
 
 </div>
-  
+
+            
+<div class="table-responsive">
+        <table class="table">
+        <h2>Problem</h2>
+        <thead>
+            <tr>
+                <th>No. by date</th>
+                <th>Where</th>
+                <th>what</th>
+                <th>When</th>
+                <th>Who</th>
+                <th>Edit</th>
+                <th>Done</th>
+            </tr>
+        </thead>
+            <tbody>
+                {% for problem in problems %}
+                <tr>
+                    <td>{{ problem.id }}</td>
+                    <td><a href="{{problem.id}}">{{ problem.location }}</a></td>
+                    <td>{{ problem.description }}</td>
+                    <td>{{ problem.date }}</td>
+                    <td>{{ problem.author }}</td>
+                    <td><a href="{% url 'plumbing_edit' pk=problem.pk %}"><span class="glyphicon glyphicon-edit"></span>Edit</a></td>
+                    <td><a href="{% url 'garden_delete' pk=problem.pk %}"><span class="glyphicon glyphicon-check"></span>Done</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+            
+</div>
 
 
 

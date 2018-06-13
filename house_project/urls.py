@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('homepage.urls')),
     url(r'^garden/', include('garden.urls')),
+    url(r'^plumbing/', include('plumbing.urls')),
     url(r'^login/$', auth_views.login, {'template_name': 'homepage/login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
 ]
