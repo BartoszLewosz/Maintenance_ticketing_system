@@ -5,12 +5,15 @@
 {% endblock title %}
 
 {% block content %}
-<div>
+<div class="back">
 	<h4>
 		<a href="/"><span class="glyphicon glyphicon-arrow-left">Back</span></a>
 	</h4>
-    <a href="{% url 'plumbing_new' %}"><span class="glyphicon glyphicon-plus-sign">New</span></a>
+    <div class="new">
+        <a href="{% url 'plumbing_new' %}"><span class="glyphicon glyphicon-plus-sign">New</span></a>
 
+    </div>
+    
 </div>
 
             

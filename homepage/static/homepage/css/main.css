@@ -2,6 +2,15 @@ body {
 	background-color: white;
 }
 
+.row {
+	height: 75px;
+}
+
+.container-fluid {
+	text-align: center;
+	width: 100%;
+}
+
 .detail {
 	font-variant: small-caps;
 	color: red;
@@ -18,7 +27,13 @@ body {
 	text-decoration-color: gray;
 	text-decoration-style: double;
 	color: yellow;
+	text-align:left;
 }
+
+.new {
+	text-align: right;
+}
+
 .table {
 	width: 100%;
 }

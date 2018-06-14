@@ -4,12 +4,22 @@ from __future__ import unicode_literals
 from django.shortcuts import redirect, get_object_or_404
 from django.shortcuts import render
 from django.utils import timezone
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Problem
 from .forms import ProblemForm
 
 # Create your views here.
 def garden(request):
-	problems = Problem.objects.order_by('-date')[:7]
+	problems = Problem.objects.order_by('-date')
+	page = request.GET.get('page', 1)
+
+	paginator = Paginator(problems, 6)
+	try:
+		problems = paginator.page(page)
+	except PageNotAnInteger:
+		problems = paginator.page(1)
+	except EmptyPage:
+		problems = paginator.page(paginator.num_pages)
 	return render(request, 'garden/garden_list.html', {'problems': problems})
 def garden_detail(request):
 	return render(request, 'garden/garden_detail.html')
