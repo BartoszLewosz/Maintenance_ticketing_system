@@ -1,0 +1,22 @@
+{% extends 'homepage/base.html' %}
+{% load staticfiles %}
+{% block title %}
+    Contact - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+
+    <a href="/">homepage</a>
+    <p>signup page</p>
+
+    <form method="post">
+    	{% csrf_token %}
+    	{{ form.as_p }}
+    	<button type="submit">Sign Up</button>
+    </form>
+
+   
+    
+
+
+{% endblock content %}
