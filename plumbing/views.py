@@ -2,12 +2,22 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render, redirect, get_object_or_404
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Problem
 from .forms import ProblemForm
 from django.utils import timezone
 # Create your views here.
 def plumbing(request):
 	problems = Problem.objects.order_by('-date')
+	page = request.GET.get('page', 1)
+
+	paginator = Paginator(problems, 5)
+	try:
+		problems = paginator.page(page)
+	except PageNotAnInteger:
+		problems = paginator.page(1)
+	except EmptyPage:
+		problems = paginator.page(paginator.num_pages)
 	return render(request, 'plumbing/plumbing_list.html', {'problems': problems})
 def plumbing_detail(request):
 	return render(request, 'plumbing/plumbing_detail.html')
