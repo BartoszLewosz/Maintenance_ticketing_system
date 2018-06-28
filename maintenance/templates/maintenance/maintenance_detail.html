@@ -1,0 +1,23 @@
+{% extends 'homepage/base.html' %}
+{% load staticfiles %}
+{% block title %}
+    Detail - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+
+
+<div class="problem_title">
+<h5>{{maintenance.location}}</h5>
+</div>
+    {{maintenance.descr|safe|linebreaks}}
+    <div class="detail">
+
+        <h6>on {{maintenance.date}}, posted by {{maintenance.author}}</h6>
+
+    </div>
+    
+
+
+
+{% endblock content %}

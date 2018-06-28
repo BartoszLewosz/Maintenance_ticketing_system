@@ -1,7 +1,7 @@
 {% extends 'homepage/base.html' %}
 {% load staticfiles %}
 {% block title %}
-    Plumbing - {{ block.super }}
+    Maintenance - {{ block.super }}
 {% endblock title %}
 
 {% block content %}
@@ -10,7 +10,7 @@
 		<a href="/"><span class="glyphicon glyphicon-arrow-left">Back</span></a>
 	</h4>
     <div class="new">
-        <a href="{% url 'plumbing_new' %}"><span class="glyphicon glyphicon-plus-sign">New</span></a>
+        <a href="{% url 'maintenance_new' %}"><span class="glyphicon glyphicon-plus-sign">New</span></a>
 
     </div>
     
@@ -19,12 +19,12 @@
             
 <div class="table-responsive">
         <table class="table">
-        <h2>Plumbing</h2>
+        <h2>Maintenance</h2>
         <thead>
             <tr>
                 <th>No. by date</th>
                 <th>Where</th>
-                <th>what</th>
+                <th>What</th>
                 <th>When</th>
                 <th>Who</th>
                 <th>Edit</th>
