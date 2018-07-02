@@ -10,6 +10,8 @@ from .forms import ProblemForm
 # Create your views here.
 def garden(request):
 	problems = Problem.objects.order_by('-date')
+
+	#Everything below except last line is Paginator
 	page = request.GET.get('page', 1)
 
 	paginator = Paginator(problems, 6)
@@ -20,8 +22,8 @@ def garden(request):
 	except EmptyPage:
 		problems = paginator.page(paginator.num_pages)
 	return render(request, 'garden/garden_list.html', {'problems': problems})
-def garden_detail(request):
-	return render(request, 'garden/garden_detail.html')
+#def garden_detail(request):
+#	return render(request, 'garden/garden_detail.html')
 def garden_new(request):
 	if request.method == "POST":
 		form = ProblemForm(request.POST)

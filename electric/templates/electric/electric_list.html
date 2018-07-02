@@ -1,0 +1,74 @@
+{% extends 'homepage/base.html' %}
+{% load staticfiles %}
+{% block title %}
+    Electric - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+<div class="back">
+	<h4><a href="/"><span class="glyphicon glyphicon-arrow-left">Back</span></a></h4>
+</div>
+
+<div class="new">
+    <a href="{% url 'electric_new' %}"><span class="glyphicon glyphicon-plus-sign">New</span></a>
+
+</div>
+<div class="table-responsive">
+        <table class="table">
+        <h2>Electric</h2>
+        <thead>
+            <tr>
+                <th>No. by date</th>
+                <th>Where</th>
+                <th>What</th>
+                <th>When</th>
+                <th>Who</th>
+                <th>Edit</th>
+                <th>Done</th>
+            </tr>
+        </thead>
+            <tbody>
+                {% for problem in problems %}
+                <tr>
+                    <td>{{ problem.id }}</td>
+                    <td><a href="{{problem.id}}">{{ problem.location }}</a></td>
+                    <td>{{ problem.descr }}</td>
+                    <td>{{ problem.date }}</td>
+                    <td>{{ problem.author }}</td>
+                    <td><a href="{% url 'electric_edit' pk=problem.pk %}"><span class="glyphicon glyphicon-edit"></span>Edit</a></td>
+                    <td><a href="{% url 'electric_delete' pk=problem.pk %}"><span class="glyphicon glyphicon-check"></span>Done</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+       {% if problems.has_other_pages %}
+            <ul class="pagination">
+            {% if problems.has_previous %}
+                <li><a href="?page={{ problems.previous_page_number }}">&laquo;</a></li>
+            {% else %}
+                <li class="disabled"><span>&laquo;</span></li>
+            {% endif %}
+
+            {% for i in problems.paginator.page_range %}
+                {% if problems.number == i %}
+
+                    <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                {% else %}
+                    <li><a href="?page={{ i }}">{{ i }}</a></li>
+                {% endif %}
+                
+            {% endfor %}
+
+            {% if problems.has_next %}
+                <li><a href="?page={{ problems.next_page_number }}">&raquo;</a></li>
+            {% else %}
+                <li class="disabled"><span>&raquo;</span></li>
+            {% endif %}
+                </ul>
+        {% endif %}
+        
+            
+</div>
+
+
+{% endblock content %}

@@ -7,7 +7,7 @@ urlpatterns = [
 	url(r'^about/', views.about, name='about'),
 	url(r'^contact/', views.contact, name='contact'),
 	url(r'^maintenance/', include('maintenance.urls')),
-	url(r'^electric/', views.electric, name='electric'),
+	url(r'^electric/', include('electric.urls')),
 	url(r'^plumbing/', include('plumbing.urls')),
 	url(r'^garden/', include('garden.urls')),
 	url(r'^signup/$', core_views.signup, name='signup'),
