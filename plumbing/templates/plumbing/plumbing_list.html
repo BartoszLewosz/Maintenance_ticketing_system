@@ -40,7 +40,7 @@
                     <td>{{ problem.date }}</td>
                     <td>{{ problem.author }}</td>
                     <td><a href="{% url 'plumbing_edit' pk=problem.pk %}"><span class="glyphicon glyphicon-edit"></span>Edit</a></td>
-                    <td><a href="{% url 'plumbing_delete' pk=problem.pk %}"><span class="glyphicon glyphicon-check"></span>Done</a></td>
+                    <td><a href="{% url 'plumbing_delete' pk=problem.pk %}"><span class="glyphicon glyphicon-trash"></span>Done</a></td>
                 </tr>
                 {% endfor %}
             </tbody>

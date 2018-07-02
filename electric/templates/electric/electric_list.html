@@ -11,6 +11,7 @@
 
 <div class="new">
     <a href="{% url 'electric_new' %}"><span class="glyphicon glyphicon-plus-sign">New</span></a>
+    <a href="{% url 'html_to_pdf_view' %}"><span class="glyphicon glyphicon-plus-print">print</span></a>
 
 </div>
 <div class="table-responsive">
@@ -36,7 +37,7 @@
                     <td>{{ problem.date }}</td>
                     <td>{{ problem.author }}</td>
                     <td><a href="{% url 'electric_edit' pk=problem.pk %}"><span class="glyphicon glyphicon-edit"></span>Edit</a></td>
-                    <td><a href="{% url 'electric_delete' pk=problem.pk %}"><span class="glyphicon glyphicon-check"></span>Done</a></td>
+                    <td><a href="{% url 'electric_delete' pk=problem.pk %}"><span class="glyphicon glyphicon-trash"></span>Done</a></td>
                 </tr>
                 {% endfor %}
             </tbody>

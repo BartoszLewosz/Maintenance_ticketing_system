@@ -5,6 +5,26 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from .models import Electric
 from .forms import ElectricForm
+from django.core.files.storage import FileSystemStorage
+from django.http import HttpResponse
+from django.template.loader import render_to_string
+from weasyprint import HTML
+
+def html_to_pdf_view(request):
+	paragraphs = ['first', 'second', 'third']
+	html_string = render_to_string('electric/electric_list.html', {'paragraphs': paragraphs})
+
+	html = HTML(string=html_string)
+	html.write_pdf(target='/tmp/mypdf.pdf');
+
+	fs = FileSystemStorage('/tmp')
+	with fs.open('mypdf.pdf')as pdf:
+		response = HttpResponse(pdf, content_type='application/pdf')
+		response['Content-Disposition'] = 'inline; filename="mypdf.pdf"'
+		return response
+	return response
+	
+
 
 # Create your views here.
 def electric(request):
