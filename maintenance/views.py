@@ -31,3 +31,24 @@ def maintenance_new(request):
 	else:
 		form = MaintenanceForm()
 	return render(request, 'maintenance/maintenance_new.html', {'form': form})
+def maintenance_edit(request, pk):
+	problem = get_object_or_404(Maintenance, pk=pk)
+	#This line above makes problem edit!
+
+	if request.method == "POST":
+		form = MaintenanceForm(request.POST, instance=problem)
+		if form.is_valid():
+			problem = form.save(commit=False)
+			problem.author = str(request.user)
+			problem.date = timezone.now()
+			problem.save()
+			return redirect('maintenance')
+	else:
+		form = MaintenanceForm(instance=problem)
+	return render(request, 'maintenance/maintenance_edit.html', {'form': form})
+def maintenance_delete(request, pk):
+	problem = get_object_or_404(Maintenance, pk=pk)
+	if request.method == "POST":
+		problem.delete()
+		return redirect('maintenance')
+	return render(request, 'maintenance/maintenance_delete.html', {'problem': problem })

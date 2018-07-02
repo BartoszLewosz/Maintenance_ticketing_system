@@ -8,4 +8,6 @@ urlpatterns = [
 	url(r'^(?P<pk>\d+)$', DetailView.as_view(model=Maintenance,
 		template_name='maintenance/maintenance_detail.html')),
 	url(r'^maintenance_new/', views.maintenance_new, name='maintenance_new'),
+	url(r'^(?P<pk>\d+)/edit/$', views.maintenance_edit, name='maintenance_edit'),
+	url(r'^(?P<pk>\d+)/delete/$', views.maintenance_delete, name='maintenance_delete'),
 ]
