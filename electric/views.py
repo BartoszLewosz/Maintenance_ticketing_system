@@ -11,8 +11,9 @@ from django.template.loader import render_to_string
 from weasyprint import HTML
 
 def html_to_pdf_view(request):
-	paragraphs = ['first', 'second', 'third']
-	html_string = render_to_string('electric/electric_list.html', {'paragraphs': paragraphs})
+	problems = Electric.objects.all()
+
+	html_string = render_to_string('electric/print_pdf.html', {'problems': problems})
 
 	html = HTML(string=html_string)
 	html.write_pdf(target='/tmp/mypdf.pdf');
