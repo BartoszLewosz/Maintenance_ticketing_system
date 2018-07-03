@@ -1,16 +1,33 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+from django.utils import timezone
 
+###================================================================================================
+#====Pagination====================================================================================
+###================================================================================================
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from .models import Problem
-from .forms import ProblemForm
-from django.utils import timezone
+###================================================================================================
+#
+#
+###================================================================================================
+#====PDF Creating with WeasyPrint==================================================================
+###================================================================================================
 from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponse
 from django.template.loader import render_to_string
 from weasyprint import HTML
-# Create your views here.
+###================================================================================================
+#
+#
+###================================================================================================
+#====Models and Forms==============================================================================
+###================================================================================================
+from .models import Problem
+from .forms import ProblemForm
+###================================================================================================
+
+
 def plumbing(request):
 	problems = Problem.objects.order_by('-date')
 	page = request.GET.get('page', 1)

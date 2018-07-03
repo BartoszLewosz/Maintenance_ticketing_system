@@ -10,13 +10,14 @@
     {% if user.is_authenticated %}
 
     	<p>welcome {{ user.username }}</p>
+        <li><a href="{% url 'garden' %}"><i class="glyphicon glyphicon-tree-conifer"></i>Where to start?</a></li>
 
 
 
         <p><br>Last 7 updates with transparency of last four</p>
         {% for problem in problems %}
         	<br>{{ problem.location }}
-            {{ problem.description }}
+            {{ problem.descr }}
         {% endfor %}
 
 
