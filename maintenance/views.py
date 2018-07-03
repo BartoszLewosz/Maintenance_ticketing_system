@@ -5,6 +5,10 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Maintenance
 from .forms import MaintenanceForm
+from django.core.files.storage import FileSystemStorage
+from django.http import HttpResponse
+from django.template.loader import render_to_string
+from weasyprint import HTML
 
 # Create your views here.
 def maintenance(request):
@@ -52,3 +56,17 @@ def maintenance_delete(request, pk):
 		problem.delete()
 		return redirect('maintenance')
 	return render(request, 'maintenance/maintenance_delete.html', {'problem': problem })
+def maintenance_print(request):
+	problems = Maintenance.objects.all()
+
+	html_string = render_to_string('maintenance/maintenance_print.html', {'problems': problems})
+
+	html = HTML(string=html_string)
+	html.write_pdf(target='/tmp/electric_print.pdf');
+
+	fs = FileSystemStorage('/tmp')
+	with fs.open('electric_print.pdf')as pdf:
+		response = HttpResponse(pdf, content_type='application/pdf')
+		response['Content-Disposition'] = 'inline; filename="electric_print.pdf"'
+		return response
+	return response

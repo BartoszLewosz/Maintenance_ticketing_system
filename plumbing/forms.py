@@ -5,4 +5,4 @@ class ProblemForm(forms.ModelForm):
 
 	class Meta:
 		model = Problem
-		fields = ('location', 'description',)
+		fields = ('location', 'descr',)

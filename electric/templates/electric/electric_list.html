@@ -10,10 +10,13 @@
 </div>
 
 <div class="new">
-    <a href="{% url 'electric_new' %}"><span class="glyphicon glyphicon-plus-sign">New</span></a>
-    <a href="{% url 'html_to_pdf_view' %}"><span class="glyphicon glyphicon-plus-print">print</span></a>
-
+    <a href="{% url 'electric_new' %}", button type="submit" class="save btn btn-default"></button></form><span class="glyphicon glyphicon-plus-sign">New</span></a>
 </div>
+<br>
+<div class="print">
+    <a href="{% url 'electric_print' %}", button type="submit" class="save btn btn-default"></button></form><span class="glyphicon glyphicon-print">Print</span></a>
+</div>
+    
 <div class="table-responsive">
         <table class="table">
         <h2>Electric</h2>

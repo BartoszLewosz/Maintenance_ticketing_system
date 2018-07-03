@@ -10,4 +10,5 @@ urlpatterns = [
 	url(r'^maintenance_new/', views.maintenance_new, name='maintenance_new'),
 	url(r'^(?P<pk>\d+)/edit/$', views.maintenance_edit, name='maintenance_edit'),
 	url(r'^(?P<pk>\d+)/delete/$', views.maintenance_delete, name='maintenance_delete'),
+	url(r'^maintenance_print/', views.maintenance_print, name='maintenance_print'),
 ]

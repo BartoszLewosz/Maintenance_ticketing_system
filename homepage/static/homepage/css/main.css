@@ -33,6 +33,9 @@ body {
 .new {
 	text-align: right;
 }
+.print {
+	text-align: right;
+}
 
 .table {
 	width: 100%;

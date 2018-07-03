@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>List_To_Do</title>
+    <style>
+      body {
+        background-color: #f7f7f7;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+          <h2>Plumbing</h2>
+          <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>Where</th>
+                  <th>What</th>
+                  <th>Who</th>
+              </tr>
+          </thead>
+              <tbody>
+                  {% for problem in problems %}
+                  <tr>
+                      <td>{{ problem.id }}</td>
+                      <td>{{ problem.location }}</a></td>
+                      <td>{{ problem.descr }}</td>
+                      <td>{{ problem.author }}</td>
+                  </tr>
+                  {% endfor %}
+              </tbody>
+          </table>
+          <style>
+    table {
+      border-collapse: collapse;
+    }
+    th, td, h2 {
+      border: 2px solid grey;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+  </table>
+  </body>
+</html>

@@ -10,5 +10,5 @@ urlpatterns = [
 	url(r'^electric_new/', views.electric_new, name='electric_new'),
 	url(r'^(?P<pk>\d+)/edit/$', views.electric_edit, name='electric_edit'),
 	url(r'^(?P<pk>\d+)/delete/$', views.electric_delete, name='electric_delete'),
-	url(r'^html_to_pdf_view/', views.html_to_pdf_view, name='html_to_pdf_view'),
+	url(r'^electric_print/', views.electric_print, name='electric_print'),
 ]

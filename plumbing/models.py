@@ -7,7 +7,7 @@ from django.db import models
 class Problem(models.Model):
 	date = models.DateTimeField()
 	location = models.CharField(max_length=30)
-	description = models.TextField()
+	descr = models.TextField()
 	status = models.CharField(max_length=30, blank=True, default='')
 	author = models.CharField(max_length=10)
 

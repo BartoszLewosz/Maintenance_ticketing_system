@@ -13,6 +13,10 @@
         <a href="{% url 'plumbing_new' %}"><span class="glyphicon glyphicon-plus-sign">New</span></a>
 
     </div>
+
+    <div class="print">
+    <a href="{% url 'plumbing_print' %}", button type="submit" class="save btn btn-default"></button></form><span class="glyphicon glyphicon-print">Print</span></a>
+</div>
     
 </div>
 
@@ -36,7 +40,7 @@
                 <tr>
                     <td>{{ problem.id }}</td>
                     <td><a href="{{problem.id}}">{{ problem.location }}</a></td>
-                    <td>{{ problem.description }}</td>
+                    <td>{{ problem.descr }}</td>
                     <td>{{ problem.date }}</td>
                     <td>{{ problem.author }}</td>
                     <td><a href="{% url 'plumbing_edit' pk=problem.pk %}"><span class="glyphicon glyphicon-edit"></span>Edit</a></td>

@@ -6,6 +6,10 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Problem
 from .forms import ProblemForm
 from django.utils import timezone
+from django.core.files.storage import FileSystemStorage
+from django.http import HttpResponse
+from django.template.loader import render_to_string
+from weasyprint import HTML
 # Create your views here.
 def plumbing(request):
 	problems = Problem.objects.order_by('-date')
@@ -52,3 +56,18 @@ def plumbing_delete(request, pk):
 		problem.delete()
 		return redirect('plumbing')
 	return render(request, 'plumbing/plumbing_delete.html', {'problem': problem })
+def plumbing_print(request):
+	problems = Problem.objects.all()
+
+	html_string = render_to_string('plumbing/plumbing_print.html', {'problems': problems})
+
+	html = HTML(string=html_string)
+	html.write_pdf(target='/tmp/mypdf.pdf');
+
+	fs = FileSystemStorage('/tmp')
+	with fs.open('mypdf.pdf')as pdf:
+		response = HttpResponse(pdf, content_type='application/pdf')
+		response['Content-Disposition'] = 'inline; filename="mypdf.pdf"'
+		return response
+	return response
+

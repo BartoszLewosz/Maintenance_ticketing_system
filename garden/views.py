@@ -6,6 +6,10 @@ from django.utils import timezone
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Problem
 from .forms import ProblemForm
+from django.core.files.storage import FileSystemStorage
+from django.http import HttpResponse
+from django.template.loader import render_to_string
+from weasyprint import HTML
 
 # Create your views here.
 def garden(request):
@@ -56,3 +60,18 @@ def garden_delete(request, pk):
 		problem.delete()
 		return redirect('garden')
 	return render(request, 'garden/garden_delete.html', {'problem': problem})
+
+def garden_print(request):
+	problems = Problem.objects.all()
+
+	html_string = render_to_string('garden/garden_print.html', {'problems': problems})
+
+	html = HTML(string=html_string)
+	html.write_pdf(target='/tmp/mypdf.pdf');
+
+	fs = FileSystemStorage('/tmp')
+	with fs.open('mypdf.pdf')as pdf:
+		response = HttpResponse(pdf, content_type='application/pdf')
+		response['Content-Disposition'] = 'inline; filename="mypdf.pdf"'
+		return response
+	return response

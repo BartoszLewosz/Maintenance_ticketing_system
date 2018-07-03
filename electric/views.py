@@ -1,16 +1,33 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.utils import timezone
+###================================================================================================
+#====Pagination====================================================================================
+###================================================================================================
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-from .models import Electric
-from .forms import ElectricForm
+###================================================================================================
+
+
+###================================================================================================
+#====PDF Creating with WeasyPrint==================================================================
+###================================================================================================
 from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponse
 from django.template.loader import render_to_string
 from weasyprint import HTML
+###================================================================================================
 
-def html_to_pdf_view(request):
+
+###================================================================================================
+#====Models and Forms==============================================================================
+###================================================================================================
+from .models import Electric
+from .forms import ElectricForm
+###================================================================================================
+
+
+def electric_print(request):
 	problems = Electric.objects.all()
 
 	html_string = render_to_string('electric/print_pdf.html', {'problems': problems})
