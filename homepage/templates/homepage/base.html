@@ -52,7 +52,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="about/">Dr Slavosh</a>
+      <a href="{% url 'about' %}" class="navbar-brand">START</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -61,10 +61,11 @@
       	{% if user.is_authenticated %}
 
 	        <li><a href="/"><i class="glyphicon glyphicon-home"></i>Home</a></li>
-	        <li><a href="{% url 'garden' %}"><i class="glyphicon glyphicon-tree-conifer"></i>Garden</a></li>
-	        <li><a href="{% url 'maintenance' %}"><i class="glyphicon glyphicon-wrench"></i>Maintenance</a></li>
-	        <li><a href="{% url 'plumbing' %}"><i class="glyphicon glyphicon-tint"></i>Plumbing</a></li>
-	        <li><a href="{% url 'electric' %}"><i class="glyphicon glyphicon-flash"></i>Electric</a></li>
+	        <li><a href="{% url 'garden' %}"><i id="garden_color" class="glyphicon glyphicon-tree-conifer"></i>Garden</a></li>
+	        <li><a href="{% url 'maintenance' %}"><i id="maintenance_color" class="glyphicon glyphicon-wrench"></i>Maintenance</a></li>
+	        <li><a href="{% url 'plumbing' %}"><i id="plumbing_color" class="glyphicon glyphicon-tint"></i>Plumbing</a></li>
+	        <li><a href="{% url 'electric' %}"><i id="electric_color" class="glyphicon glyphicon-flash"></i>Electric</a></li>
+	        <li><a href="{% url 'contact' %}"><i id="contact" class="glyphicon glyphicon-envelope"></i>Contact</a></li>
         {% else %}
 
         	<li class="active"><a href="/">Home</a></li>

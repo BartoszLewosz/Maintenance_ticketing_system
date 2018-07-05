@@ -1,8 +1,8 @@
 from django import forms
-from .models import Problem
+from .models import Plumbing
 
 class ProblemForm(forms.ModelForm):
 
 	class Meta:
-		model = Problem
+		model = Plumbing
 		fields = ('location', 'descr',)

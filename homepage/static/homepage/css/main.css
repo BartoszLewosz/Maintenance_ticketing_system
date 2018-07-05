@@ -43,7 +43,61 @@ body {
 h2 {
 	text-align: center;
 }
+.about {
+	text-align: justify;
+  	margin: 0 auto;
+  	width: 40em;
+}
 .problem_options {
 	text-align: right;
 	color: black;
+}
+.problems {
+	text-align: center;
+	padding: 12px;
+}
+#garden, #maintenance, #plumbing, #electric {
+	padding: 12px;
+	border-radius: 10px;
+}
+#contact {
+	color: yellow;
+	padding-left: 120px;
+}
+#garden_color {
+	color: green;
+}
+#maintenance_color {
+	color: black;
+}
+#plumbing_color {
+	color: blue;
+}
+#electric_color {
+	color: #fcc01e;
+}
+.section-problems {
+	float: left;
+	width: 100%;
+}
+.section-garden {
+	float: left;
+	width: 50%;
+	background-color: green;
+	border-radius: 15px;
+}
+.section-plumbing {
+	float: left;
+	width: 50%;
+	background-color: blue;
+}
+.section-maintenance {
+	float: left;
+	width: 50%;
+	background-color: darkgray;
+}
+.section-electric {
+	float: left;
+	width: 50%;
+	background-color: #fcc01e;
 }

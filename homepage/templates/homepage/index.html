@@ -10,16 +10,48 @@
     {% if user.is_authenticated %}
 
     	<p>welcome {{ user.username }}</p>
-        <li><a href="{% url 'garden' %}"><i class="glyphicon glyphicon-tree-conifer"></i>Where to start?</a></li>
+        <li><a href="{% url 'about' %}"><i class="glyphicon glyphicon-tree-conifer"></i>Where to start?</a></li>
 
+        <section class="section-problems">
+            <section class="section-garden">
 
+            {% for problem in problems %}
+                <br>{{ problem.location }}
+                {{ problem.descr }}
+                {{ problem.date }}
+            {% endfor %}
 
-        <p><br>Last 7 updates with transparency of last four</p>
-        {% for problem in problems %}
-        	<br>{{ problem.location }}
-            {{ problem.descr }}
-        {% endfor %}
+            </section>
 
+             <section class="section-maintenance">
+                {% for m in maintenance %}
+                    <br>{{ m.location }}
+                    {{ m.descr }}
+                    {{ m.date }}
+                {% endfor %}
+            </section>
+
+            <section class="section-plumbing">
+                {% for p in plumbing %}
+                    <br>{{ p.location }}
+                    {{ p.descr }}
+                    {{ p.date }}
+                {% endfor %}
+
+            </section>
+
+            <section class="section-electric">
+                {% for e in electric %}
+                    <br>{{ e.location }}
+                    {{ e.descr }}
+                    {{ e.date }}
+                {% endfor %}
+            </section>
+
+            
+        </section>
+
+            
 
     {% else %}
 

@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.db import models
 
 # Create your models here.
-class Problem(models.Model):
+class Plumbing(models.Model):
 	date = models.DateTimeField()
 	location = models.CharField(max_length=30)
 	descr = models.TextField()

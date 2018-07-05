@@ -6,9 +6,44 @@
 
 {% block content %}
 
-    <a href="/">homepage</a>
+    <h2>Hello everyone!</h2>
+    <p>This is Warren House Maintenance Project. First reason I created this, is to make our work easier.
+    Every department of this company has some technical issues; loose screws on firedoors, printer with jammed paper, hanging spot light on ceiling, restroom flush not working propely or outdoor issues. I had on my mind all of this. I created this application to make it easier to organise and fix your problems. Welcome to my Application!<br>
+    There are four groups of issues:<br>
+    <div class="problems">
 
-    <p>This is section<br>About me</p>
+	    <a href="{% url 'garden' %}", id="garden" button type="submit" class="save btn btn-default"></button></form><span class="glyphicon glyphicon-tree-conifer">Garden</span></a>
+	    <a href="{% url 'maintenance' %}", id="maintenance" button type="submit" class="save btn btn-default"></button></form><span class="glyphicon glyphicon-wrench">Maintenance</span></a>
+	    <a href="{% url 'plumbing' %}", id="plumbing" button type="submit" class="save btn btn-default"></button></form><span class="glyphicon glyphicon-tint">Plumbing</span></a>
+	    <a href="{% url 'electric' %}", id="electric" button type="submit" class="save btn btn-default"></button></form><span class="glyphicon glyphicon-flash">Electric</span></a>
+
+    </div>
+
+    <div class="about">
+
+    	<br>Before you add anything, decide to which group your problem belongs.
+    For example:
+    <ul><br>
+    	<li>
+    		You noticed one spot light in bedroom, lamp without light bulb, socket that is not working or anything connected to power - <span class="glyphicon glyphicon-flash">Electric</span>.
+    	</li><br>
+    	<li>
+    		You've seen that one of the table in terrace is wobbly, parasol has broken parts or any other issues from outdoors - <span class="glyphicon glyphicon-tree-conifer">Garden</span>.
+    	</li><br>
+    	<li>
+    		You've noticed that door knob is about to fall out, some screws are loose or any other actions with hammer or screwdriver - <span class="glyphicon glyphicon-wrench">Maintenance</span>.
+    	</li><br>
+    	<li>
+    		You've just discovered that toilet is blocked, tap is dripping or there is slippery surface because of some leak - <span class="glyphicon glyphicon-tint">Plumbing</span>. <br>
+
+    	</li>
+    </ul> <br>
+    <br>
+    
+    
+    </div>
+
+    Second reason is to practice my skills.   </p>
 
    
     

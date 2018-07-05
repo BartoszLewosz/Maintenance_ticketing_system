@@ -23,13 +23,13 @@ from weasyprint import HTML
 ###================================================================================================
 #====Models and Forms==============================================================================
 ###================================================================================================
-from .models import Problem
+from .models import Plumbing
 from .forms import ProblemForm
 ###================================================================================================
 
 
 def plumbing(request):
-	problems = Problem.objects.order_by('-date')
+	problems = Plumbing.objects.order_by('-date')
 	page = request.GET.get('page', 1)
 
 	paginator = Paginator(problems, 5)
@@ -55,7 +55,7 @@ def plumbing_new(request):
 	return render(request, 'plumbing/plumbing_new.html', {'form': form})
 
 def plumbing_edit(request, pk):
-	problem = get_object_or_404(Problem, pk=pk)
+	problem = get_object_or_404(Plumbing, pk=pk)
 	if request.method == "POST":
 		form = ProblemForm(request.POST, instance=problem)
 		if form.is_valid():
@@ -68,13 +68,13 @@ def plumbing_edit(request, pk):
 		form = ProblemForm(instance=problem)
 	return render(request, 'plumbing/plumbing_edit.html', {'form': form})
 def plumbing_delete(request, pk):
-	problem = get_object_or_404(Problem, pk=pk)
+	problem = get_object_or_404(Plumbing, pk=pk)
 	if request.method == "POST":
 		problem.delete()
 		return redirect('plumbing')
 	return render(request, 'plumbing/plumbing_delete.html', {'problem': problem })
 def plumbing_print(request):
-	problems = Problem.objects.all()
+	problems = Plumbing.objects.all()
 
 	html_string = render_to_string('plumbing/plumbing_print.html', {'problems': problems})
 

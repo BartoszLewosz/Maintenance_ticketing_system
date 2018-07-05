@@ -14,13 +14,22 @@ from django.contrib.auth.forms import UserCreationForm
 #====Models and Forms==============================================================================
 ###================================================================================================
 from garden.models import Problem
+from electric.models import Electric
+from maintenance.models import Maintenance 
+from plumbing.models import Plumbing
 ###================================================================================================
 
 # Create your views here.
 
 def index(request):
-	problems = Problem.objects.order_by('-date')[:7]
-	return render(request, 'homepage/index.html', {'problems': problems})
+	problems = Problem.objects.order_by('-date')[:5]
+	electric = Electric.objects.order_by('-date')[:5]
+	maintenance = Maintenance.objects.order_by('-date')[:5]
+	plumbing = Plumbing.objects.order_by('-date')[:5]
+	return render(request, 'homepage/index.html', {'problems': problems,
+													'electric': electric,
+													'maintenance': maintenance,
+													'plumbing': plumbing})
 
 def about(request):
 	return render(request, 'homepage/about.html')
