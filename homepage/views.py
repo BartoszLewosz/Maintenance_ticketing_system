@@ -22,10 +22,10 @@ from plumbing.models import Plumbing
 # Create your views here.
 
 def index(request):
-	problems = Problem.objects.order_by('-date')[:5]
-	electric = Electric.objects.order_by('-date')[:5]
-	maintenance = Maintenance.objects.order_by('-date')[:5]
-	plumbing = Plumbing.objects.order_by('-date')[:5]
+	problems = Problem.objects.order_by('-date')[:3]
+	electric = Electric.objects.order_by('-date')[:3]
+	maintenance = Maintenance.objects.order_by('-date')[:3]
+	plumbing = Plumbing.objects.order_by('-date')[:3]
 	return render(request, 'homepage/index.html', {'problems': problems,
 													'electric': electric,
 													'maintenance': maintenance,

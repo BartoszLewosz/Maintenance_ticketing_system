@@ -40,7 +40,7 @@ body {
 .table {
 	width: 100%;
 }
-h2 {
+h2, h4 {
 	text-align: center;
 }
 .about {
@@ -61,8 +61,12 @@ h2 {
 	border-radius: 10px;
 }
 #contact {
-	color: yellow;
+	color: orange;
 	padding-left: 120px;
+}
+.contact {
+	text-align: center;
+	font-size: 16px;
 }
 #garden_color {
 	color: green;
@@ -83,21 +87,26 @@ h2 {
 .section-garden {
 	float: left;
 	width: 50%;
-	background-color: green;
-	border-radius: 15px;
 }
 .section-plumbing {
 	float: left;
 	width: 50%;
-	background-color: blue;
 }
 .section-maintenance {
 	float: left;
 	width: 50%;
-	background-color: darkgray;
 }
 .section-electric {
 	float: left;
 	width: 50%;
-	background-color: #fcc01e;
 }
+.section-garden, .section-plumbing, .section-maintenance, .section-electric {
+	border-radius: 15px;
+	padding-top: 5px;
+	padding-bottom: 15px;
+	padding-left: 10px;
+	margin: 5px 0px ;
+}
+
+
+ 

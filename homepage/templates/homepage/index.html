@@ -10,46 +10,90 @@
     {% if user.is_authenticated %}
 
     	<p>welcome {{ user.username }}</p>
-        <li><a href="{% url 'about' %}"><i class="glyphicon glyphicon-tree-conifer"></i>Where to start?</a></li>
 
         <section class="section-problems">
             <section class="section-garden">
-
-            {% for problem in problems %}
-                <br>{{ problem.location }}
+            <ul><h4>Garden</h4>
+                {% for problem in problems %}
+                <li>
+                    {{ problem.location }}
+                </li>
                 {{ problem.descr }}
                 {{ problem.date }}
             {% endfor %}
 
+            </ul>
+
+            
             </section>
 
              <section class="section-maintenance">
-                {% for m in maintenance %}
-                    <br>{{ m.location }}
+             <ul><h4>Maintenance</h4>
+                 {% for m in maintenance %}
+                    <li>
+                        {{ m.location }}
+                    </li>
                     {{ m.descr }}
                     {{ m.date }}
                 {% endfor %}
+             </ul>
+                
             </section>
 
             <section class="section-plumbing">
-                {% for p in plumbing %}
-                    <br>{{ p.location }}
-                    {{ p.descr }}
-                    {{ p.date }}
-                {% endfor %}
+                <ul><h4>Plumbing</h4>
+                    {% for p in plumbing %}
+                    <li>
+                        {{ p.location }}
+                    </li>
+                        {{ p.descr }}
+                        {{ p.date }}
+                    {% endfor %}
 
+                </ul>
+                
             </section>
 
             <section class="section-electric">
+            <ul><h4>Electric</h4>
                 {% for e in electric %}
-                    <br>{{ e.location }}
+                    <li>
+                        {{ e.location }}
+                    </li>
                     {{ e.descr }}
                     {{ e.date }}
                 {% endfor %}
+            </ul>
+                
             </section>
 
             
         </section>
+
+        <style>
+        #myDIV {
+            width: 100%;
+            padding: 50px 0;
+            text-align: center;
+            background-color: lightblue;
+            margin-top: 20px;
+        }
+        </style>
+
+        <button onclick="myFunction()">Try it!</button>
+        <div id="myDIV">This is my Div element</div>
+
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myDIV");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                }
+                else {
+                    x.style.display = "none";
+                }
+            }
+        </script>
 
             
 
