@@ -10,13 +10,13 @@
 
 
 <div class="problem_title">
-<h3>{{problem.location}}</h3>
+<h3>{{plumbing.location}}</h3>
 </div>
-    {{ problem.description|safe|linebreaks }}
+    {{ plumbing.descr|safe|linebreaks }}
     <div class="detail">
-        <h6>on {{problem.date}}, posted by {{problem.author}}</h6>
+        <h6>on {{plumbing.date}}, posted by {{plumbing.author}}</h6>
         <div class="problem_options">
-        	<a href="{% url 'plumbing_edit' pk=problem.pk %}"><span class="glyphicon glyphicon-edit"></span>Edit</a><br><a href="{% url 'plumbing_delete' pk=problem.pk %}"><span class="glyphicon glyphicon-check"></span>Delete</a>
+        	<a href="{% url 'plumbing_edit' pk=plumbing.pk %}"><span class="glyphicon glyphicon-edit"></span>Edit</a><br><a href="{% url 'plumbing_delete' pk=plumbing.pk %}"><span class="glyphicon glyphicon-check"></span>Delete</a>
         </div>
 
     </div>

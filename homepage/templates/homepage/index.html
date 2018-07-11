@@ -10,6 +10,16 @@
     {% if user.is_authenticated %}
 
     	<p>welcome {{ user.username }}</p>
+        <h4>Choose your problem</h4>
+
+        <div class="problems">
+
+        <a href="{% url 'garden' %}", id="garden" button type="submit" class="save btn btn-default"></button></form><span class="glyphicon glyphicon-tree-conifer">Garden</span></a>
+        <a href="{% url 'maintenance' %}", id="maintenance" button type="submit" class="save btn btn-default"></button></form><span class="glyphicon glyphicon-wrench">Maintenance</span></a>
+        <a href="{% url 'plumbing' %}", id="plumbing" button type="submit" class="save btn btn-default"></button></form><span class="glyphicon glyphicon-tint">Plumbing</span></a>
+        <a href="{% url 'electric' %}", id="electric" button type="submit" class="save btn btn-default"></button></form><span class="glyphicon glyphicon-flash">Electric</span></a>
+
+    </div>
 
         <section class="section-problems">
             <section class="section-garden">
@@ -80,10 +90,11 @@
         }
         </style>
 
+
         <button onclick="myFunction()">Try it!</button>
         <div id="myDIV">This is my Div element</div>
 
-        <script>
+        <!--<script>
             function myFunction() {
                 var x = document.getElementById("myDIV");
                 if (x.style.display === "none") {
@@ -94,6 +105,7 @@
                 }
             }
         </script>
+        -->
 
             
 
