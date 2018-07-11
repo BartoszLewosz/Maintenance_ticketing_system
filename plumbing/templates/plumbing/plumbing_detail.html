@@ -15,8 +15,10 @@
     {{ plumbing.descr|safe|linebreaks }}
     <div class="detail">
         <h6>on {{plumbing.date}}, posted by {{plumbing.author}}</h6>
-        <div class="problem_options">
-        	<a href="{% url 'plumbing_edit' pk=plumbing.pk %}"><span class="glyphicon glyphicon-edit"></span>Edit</a><br><a href="{% url 'plumbing_delete' pk=plumbing.pk %}"><span class="glyphicon glyphicon-check"></span>Delete</a>
+        <div>
+        	<a href="{% url 'plumbing_edit' pk=plumbing.pk %}"><span class="glyphicon glyphicon-edit"></span>Edit</a><br><a href="{% url 'plumbing_delete' pk=plumbing.pk %}"><span class="glyphicon glyphicon-trash"></span>Delete</a>
+
+
         </div>
 
     </div>

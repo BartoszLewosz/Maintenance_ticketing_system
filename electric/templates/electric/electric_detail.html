@@ -19,7 +19,8 @@
         <h6>on {{electric.date}}, posted by {{electric.author}}</h6>
 
     </div>
-    
+    <a href="{% url 'electric_edit' pk=electric.pk %}"><span class="glyphicon glyphicon-edit"></span>Edit</a>
+    <a href="{% url 'electric_delete' pk=electric.pk %}"><span class="glyphicon glyphicon-trash"></span>Done</a>
 
 
 
