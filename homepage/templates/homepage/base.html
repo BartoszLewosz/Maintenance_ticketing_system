@@ -25,7 +25,8 @@
 	<body>
 
 	<center>
-		<img src="{% static 'homepage/img/warren.gif' %}" class="responsive-img" style='max-height:100px;' alt="face">
+	<a href="http://www.warrenhouse.com/" target="blank">
+		<img src="{% static 'homepage/img/index.png' %}" class="responsive-img" style='max-height:100px;' alt="logo"></a>
 		<h3>Dr. Slavosh__Software__Handy_man</h3>
 	</center>
 
@@ -48,23 +49,23 @@
 		      </li>
 
 		      <li class="nav-item">
-		        <a class="nav-link" href="{% url 'garden' %}"></span><i class="fas fa-tree"></i>Garden</a>
+		        <a class="nav-link" href="{% url 'garden' %}"></span><i id="garden_color" class="fas fa-tree"></i>Garden</a>
 		      </li>
 
 		      <li class="nav-item">
-		        <a class="nav-link" href="{% url 'maintenance' %}"><i class="fas fa-wrench"></i>Maintenance</a>
+		        <a class="nav-link" href="{% url 'maintenance' %}"><i id="maintenance_color" class="fas fa-wrench"></i>Maintenance</a>
 		      </li>
 
 		      <li class="nav-item">
-		        <a class="nav-link" href="{% url 'electric' %}"><i class="fas fa-bolt"></i>Electric</a>
+		        <a class="nav-link" href="{% url 'electric' %}"><i id="electric_color" class="fas fa-bolt"></i>Electric</a>
 		      </li>
 
 		      <li class="nav-item">
-		        <a class="nav-link" href="{% url 'plumbing' %}"><i class="fas fa-tint"></i>Plumbing</a>
+		        <a class="nav-link" href="{% url 'plumbing' %}"><i id="plumbing_color" class="fas fa-tint"></i>Plumbing</a>
 		      </li>
 
 		       <li class="nav-item">
-		        <a class="nav-link" href="{% url 'contact' %}"><i class="fas fa-envelope"></i>Contact</a>
+		        <a class="nav-link" href="{% url 'contact' %}"><i id="contact_color" class="fas fa-envelope"></i>Contact</a>
 		      </li> 
 		       <li class="nav-item">
 		        <a class="nav-link" href="/logout" id="nav-right"><i class="fas fa-sign-out-alt"></i>Logout</a>

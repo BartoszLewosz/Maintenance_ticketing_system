@@ -9,17 +9,38 @@
    
     {% if user.is_authenticated %}
 
-    	<p>welcome {{ user.username }}</p>
-        <h4>Choose your problem</h4>
+    	<h5 class="welcome">welcome {{ user.username }}</h5>
+        <h3>Choose your problem</h3>
 
-        <div class="problems">
+        <div class="row">
+             <div class="col-sm">
+          <h2>Garden</h2>
+          
+          <p><a class="btn btn-light" href="{% url 'garden' %}" role="button">Show all  &raquo;</a></p>
+       </div>
+       <div class="col-sm">
+          <h2>Maintenance</h2>
+          
+          <p><a class="btn btn-light" href="#" role="button">Show all  &raquo;</a></p>
+       </div>
+       <div class="col-sm">
+          <h2>Electric</h2>
+          
+          <p><a class="btn btn-light" href="#" role="button">Show all  &raquo;</a></p>
+       </div>
+       <div class="col-sm">
+          <h2>Plumbing</h2>
+          
+          <p><a class="btn btn-light" href="#" role="button">Show all  &raquo;</a></p>
+       </div>
+        </div>
 
-        <a href="{% url 'garden' %}", id="garden" button type="submit" class="save btn btn-default"></button></form><span class="glyphicon glyphicon-tree-conifer">Garden</span></a>
-        <a href="{% url 'maintenance' %}", id="maintenance" button type="submit" class="save btn btn-default"></button></form><span class="glyphicon glyphicon-wrench">Maintenance</span></a>
-        <a href="{% url 'plumbing' %}", id="plumbing" button type="submit" class="save btn btn-default"></button></form><span class="glyphicon glyphicon-tint">Plumbing</span></a>
-        <a href="{% url 'electric' %}", id="electric" button type="submit" class="save btn btn-default"></button></form><span class="glyphicon glyphicon-flash">Electric</span></a>
+       
 
-    </div>
+
+
+
+       
 
     <!--
 

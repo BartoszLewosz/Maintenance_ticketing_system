@@ -22,14 +22,25 @@ body {
 }
 /*
 ======================================================
-										  	==
+									INDEX PAGE	======
 ======================================================
 */
-
+.welcome {
+	text-align: center;
+	padding: 30px;
+}
+.responsive-img {
+	padding: 10px;
+	border-radius: 15px;
+	
+}
 
 
 .row {
 	height: 75px;
+	text-align: center;
+	width: 100%;
+	padding-top: 50px;
 }
 
 .container-fluid {
@@ -51,11 +62,7 @@ body {
 }
 
 .back {
-	text-decoration: underline;
-	text-decoration-color: gray;
-	text-decoration-style: double;
-	color: yellow;
-	text-align:left;
+	padding: 10px;
 }
 
 .new {
@@ -68,7 +75,7 @@ body {
 .table {
 	width: 100%;
 }
-h2, h4 {
+h2, h3, h4 {
 	text-align: center;
 }
 .about {
@@ -88,13 +95,12 @@ h2, h4 {
 	padding: 12px;
 	border-radius: 10px;
 }
-#contact {
-	color: orange;
-	padding-left: 120px;
-}
 .contact {
 	text-align: center;
 	font-size: 16px;
+}
+#contact_color {
+	color: orange;
 }
 #garden_color {
 	color: green;
@@ -103,7 +109,7 @@ h2, h4 {
 	color: black;
 }
 #plumbing_color {
-	color: blue;
+	color: lightblue;
 }
 #electric_color {
 	color: #fcc01e;

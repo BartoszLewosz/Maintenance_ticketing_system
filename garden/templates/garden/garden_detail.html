@@ -8,7 +8,7 @@
 
 <div class="back">
     <h4>
-    	<a href="#" onClick="history.go(-1);return true;"><span class="glyphicon glyphicon-arrow-left">Back</span></a>
+    	<a href="#" onClick="history.go(-1);return true;"><i class="fas fa-backward"></i> Back</a>
     </h4>
 </div>
 
@@ -23,8 +23,8 @@
     </div>
     
 
-<a href="{% url 'garden_edit' pk=problem.pk %}"><span class="glyphicon glyphicon-edit"></span>Edit</a>
-<a href="{% url 'garden_delete' pk=problem.pk %}"><span class="glyphicon glyphicon-trash"></span>Done</a>
+<a href="{% url 'garden_edit' pk=problem.pk %}"><i class="fas fa-edit"></i>Edit</a>
+<a href="{% url 'garden_delete' pk=problem.pk %}"><i class="fas fa-trash-alt"></i>Done</a>
 
 
 
