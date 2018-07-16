@@ -50,32 +50,31 @@
             </tbody>
         </table>
 
-        {% if problems.has_other_pages %}
-            <ul class="pagination">
-            {% if problems.has_previous %}
-                <li><a href="?page={{ problems.previous_page_number }}">&laquo;</a></li>
-            {% else %}
-                <li class="disabled"><span>&laquo;</span></li>
+        {% with problems as items %}
+            {% if items.has_other_pages %}
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-left">
+                        {% if items.has_previous %}
+                            <li class="page-item"><a class="page-link" href="?page={{ items.previous_page_number }}">&laquo;</a></li>
+                        {% else %}
+                            <li class="page-item disabled"><a class="page-link" href="#"><span>&laquo;</span></a></li>
+                        {% endif %}
+                        {% for i in items.paginator.page_range %}
+                            {% if items.number == i %}
+                                <li class="page-item active"><a class="page-link" href="#">{{ i }} <span class="sr-only">(current)</span></a></li>
+                            {% else %}
+                                <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                        {% if items.has_next %}
+                            <li class="page-item"><a class="page-link" href="?page={{ items.next_page_number }}">&raquo;</a></li>
+                        {% else %}
+                            <li class="page-item disabled"><a class="page-link" href="#"><span>&raquo;</span></a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
             {% endif %}
-
-            {% for i in problems.paginator.page_range %}
-                {% if problems.number == i %}
-
-                    <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
-                {% else %}
-                    <li><a href="?page={{ i }}">{{ i }}</a></li>
-                {% endif %}
-                
-            {% endfor %}
-
-            {% if problems.has_next %}
-                <li><a href="?page={{ problems.next_page_number }}">&raquo;</a></li>
-            {% else %}
-                <li class="disabled"><span>&raquo;</span></li>
-            {% endif %}
-                </ul>
-        {% endif %}
-            
+        {% endwith %}
 </div>
 
 
