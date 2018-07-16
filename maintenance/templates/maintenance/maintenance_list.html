@@ -49,8 +49,8 @@
                 {% endfor %}
             </tbody>
         </table>
-
-        {% with problems as items %}
+        <div class="pagination">
+            {% with problems as items %}
             {% if items.has_other_pages %}
                 <nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-left">
@@ -74,7 +74,10 @@
                     </ul>
                 </nav>
             {% endif %}
-        {% endwith %}
+        {% endwith %}            
+        </div>
+
+        
 </div>
 
 
