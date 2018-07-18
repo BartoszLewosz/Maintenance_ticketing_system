@@ -5,12 +5,14 @@
 {% endblock title %}
 
 {% block content %}
-
+<div class="new-form">
 	<h3>New problem</h3>
 	<form method="POST" class="post-form">{% csrf_token %}
 		{{ form.as_p }}
 		<button type="submit" class="save btn btn-default">Save</button></form>
-<p>To trigger submit button pressing enter use JS</p>
+	<p>To trigger submit button pressing enter use JS</p>
+</div>
+	
 
 
 

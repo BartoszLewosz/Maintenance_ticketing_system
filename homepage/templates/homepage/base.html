@@ -10,11 +10,13 @@
 			{%endblock title %}
 		</title>
 	  
-	  <meta charset="utf-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-	  <link rel="stylesheet" href="{% static 'homepage/css/main.css' %}">
-	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{% static 'homepage/css/main.css' %}">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text" rel="stylesheet">
 
 
 	</head>
@@ -27,7 +29,10 @@
 	<center>
 	<a href="http://www.warrenhouse.com/" target="blank">
 		<img src="{% static 'homepage/img/index.png' %}" class="responsive-img" style='max-height:100px;' alt="logo"></a>
-		<h3>Dr. Slavosh__Software__Handy_man</h3>
+		<div class="barcode">
+			<p>Dr. Slavosh__Software__Handy_man</p>
+		</div>
+		
 	</center>
 
 	<div class="container">
@@ -83,15 +88,7 @@
 
         {% endif %}
 
-
-	  
-   
-
-        	
-		        
-		     
-		    
-		      
+	      
 	  </div>  
 	</nav>
 
