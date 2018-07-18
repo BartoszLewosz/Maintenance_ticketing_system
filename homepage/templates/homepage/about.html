@@ -6,47 +6,61 @@
 
 {% block content %}
 
-    <h2>Hello everyone!</h2>
+<div class="about_intro">
+	<h2>Hello everyone!</h2>
     <p>This is Warren House Maintenance Project. First reason I created this, is to make our work easier.
-    Every department of this company has some technical issues; loose screws on firedoors, printer with jammed paper, hanging spot light on ceiling, restroom flush not working propely or outdoor issues. I had on my mind all of this. I created this application to make it easier to organise and fix your problems. Welcome to my Application!<br>
-    There are four groups of issues:<br>
-    <div class="problems">
+    Every department of this company has some technical issues; loose screws on firedoors, printer with jammed paper, hanging spot light on ceiling, restroom flush not working propely or outdoor issues. I had on my mind few of this. I created this application to make it easier to organise and fix the problems that you've spotted. Welcome to my Application!</p>
+</div>
 
-	    <a href="{% url 'garden' %}", id="garden" button type="submit" class="save btn btn-default"></button></form><span class="glyphicon glyphicon-tree-conifer">Garden</span></a>
-	    <a href="{% url 'maintenance' %}", id="maintenance" button type="submit" class="save btn btn-default"></button></form><span class="glyphicon glyphicon-wrench">Maintenance</span></a>
-	    <a href="{% url 'plumbing' %}", id="plumbing" button type="submit" class="save btn btn-default"></button></form><span class="glyphicon glyphicon-tint">Plumbing</span></a>
-	    <a href="{% url 'electric' %}", id="electric" button type="submit" class="save btn btn-default"></button></form><span class="glyphicon glyphicon-flash">Electric</span></a>
+    <center>
+    Before you add anything, decide to which group your problem belongs. There are four groups of issues:
+    </center>
+
+    
+    <div class="row">
+
+            <div class="col-sm">
+              <a class="btn btn-outline-dark" href="#collapseOne" data-toggle="collapse"><h2>Garden</h2></a>
+              <div id="collapseOne" class="collapse" data-parent="#accordion" class="btn btn-outline-dark">
+			      <div class="card-body">
+			        You've seen that one of the table in terrace is wobbly, parasol has broken parts or any other issues from outdoors - Garden
+			      </div>
+			  </div>
+              <p><a class="btn btn-light" href="{% url 'garden' %}" role="button">Show all  &raquo;</a></p><br><br>
+            </div>
+
+            <div class="col-sm">
+              <a class="btn btn-outline-dark" data-toggle="collapse"  href="#collapseTwo"><h2>Maintenance</h2></a>
+              <div id="collapseTwo" class="collapse" data-parent="#accordion" class="btn btn-outline-dark">
+			      <div class="card-body">
+			       You've noticed that door knob is about to fall out, some screws are loose or any other actions with hammer or screwdriver - Maintenance
+			      </div>
+			  </div>
+              <p><a class="btn btn-light" href="{% url 'garden' %}" role="button">Show all  &raquo;</a></p>
+            </div>
+
+            <div class="col-sm">
+              <a class="btn btn-outline-dark" data-toggle="collapse"  href="#collapseThree"><h2>Electric</h2></a>
+              <div id="collapseThree" class="collapse" data-parent="#accordion" class="btn btn-outline-dark">
+			      <div class="card-body">
+			        You noticed one spot light in bedroom, lamp without light bulb, socket that is not working or anything connected to power - Electric
+			      </div>
+			  </div>
+              <p><a class="btn btn-light" href="{% url 'garden' %}" role="button">Show all  &raquo;</a></p>
+            </div>
+
+           <div class="col-sm">
+              <a class="btn btn-outline-dark" data-toggle="collapse"  href="#collapseFour"><h2>Plumbing</h2></a>
+              <div id="collapseFour" class="collapse" data-parent="#accordion" class="btn btn-outline-dark">
+			      <div class="card-body">
+			        You've just discovered that toilet is blocked, tap is dripping or there is slippery surface because of some leak - Plumbing
+			      </div>
+			  </div>
+              <p><a class="btn btn-light" href="{% url 'garden' %}" role="button">Show all  &raquo;</a></p>
+            </div>
 
     </div>
 
-    <div class="about">
-
-    	<br>Before you add anything, decide to which group your problem belongs.
-    For example:
-    <ul><br>
-    	<li>
-    		You noticed one spot light in bedroom, lamp without light bulb, socket that is not working or anything connected to power - <span class="glyphicon glyphicon-flash">Electric</span>.
-    	</li><br>
-    	<li>
-    		You've seen that one of the table in terrace is wobbly, parasol has broken parts or any other issues from outdoors - <span class="glyphicon glyphicon-tree-conifer">Garden</span>.
-    	</li><br>
-    	<li>
-    		You've noticed that door knob is about to fall out, some screws are loose or any other actions with hammer or screwdriver - <span class="glyphicon glyphicon-wrench">Maintenance</span>.
-    	</li><br>
-    	<li>
-    		You've just discovered that toilet is blocked, tap is dripping or there is slippery surface because of some leak - <span class="glyphicon glyphicon-tint">Plumbing</span>. <br>
-
-    	</li>
-    </ul> <br>
-    <br>
-    
-    
-    </div>
-
-    Second reason is to practice my skills.   </p>
-
-   
-    
 
 
 {% endblock content %}

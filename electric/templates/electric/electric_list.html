@@ -7,18 +7,18 @@
 {% block content %}
 <div class="back">
     <h4>
-        <a href="/"><span class="glyphicon glyphicon-arrow-left">Back</span></a>
+        <a href="#", onClick="history.go(-1);return true;" button type="submit" class="btn btn-outline-dark",></button><i class="fas fa-angle-double-left"></i> Back</a>
     </h4>
-    <div class="new">
-        <a href="{% url 'electric_new' %}", button type="submit" class="save btn btn-default"></button><span class="glyphicon glyphicon-plus-sign">New</span></a>
+</div>
+   <div class="new">
+        <a href="{% url 'garden_new' %}", button type="submit" class="btn btn-outline-dark"></button><span class="fas fa-plus-square"> New</span></a>
 
-    </div><br>
-    
-    <div class="print">
-    <a href="{% url 'electric_print' %}", button type="submit" class="save btn btn-default"></button><span class="glyphicon glyphicon-print">Print</span></a>
     </div>
     
-</div>
+    <div class="print">
+    <a href="{% url 'garden_print' %}", button type="submit", class="btn btn-outline-dark"></button><span class="fas fa-print"> Print</span></a>
+    </div>
+    
     
 <div class="table-responsive">
         <table class="table">

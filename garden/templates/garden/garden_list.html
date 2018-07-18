@@ -8,18 +8,18 @@
 
 <div class="back">
     <h4>
-        <a href="/"><span class="glyphicon glyphicon-arrow-left">Back</span></a>
+        <a href="#", onClick="history.go(-1);return true;" button type="submit" class="btn btn-outline-dark",></button><i class="fas fa-angle-double-left"></i> Back</a>
     </h4>
+</div>
     <div class="new">
-        <a href="{% url 'garden_new' %}", button type="submit" class="save btn btn-default"></button><span class="glyphicon glyphicon-plus-sign">New</span></a>
+        <a href="{% url 'garden_new' %}", button type="submit" class="btn btn-outline-dark"></button><span class="fas fa-plus-square"> New</span></a>
 
-    </div><br>
-    
-    <div class="print">
-    <a href="{% url 'garden_print' %}", button type="submit" class="save btn btn-default"></button><span class="glyphicon glyphicon-print">Print</span></a>
     </div>
     
-</div>
+    <div class="print">
+    <a href="{% url 'garden_print' %}", button type="submit", class="btn btn-outline-dark"></button><span class="fas fa-print"> Print</span></a>
+    </div>
+    
 
 <div class="table-responsive">
         <table class="table">
@@ -43,8 +43,8 @@
                     <td>{{ problem.descr }}</td>
                     <td>{{ problem.date }}</td>
                     <td>{{ problem.author }}</td>
-                    <td><a href="{% url 'garden_edit' pk=problem.pk %}"><span class="glyphicon glyphicon-edit"></span>Edit</a></td>
-                    <td><a href="{% url 'garden_delete' pk=problem.pk %}">Done</a></td>
+                    <td><a href="{% url 'garden_edit' pk=problem.pk %}"><span class="fas fa-edit"></span></a></td>
+                    <td><a href="{% url 'garden_delete' pk=problem.pk %}"><span class="far fa-trash-alt"></span></a></td>
                 </tr>
                 {% endfor %}
             </tbody>

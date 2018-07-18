@@ -41,16 +41,10 @@ body {
 	text-align: center;
 	width: 100%;
 	padding-top: 50px;
+	padding-bottom: 400px;
 }
 
-.container-fluid {
-	text-align: center;
-	width: 100%;
-	position: absolute;
-	bottom: 0;
-	margin-top: 50px;
 
-}
 
 .detail {
 	font-variant: small-caps;
@@ -64,7 +58,7 @@ body {
 }
 
 .back {
-	padding: 10px;
+	padding: 20px;
 }
 
 .new {
@@ -80,11 +74,7 @@ body {
 h2, h3, h4 {
 	text-align: center;
 }
-.about {
-	text-align: justify;
-  	margin: 0 auto;
-  	width: 40em;
-}
+
 .problem_options {
 	text-align: right;
 	color: black;
@@ -156,4 +146,22 @@ h2, h3, h4 {
 .pagination {
 	padding: 0 0 10% 40%;
 
+}
+.about_intro {
+	margin: 20px;
+	text-align: justify;
+}
+.footer {
+	position: absolute;
+  	right: 0;
+  	bottom: 0;
+  	left: 0;
+  	padding: 1rem;
+  	background-color: blue;
+  	text-align: center;
+}
+
+.card-body {
+	padding-bottom: 50px;
+	text-align: justify;
 }
