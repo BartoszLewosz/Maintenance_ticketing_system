@@ -5,17 +5,25 @@
 {% endblock title %}
 
 {% block content %}
+<div class="back">
+    <h4>
+    	<a href="#" onClick="history.go(-1);return true;"><span class="glyphicon glyphicon-arrow-left">Back</span></a>
+    </h4>
+</div>
 
 
 <div class="problem_title">
-<h5>{{maintenance.location}}</h5>
+	<h3>{{maintenance.location}}</h5>
 </div>
+
     {{maintenance.descr|safe|linebreaks}}
     <div class="detail">
 
         <h6>on {{maintenance.date}}, posted by {{maintenance.author}}</h6>
 
     </div>
+    <td><a href="{% url 'maintenance_edit' pk=maintenance.pk %}"><span class="glyphicon glyphicon-edit"></span>Edit</a></td>
+                    <td><a href="{% url 'maintenance_delete' pk=maintenance.pk %}"><span class="glyphicon glyphicon-trash"></span>Done</a></td>
     
 
 

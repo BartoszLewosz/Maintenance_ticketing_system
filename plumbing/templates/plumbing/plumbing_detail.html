@@ -6,17 +6,24 @@
 
 {% block content %}
 
+<div class="back">
+    <h4>
+    	<a href="#" onClick="history.go(-1);return true;"><span class="glyphicon glyphicon-arrow-left">Back</span></a>
+    </h4>
+</div>
 
 
 
 <div class="problem_title">
-<h3>{{problem.location}}</h3>
+<h3>{{plumbing.location}}</h3>
 </div>
-    {{ problem.description|safe|linebreaks }}
+    {{ plumbing.descr|safe|linebreaks }}
     <div class="detail">
-        <h6>on {{problem.date}}, posted by {{problem.author}}</h6>
-        <div class="problem_options">
-        	<a href="{% url 'plumbing_edit' pk=problem.pk %}"><span class="glyphicon glyphicon-edit"></span>Edit</a><br><a href="{% url 'plumbing_delete' pk=problem.pk %}"><span class="glyphicon glyphicon-check"></span>Delete</a>
+        <h6>on {{plumbing.date}}, posted by {{plumbing.author}}</h6>
+        <div>
+        	<a href="{% url 'plumbing_edit' pk=plumbing.pk %}"><span class="glyphicon glyphicon-edit"></span>Edit</a><br><a href="{% url 'plumbing_delete' pk=plumbing.pk %}"><span class="glyphicon glyphicon-trash"></span>Delete</a>
+
+
         </div>
 
     </div>

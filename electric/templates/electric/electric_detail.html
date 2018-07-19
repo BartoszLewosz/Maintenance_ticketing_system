@@ -5,6 +5,11 @@
 {% endblock title %}
 
 {% block content %}
+<div class="back">
+    <h4>
+    	<a href="#" onClick="history.go(-1);return true;"><span class="glyphicon glyphicon-arrow-left">Back</span></a>
+    </h4>
+</div>
 
 
 <div class="problem_title">
@@ -19,7 +24,8 @@
         <h6>on {{electric.date}}, posted by {{electric.author}}</h6>
 
     </div>
-    
+    <a href="{% url 'electric_edit' pk=electric.pk %}"><span class="glyphicon glyphicon-edit"></span>Edit</a>
+    <a href="{% url 'electric_delete' pk=electric.pk %}"><span class="glyphicon glyphicon-trash"></span>Done</a>
 
 
 
