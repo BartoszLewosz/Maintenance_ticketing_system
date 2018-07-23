@@ -6,14 +6,18 @@
 
 {% block content %}
 
-	 <h1>New post</h1>
+<div class="edit">
+	<h1>New post</h1>
     	<form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
         <div class="save_button">
-        	<button type="submit" class="save btn btn-default">Save</button>
+        	<button type="submit" class="btn btn-outline-dark">Save</button>
         </div>
         
     </form>
+</div>
+
+	 
 
 
 
