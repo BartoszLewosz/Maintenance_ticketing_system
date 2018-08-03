@@ -1,0 +1,29 @@
+{% extends 'homepage/base.html' %}
+{% load staticfiles %}
+{% block title %}
+    Delete - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+
+	 <h1>Deleted! Moved!</h1>
+
+	 <!--	Probably javascript for future as an alert or smth -->
+    	<form method="POST" class="post-form">{% csrf_token %}
+
+    	<!--	^^This line takes you back to list page	-->
+        
+        <button type="submit" class="save btn btn-default">Back</button>
+    </form>
+    <p>Move object(problem) to 'done' list</p>
+
+
+
+
+
+
+{% endblock content %}
+
+
+
+   

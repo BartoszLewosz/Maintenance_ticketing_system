@@ -44,6 +44,7 @@
                     <td>{{ problem.author }}</td>
                     <td><a href="{% url 'electric_edit' pk=problem.pk %}"><span class="glyphicon glyphicon-edit"></span>Edit</a></td>
                     <td><a href="{% url 'electric_delete' pk=problem.pk %}"><span class="glyphicon glyphicon-trash"></span>Done</a></td>
+                    <td><a href="{% url 'electric_move' pk=problem.pk %}"><span class="glyphicon glyphicon-trash"></span>Move</a></td>
                 </tr>
                 {% endfor %}
             </tbody>

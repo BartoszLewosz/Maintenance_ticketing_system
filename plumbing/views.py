@@ -40,8 +40,12 @@ def plumbing(request):
 	except EmptyPage:
 		problems = paginator.page(paginator.num_pages)
 	return render(request, 'plumbing/plumbing_list.html', {'problems': problems})
+
+
 def plumbing_detail(request):
 	return render(request, 'plumbing/plumbing_detail.html')
+
+
 def plumbing_new(request):
 	if request.method == "POST":
 		form = ProblemForm(request.POST)
@@ -53,6 +57,7 @@ def plumbing_new(request):
 	else:
 		form = ProblemForm()
 	return render(request, 'plumbing/plumbing_new.html', {'form': form})
+
 
 def plumbing_edit(request, pk):
 	problem = get_object_or_404(Plumbing, pk=pk)
@@ -67,12 +72,16 @@ def plumbing_edit(request, pk):
 	else:
 		form = ProblemForm(instance=problem)
 	return render(request, 'plumbing/plumbing_edit.html', {'form': form})
+
+
 def plumbing_delete(request, pk):
 	problem = get_object_or_404(Plumbing, pk=pk)
 	if request.method == "POST":
 		problem.delete()
 		return redirect('plumbing')
 	return render(request, 'plumbing/plumbing_delete.html', {'problem': problem })
+
+
 def plumbing_print(request):
 	problems = Plumbing.objects.all()
 

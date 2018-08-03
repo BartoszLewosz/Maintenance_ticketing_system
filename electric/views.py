@@ -84,6 +84,7 @@ def electric_edit(request, pk):
 	else:
 		form = ElectricForm(instance=problem)
 	return render(request, 'electric/electric_edit.html', {'form': form})
+
 def electric_delete(request, pk):
 	problem = get_object_or_404(Electric, pk=pk)
 	if request.method == "POST":
@@ -91,3 +92,19 @@ def electric_delete(request, pk):
 		return redirect('electric')
 	return render(request, 'electric/electric_delete.html', {'problem': problem })
 
+def electric_move(request, pk):
+	problem = get_object_or_404(Electric, pk=pk)
+	if request.method == "POST":
+		file = open("electric_deleted.txt", "w")
+		file.write(str(problem) + str(problem.descr))
+		file.close()
+		return redirect('electric')
+	return render(request, 'electric/electric_move.html', {'problem': problem})
+
+
+
+#		numbers = [1, 2, 3]
+#	file = open("exerccise.txt", "w")
+#	for item in numbers:
+#		file.write(str(item) + "\n")
+#	file.close()

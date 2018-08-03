@@ -161,6 +161,7 @@ h2, h3, h4 {
 .about_intro {
 	margin: 60px;
 	text-align: justify;
+	line-height: 30px;
 }
 .footer {
 	position: absolute;
