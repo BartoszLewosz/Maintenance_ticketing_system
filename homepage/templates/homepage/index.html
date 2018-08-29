@@ -36,109 +36,13 @@
 
         </div>
 
-       
-
-
-
-
-       
-
-    <!--
-
-        <section class="section-problems">
-            <section class="section-garden">
-            <ul><h4>Garden</h4>
-                {% for problem in problems %}
-                <li>
-                    {{ problem.location }}
-                </li>
-                {{ problem.descr }}
-                {{ problem.date }}
-            {% endfor %}
-
-            </ul>
-
-            
-            </section>
-
-             <section class="section-maintenance">
-             <ul><h4>Maintenance</h4>
-                 {% for m in maintenance %}
-                    <li>
-                        {{ m.location }}
-                    </li>
-                    {{ m.descr }}
-                    {{ m.date }}
-                {% endfor %}
-             </ul>
-                
-            </section>
-
-            <section class="section-plumbing">
-                <ul><h4>Plumbing</h4>
-                    {% for p in plumbing %}
-                    <li>
-                        {{ p.location }}
-                    </li>
-                        {{ p.descr }}
-                        {{ p.date }}
-                    {% endfor %}
-
-                </ul>
-                
-            </section>
-
-            <section class="section-electric">
-            <ul><h4>Electric</h4>
-                {% for e in electric %}
-                    <li>
-                        {{ e.location }}
-                    </li>
-                    {{ e.descr }}
-                    {{ e.date }}
-                {% endfor %}
-            </ul>
-                
-            </section>
-
-            
-        </section>
-
-        <style>
-        #myDIV {
-            width: 100%;
-            padding: 50px 0;
-            text-align: center;
-            background-color: lightblue;
-            margin-top: 20px;
-        }
-        </style>
-
-
-        <button onclick="myFunction()">Try it!</button>
-        <div id="myDIV">This is my Div element</div>
-
-        <script>
-            function myFunction() {
-                var x = document.getElementById("myDIV");
-                if (x.style.display === "none") {
-                    x.style.display = "block";
-                }
-                else {
-                    x.style.display = "none";
-                }
-            }
-        </script>
-        -->
-
-
     {% else %}
-<div class="back">
-  <h2>Hello World!</h2>
-       <center>
-         To continue please log in or sign up
-       </center> 
-</div>
+      <div class="back">
+        <h2>Welcome!</h2>
+             <center>
+               To continue please log in or sign up
+             </center> 
+      </div>
         
     	
 

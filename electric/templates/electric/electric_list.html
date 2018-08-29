@@ -5,11 +5,11 @@
 {% endblock title %}
 
 {% block content %}
-<div class="back">
+
     <h4>
         <a href="#", onClick="history.go(-1);return true;" button type="submit" class="btn btn-outline-dark",></button><i class="fas fa-angle-double-left"></i> Back</a>
     </h4>
-</div>
+    
    <div class="new">
         <a href="{% url 'electric_new' %}", button type="submit" class="btn btn-outline-dark"></button><span class="fas fa-plus-square"></span> New</a>
 
@@ -42,8 +42,8 @@
                     <td>{{ problem.descr }}</td>
                     <td>{{ problem.date }}</td>
                     <td>{{ problem.author }}</td>
-                    <td><a href="{% url 'electric_edit' pk=problem.pk %}"><span class="glyphicon glyphicon-edit"></span>Edit</a></td>
-                    <td><a href="{% url 'electric_delete' pk=problem.pk %}"><span class="glyphicon glyphicon-trash"></span>Done</a></td>
+                    <td><a href="{% url 'electric_edit' pk=problem.pk %}"><span class="fas fa-edit"></span></a></td>
+                    <td><a href="{% url 'electric_delete' pk=problem.pk %}"><span class="far fa-trash-alt"></span></a></td>
                     <td><a href="{% url 'electric_move' pk=problem.pk %}"><span class="glyphicon glyphicon-trash"></span>Move</a></td>
                 </tr>
                 {% endfor %}

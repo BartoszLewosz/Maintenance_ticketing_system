@@ -42,8 +42,8 @@
                     <td>{{ problem.descr }}</td>
                     <td>{{ problem.date }}</td>
                     <td>{{ problem.author }}</td>
-                    <td><a href="{% url 'maintenance_edit' pk=problem.pk %}"><span class="glyphicon glyphicon-edit"></span>Edit</a></td>
-                    <td><a href="{% url 'maintenance_delete' pk=problem.pk %}"><span class="glyphicon glyphicon-trash"></span>Done</a></td>
+                    <td><a href="{% url 'maintenance_edit' pk=problem.pk %}"><span class="fas fa-edit"></span></a></td>
+                    <td><a href="{% url 'maintenance_delete' pk=problem.pk %}"><span class="far fa-trash-alt"></span></a></td>
                 </tr>
                 {% endfor %}
             </tbody>
