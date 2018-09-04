@@ -95,9 +95,10 @@ def electric_delete(request, pk):
 def electric_move(request, pk):
 	problem = get_object_or_404(Electric, pk=pk)
 	if request.method == "POST":
-		file = open("electric_deleted.txt", "w")
-		file.write(str(problem) + str(problem.descr))
+		file = open("problems_completed/electric_deleted.txt", "a+")
+		file.write(str(problem) + ' - ' + str(problem.descr) + ",\n")
 		file.close()
+		problem.delete()
 		return redirect('electric')
 	return render(request, 'electric/electric_move.html', {'problem': problem})
 

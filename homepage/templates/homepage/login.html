@@ -7,6 +7,9 @@
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Login</button>
+    <button type="submit" class="btn btn-outline-dark">Login</button>
   </form>
 {% endblock %}
+
+
+<!--<a href="{% url 'garden_print' %}", button type="submit", class="btn btn-outline-dark"></button><span class="fas fa-print"></span> Print</a>
