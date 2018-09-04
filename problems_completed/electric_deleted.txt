@@ -4,3 +4,6 @@ bedroom 3 - test 3
 Bedroom 43 - Ceiling Fan is not working
 bedroom 1 - test test
 ,Bedroom 29 - No remote for fan and fan is not working at all,
+bedroom 37 - Two spotlights are not working. Fitting?2018-09-04 19:14:29.197902+00:00,
+test 4 - aeegesewat2018-09-04 19:15:31.224187+00:00,
+test 5 - dwdewweef eegrgre. at: 2018-09-04 19:16:15.451127+00:00,
