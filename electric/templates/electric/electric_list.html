@@ -17,6 +17,7 @@
     
     <div class="print">
     <a href="{% url 'electric_print' %}", button type="submit", class="btn btn-outline-dark"></button><span class="fas fa-print"></span> Print</a>
+    <a href="{% url 'electric_done' %}", button type="submit", class="btn btn-outline-dark"></button><span class="fas fa-print"></span> Done list</a>
     </div>
     
     
@@ -44,7 +45,6 @@
                     <td>{{ problem.author }}</td>
                     <td><a href="{% url 'electric_edit' pk=problem.pk %}"><span class="fas fa-edit"></span></a></td>
                     <td><a href="{% url 'electric_delete' pk=problem.pk %}"><span class="far fa-trash-alt"></span></a></td>
-                    <td><a href="{% url 'electric_move' pk=problem.pk %}"><span class="glyphicon glyphicon-trash"></span>Move</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
