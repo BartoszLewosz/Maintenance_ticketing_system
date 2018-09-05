@@ -90,7 +90,6 @@ def electric_delete(request, pk):
 	problem = get_object_or_404(Electric, pk=pk)
 	date = datetime.now()
 	formated_date = date.strftime("%d, %B, %Y, %H:%M %p")
-
 	if request.method == "POST":
 		file = open("electric/templates/electric/electric_done.txt", "a+")
 		file.write(str(problem) + ' - ' + str(problem.descr) + " at: " +
@@ -101,19 +100,4 @@ def electric_delete(request, pk):
 	return render(request, 'electric/electric_delete.html', {'problem': problem })
 
 def electric_done(request):
-	return render(request, 'electric/electric_done.txt')
-"""
-def electric_move(request, pk):
-	problem = get_object_or_404(Electric, pk=pk)
-	date = datetime.now()
-	formated_date = date.strftime("%d, %B, %Y, %H:%M %p")
-	if request.method == "POST":
-		file = open("problems_completed/electric_deleted.txt", "a+")
-		file.write(str(problem) + ' - ' + str(problem.descr) + " at: " +
-		str(formated_date) + ",\n")  
-		file.close()
-		problem.delete()
-		return redirect('electric')
-	return render(request, 'electric/electric_move.html', {'problem': problem})
-
-"""
+	return render(request, 'electric/electric_done_list.html')
