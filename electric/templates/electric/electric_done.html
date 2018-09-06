@@ -1,2 +1,26 @@
-test 25 - Checking again at: 05, September, 2018, 10:57 AM,
-test 29 - And now line 5 at: 05, September, 2018, 10:58 AM,
+{% extends 'homepage/base.html' %}
+{% load staticfiles %}
+{% block title %}
+    Detail - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+
+    <h4>
+    	<a href="#", onClick="history.go(-1);return true;" button type="submit" class="btn btn-outline-dark",></button><i class="fas fa-angle-double-left"></i> Back</a>
+    </h4>
+
+
+<div class="problem_title">
+
+<!-- Need to change object name according to suitable model, but with lowercase!-->
+
+</div>
+    {{electric.descr|safe|linebreaks}}
+    <div class="detail">
+
+        <h6>on {{electric.date}}, posted by {{electric.author}}</h6>
+
+
+
+{% endblock content %}

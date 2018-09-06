@@ -100,4 +100,4 @@ def electric_delete(request, pk):
 	return render(request, 'electric/electric_delete.html', {'problem': problem })
 
 def electric_done(request):
-	return render(request, 'electric/electric_done_list.html')
+	return render(request, 'electric/electric_done.txt')
