@@ -174,7 +174,8 @@ h2, h3, h4 {
 	padding: 20px;
 }
 
-.contact, .edit, .new-form {
+.contact, .edit, .new-form, .login,
+.password_reset {
 	text-align: center;
 	font-size: 16px;
 	padding: 20px;
@@ -184,7 +185,7 @@ h2, h3, h4 {
 	padding: 0 0 10% 40%;
 
 }
-.about_intro {
+.about_intro, .password_reset_done {
 	margin: 60px;
 	text-align: justify;
 	line-height: 30px;
