@@ -11,4 +11,5 @@ urlpatterns = [
 	url(r'^plumbing/', include('plumbing.urls')),
 	url(r'^garden/', include('garden.urls')),
 	url(r'^signup/$', core_views.signup, name='signup'),
+	
 ]
