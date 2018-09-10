@@ -94,13 +94,9 @@ html {
 .detail {
 	font-variant: small-caps;
 	color: red;
+	text-align: center;
 }
 
-.problem_title  {
-	text-decoration: underline;
-	text-decoration-color: blue;
-	text-decoration-style: double;
-}
 
 /*
 #############################################################################
@@ -113,10 +109,7 @@ html {
 =============================================================================
 */
 
-.new {
-	text-align: right;
-}
-.print {
+.new, .print {
 	text-align: right;
 }
 
@@ -169,7 +162,7 @@ html {
 .table {
 	width: 100%;
 }
-h2, h3, h4 {
+h2, h3, h4, h5, h6 {
 	text-align: center;
 	padding: 20px;
 }
