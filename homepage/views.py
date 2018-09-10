@@ -34,6 +34,9 @@ def index(request):
 def about(request):
 	return render(request, 'homepage/about.html')
 
+def password_reset(request):
+	return render(request, 'homepage/password_reset_form.html')
+
 def contact(request):
 	return render(request, 'homepage/contact.html')
 
