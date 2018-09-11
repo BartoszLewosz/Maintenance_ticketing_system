@@ -1,0 +1,24 @@
+{% extends 'homepage/base.html' %}
+{% load staticfiles %}
+{% block title %}
+    Detail - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+
+
+    <h4>
+    	<a href="#", onClick="history.go(-1);return true;" button type="submit" class="btn btn-outline-dark",></button><i class="fas fa-angle-double-left"></i> Back</a>
+    </h4>
+
+
+
+        <h6>on {{problem.date}}, posted by {{problem.author}}</h6>
+        <iframe src="templates/maintenance/maintenance_done.txt">This is it!</iframe>
+
+    </div>
+    
+
+
+
+{% endblock content %}

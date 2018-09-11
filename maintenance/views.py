@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.utils import timezone
+from datetime import datetime
 
 ###================================================================================================
 #====Pagination====================================================================================
@@ -69,7 +70,14 @@ def maintenance_edit(request, pk):
 	return render(request, 'maintenance/maintenance_edit.html', {'form': form})
 def maintenance_delete(request, pk):
 	problem = get_object_or_404(Maintenance, pk=pk)
+	date = datetime.now()
+	formated_date = date.strftime("%d, %B, %Y, %H, %M, %p")
 	if request.method == "POST":
+		file = open("maintenance/templates/maintenance/maintenance_done.txt", "a+")
+		file.write(str(problem) + ' - ' + str(problem.descr) + " at: " +
+		str(formated_date) + "___\n")  
+		file.close()
+
 		problem.delete()
 		return redirect('maintenance')
 	return render(request, 'maintenance/maintenance_delete.html', {'problem': problem })
@@ -87,3 +95,6 @@ def maintenance_print(request):
 		response['Content-Disposition'] = 'inline; filename="electric_print.pdf"'
 		return response
 	return response
+
+def maintenance_done(request):
+	return render(request, 'maintenance/maintenance_done.txt')

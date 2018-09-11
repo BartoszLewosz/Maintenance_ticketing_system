@@ -6,11 +6,11 @@
 
 <div class="login">
 	<h3>Login</h3>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-outline-dark">Login</button>
-  </form>
+	  <form method="POST", autocomplete="off">
+	    {% csrf_token %}
+	    {{ form.as_p }}
+	    <button type="submit" class="btn btn-outline-dark">Login</button>
+	  </form>
   <a href="{% url 'password_reset' %}", button type="submit", class="btn btn-outline-dark">Reset password</a>
 </div>
   
