@@ -93,7 +93,7 @@ def electric_delete(request, pk):
 	if request.method == "POST":
 		file = open("electric/templates/electric/electric_done.txt", "a+")
 		file.write(str(problem) + ' - ' + str(problem.descr) + " at: " +
-		str(formated_date) + ",\n")  
+		str(formated_date) + ",\n__//")  
 		file.close()
 		problem.delete()
 		return redirect('electric')

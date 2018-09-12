@@ -11,5 +11,6 @@ urlpatterns = [
 	url(r'^(?P<pk>\d+)/edit/$', views.plumbing_edit, name='plumbing_edit'),
 	url(r'^(?P<pk>\d+)/delete/$', views.plumbing_delete, name='plumbing_delete'),
 	url(r'^plumbing_print/', views.plumbing_print, name='plumbing_print'),
+	url(r'^plumbing_done/', views.plumbing_done, name='plumbing_done'),
 
 ]

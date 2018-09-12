@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.utils import timezone
-
+from datetime import datetime
 ###================================================================================================
 #====Pagination====================================================================================
 ###================================================================================================
@@ -42,8 +42,7 @@ def garden(request):
 	except EmptyPage:
 		problems = paginator.page(paginator.num_pages)
 	return render(request, 'garden/garden_list.html', {'problems': problems})
-#def garden_detail(request):
-#	return render(request, 'garden/garden_detail.html')
+
 def garden_new(request):
 	if request.method == "POST":
 		form = ProblemForm(request.POST)
@@ -56,6 +55,7 @@ def garden_new(request):
 	else:
 		form = ProblemForm()
 	return render(request, 'garden/garden_new.html', {'form': form})
+
 def garden_edit(request, pk):
 	problem = get_object_or_404(Problem, pk=pk)
 	if request.method == "POST":
@@ -72,7 +72,13 @@ def garden_edit(request, pk):
 
 def garden_delete(request, pk):
 	problem = get_object_or_404(Problem, pk=pk)
+	date = datetime.now()
+	formated_date = date.strftime("%d, %B, %Y, %H:%M %p")
 	if request.method == "POST":
+		file = open("garden/templates/garden/garden_done.txt", "a+")
+		file.write(str(problem) + " - " + str(problem.descr) + " at:" +
+			str(formated_date) + " __//")
+		file.close()
 		problem.delete()
 		return redirect('garden')
 	return render(request, 'garden/garden_delete.html', {'problem': problem})
@@ -91,3 +97,6 @@ def garden_print(request):
 		response['Content-Disposition'] = 'inline; filename="mypdf.pdf"'
 		return response
 	return response
+
+def garden_done(request):
+	return render(request, 'garden/garden_done.txt')

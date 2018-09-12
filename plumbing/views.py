@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.utils import timezone
-
+from datetime import datetime
 ###================================================================================================
 #====Pagination====================================================================================
 ###================================================================================================
@@ -76,7 +76,13 @@ def plumbing_edit(request, pk):
 
 def plumbing_delete(request, pk):
 	problem = get_object_or_404(Plumbing, pk=pk)
+	date = datetime.now()
+	formated_date = date.strftime("%d, %B, %Y, %H:%M %p")
 	if request.method == "POST":
+		file = open("plumbing/templates/plumbing/plumbing_done.txt", "a+")
+		file.write(str(problem) + " - " + str(problem.descr) + " at:" + 
+			str(formated_date) + ", \n__//")
+		file.close()
 		problem.delete()
 		return redirect('plumbing')
 	return render(request, 'plumbing/plumbing_delete.html', {'problem': problem })
@@ -97,3 +103,5 @@ def plumbing_print(request):
 		return response
 	return response
 
+def plumbing_done(request):
+	return render(request, 'plumbing/plumbing_done.txt')

@@ -19,7 +19,10 @@ from maintenance.models import Maintenance
 from plumbing.models import Plumbing
 ###================================================================================================
 
-# Create your views here.
+# 
+
+ # This function has been created to display 1 to 3 included problems from every section.
+	# Ready to use.
 
 def index(request):
 	problems = Problem.objects.order_by('-date')[:3]
@@ -30,6 +33,8 @@ def index(request):
 													'electric': electric,
 													'maintenance': maintenance,
 													'plumbing': plumbing})
+
+
 
 def about(request):
 	return render(request, 'homepage/about.html')

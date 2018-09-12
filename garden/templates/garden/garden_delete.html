@@ -1,22 +1,21 @@
 {% extends 'homepage/base.html' %}
 {% load staticfiles %}
 {% block title %}
-    Edit - {{ block.super }}
+    Delete - {{ block.super }}
 {% endblock title %}
 
 {% block content %}
 
-	 <h1>Task Done</h1>
+	 <h2>Task completed!</h2>
 
 	 <!--	Probably javascript for future as an alert or smth -->
     	<form method="POST" class="post-form">{% csrf_token %}
 
     	<!--	^^This line takes you back to list page	-->
         
-        <button type="submit" class="save btn btn-default">Back</button>
+        <h4><button type="submit" class="btn btn-outline-dark">
+        <i class="fas fa-angle-double-left"></i>Back</button></h4>
     </form>
-
-
 
 
 
