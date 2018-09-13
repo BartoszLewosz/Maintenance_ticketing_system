@@ -6,13 +6,15 @@
 
 {% block content %}
 
-<p>This is space for time/date/calendar</p>
-
+{{ today|date:"l, jS F Y" }}
    
     {% if user.is_authenticated %}
+    
 
     	<h5 class="welcome">welcome {{ user.username }}</h5>
         <h3>Choose your problem</h3>
+
+        
 
         <div class="row">
 
@@ -40,9 +42,10 @@
 
     {% else %}
       <div class="back">
+
         <h2>Welcome!</h2>
              <center>
-               To continue please log in or sign up
+               To continue please log in or sign up {{ today }}
              </center> 
       </div>
         

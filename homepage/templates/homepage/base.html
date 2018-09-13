@@ -26,88 +26,89 @@
 
 	<body>
 
-	<center>
-	<a href="http://www.warrenhouse.com/" target="blank">
-		<img src="{% static 'homepage/img/index.png' %}" class="responsive-img" style='max-height:100px;' alt="logo"></a>
-		<div>
-			<p>Desktop__Maintenance__Application</p>
-		</div>
-		
-	</center>
-
-	<div class="container">
-
-	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-	  <a class="navbar-brand" href="{% url 'about' %}">START</a>
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
-	  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-
-	  	{% if user.is_authenticated %}
-	  	
-
-	  		 <ul class="navbar-nav">
-
-	  		  <li class="nav-item">
-	        	<a class="nav-link" href="/"><i class="fas fa-home"></i>Home</a>
-		      </li>
-
-		      <li class="nav-item">
-		        <a class="nav-link" href="{% url 'garden' %}"></span><i id="garden_color" class="fas fa-tree"></i>Garden</a>
-		      </li>
-
-		      <li class="nav-item">
-		        <a class="nav-link" href="{% url 'maintenance' %}"><i id="maintenance_color" class="fas fa-wrench"></i>Maintenance</a>
-		      </li>
-
-		      <li class="nav-item">
-		        <a class="nav-link" href="{% url 'electric' %}"><i id="electric_color" class="fas fa-bolt"></i>Electric</a>
-		      </li>
-
-		      <li class="nav-item">
-		        <a class="nav-link" href="{% url 'plumbing' %}"><i id="plumbing_color" class="fas fa-tint"></i>Plumbing</a>
-		      </li>
-
-		       <li class="nav-item">
-		        <a class="nav-link" href="{% url 'contact' %}"><i id="contact_color" class="fas fa-envelope"></i>Contact</a>
-		      </li> 
-		       <li class="nav-item">
-		        <a class="nav-link" href="/logout" id="nav-right"><i class="fas fa-sign-out-alt"></i>Logout</a>
-		      </li>
-	        </ul>
-        {% else %}
-
-        	<ul class="navbar-nav">
-        		<a class="nav-link" href="/"><i class="fas fa-home"></i>Home</a>
-        		<a class="nav-link" href="/login"><i class="fas fa-address-card"></i>Login</a>
-        		<a class="nav-link" href="/signup"><i class="fas fa-user-plus"></i>Sign Up</a>
-        	</ul>
-		        
-		     
-
-        {% endif %}
-
-	      
-	  </div>  
-	</nav>
-
-		{% block content %}
-
-		{% endblock %}	
-		</div>
-					<div id="footer">
-						<p><a href="{% url 'contact' %}"</>Contact</a> | <a href="http://www.warrenhouse.com/" target="blank">Warren House</a> | <a href="{% url 'about' %}">About</a> </p>
-					</div>
-
-				
+		<center>
+		<a href="http://www.warrenhouse.com/" target="blank">
+			<img src="{% static 'homepage/img/index.png' %}" class="responsive-img" style='max-height:100px;' alt="logo"></a>
+			<div>
+				<p>Desktop__Maintenance__Application</p>
+			</div>
 			
+		</center>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+		<div class="container">
 
-	</div>
+		<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		  <a class="navbar-brand" href="{% url 'about' %}">START</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+		  
+
+		  	{% if user.is_authenticated %}
+		  	
+
+		  		 <ul class="navbar-nav">
+
+		  		  <li class="nav-item">
+		        	<a class="nav-link" href="/"><i class="fas fa-home"></i>Home</a>
+			      </li>
+
+			      <li class="nav-item">
+			        <a class="nav-link" href="{% url 'garden' %}"></span><i id="garden_color" class="fas fa-tree"></i>Garden</a>
+			      </li>
+
+			      <li class="nav-item">
+			        <a class="nav-link" href="{% url 'maintenance' %}"><i id="maintenance_color" class="fas fa-wrench"></i>Maintenance</a>
+			      </li>
+
+			      <li class="nav-item">
+			        <a class="nav-link" href="{% url 'electric' %}"><i id="electric_color" class="fas fa-bolt"></i>Electric</a>
+			      </li>
+
+			      <li class="nav-item">
+			        <a class="nav-link" href="{% url 'plumbing' %}"><i id="plumbing_color" class="fas fa-tint"></i>Plumbing</a>
+			      </li>
+
+			       <li class="nav-item">
+			        <a class="nav-link" href="{% url 'contact' %}"><i id="contact_color" class="fas fa-envelope"></i>Contact</a>
+			      </li> 
+			       <li class="nav-item">
+			        <a class="nav-link" href="/logout" id="nav-right"><i class="fas fa-sign-out-alt"></i>Logout</a>
+			      </li>
+		        </ul>
+	        {% else %}
+
+	        	<ul class="navbar-nav">
+	        		<a class="nav-link" href="/"><i class="fas fa-home"></i>Home</a>
+	        		<a class="nav-link" href="/login"><i class="fas fa-address-card"></i>Login</a>
+	        		<a class="nav-link" href="/signup"><i class="fas fa-user-plus"></i>Sign Up</a>
+	        	</ul>
+			        
+			     
+
+	        {% endif %}
+
+		      
+		  </div>  
+		</nav>
+
+			{% block content %}
+
+			{% endblock %}	
+			</div>
+						<div id="footer">
+							<p><a href="{% url 'contact' %}"</>Contact</a> | <a href="http://www.warrenhouse.com/" target="blank">Warren House</a> | <a href="{% url 'about' %}">About</a> </p>
+						</div>
+
+					
+				
+
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+		</div>
 
 </body>
 			   

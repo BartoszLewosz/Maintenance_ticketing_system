@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.shortcuts import render, redirect
+from datetime import datetime
 ###================================================================================================
 #====SignUp========================================================================================
 ###================================================================================================
@@ -25,6 +26,7 @@ from plumbing.models import Plumbing
 	# Ready to use.
 
 def index(request):
+	today = datetime.now()
 	problems = Problem.objects.order_by('-date')[:3]
 	electric = Electric.objects.order_by('-date')[:3]
 	maintenance = Maintenance.objects.order_by('-date')[:3]
@@ -32,8 +34,9 @@ def index(request):
 	return render(request, 'homepage/index.html', {'problems': problems,
 													'electric': electric,
 													'maintenance': maintenance,
-													'plumbing': plumbing})
-
+													'plumbing': plumbing,
+													'today': today
+													})
 
 
 def about(request):
