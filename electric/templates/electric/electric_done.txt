@@ -6,4 +6,9 @@ test 28 - It's time for line 4 at: 06, September, 2018, 12:23 PM,
 test 27 - line nr three at: 06, September, 2018, 12:25 PM,
 test 30 - now maybe work again at: 09, September, 2018, 18:32 PM,
 test 31 - trying again and again at: 09, September, 2018, 22:58 PM,
+<<<<<<< HEAD
 
+=======
+Outside lights - None of the lights are working at: 19, September, 2018, 18:54 PM,
+__//
+>>>>>>> 48db7a0794dd4d1598130ada4aa495d84a49c636

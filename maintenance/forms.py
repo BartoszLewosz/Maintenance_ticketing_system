@@ -6,3 +6,6 @@ class MaintenanceForm(forms.ModelForm):
 	class Meta:
 		model = Maintenance
 		fields = ('location', 'descr',)
+		widgets = {
+		'descr': forms.Textarea(attrs={'rows':4, 'cols':25}),
+		}
