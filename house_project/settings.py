@@ -25,7 +25,7 @@ SECRET_KEY = 'k-3i91eulop5h87$$)q@u$wht-tu11=$x9-ah1f@z3esm!2tpc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [u'www.levi2.pythonanywhere.com', 'levi2.pythonanywhere.com']
 
 
 # Application definition
@@ -127,6 +127,8 @@ DATE_FORMAT = 'd-M-Y'
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/home/levi2/warren_app/warren_folder/homepage/static/'
+
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
