@@ -75,7 +75,7 @@ def garden_delete(request, pk):
 	date = datetime.now()
 	formated_date = date.strftime("%d, %B, %Y, %H:%M %p")
 	if request.method == "POST":
-		file = open("garden/templates/garden/garden_done.txt", "a+")
+		file = open("/home/levi2/warren_app/warren_folder/garden/templates/garden/garden_done.txt", "a+")
 		file.write(str(problem) + " - " + str(problem.descr) + " at:" +
 			str(formated_date) + " __//")
 		file.close()

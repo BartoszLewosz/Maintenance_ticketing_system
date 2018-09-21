@@ -1,3 +1,4 @@
 Test - test to create() at:12, September, 2018, 15:07 PM, 
 bedroom 5 - bath block is not working. Edited at:12, September, 2018, 15:08 PM, 
+__//delete check - checking delete option. And also I'm checking a longer text input to try text area behaviour. For example it can extend. Now I can see than it's showing scroll on the right side. at:21, September, 2018, 05:56 AM, 
 __//

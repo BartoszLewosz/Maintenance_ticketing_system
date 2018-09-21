@@ -73,9 +73,9 @@ def maintenance_delete(request, pk):
 	date = datetime.now()
 	formated_date = date.strftime("%d, %B, %Y, %H, %M, %p")
 	if request.method == "POST":
-		file = open("maintenance/templates/maintenance/maintenance_done.txt", "a+")
+		file = open("/home/levi2/warren_app/warren_folder/maintenance/templates/maintenance/maintenance_done.txt", "a+")
 		file.write(str(problem) + ' - ' + str(problem.descr) + " at: " +
-		str(formated_date) + "___\n")  
+		str(formated_date) + "___\n")
 		file.close()
 
 		problem.delete()
