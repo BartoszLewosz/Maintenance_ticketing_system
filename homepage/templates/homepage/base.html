@@ -9,7 +9,7 @@
 				Mr Slavosh
 			{%endblock title %}
 		</title>
-	  
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
@@ -22,17 +22,17 @@
 	</head>
 
 
-	
+
 
 	<body>
 
 		<center>
-		<a href="http://www.warrenhouse.com/" target="blank">
+		<a href="/" target="blank">
 			<img src="{% static 'homepage/img/index.png' %}" class="responsive-img" style='max-height:100px;' alt="logo"></a>
 			<div>
 				<p>Desktop__Maintenance__Application</p>
 			</div>
-			
+
 		</center>
 
 		<div class="container">
@@ -43,10 +43,10 @@
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
 		  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-		  
+
 
 		  	{% if user.is_authenticated %}
-		  	
+
 
 		  		 <ul class="navbar-nav">
 
@@ -72,7 +72,7 @@
 
 			       <li class="nav-item">
 			        <a class="nav-link" href="{% url 'contact' %}"><i id="contact_color" class="fas fa-envelope"></i>Contact</a>
-			      </li> 
+			      </li>
 			       <li class="nav-item">
 			        <a class="nav-link" href="/logout" id="nav-right"><i class="fas fa-sign-out-alt"></i>Logout</a>
 			      </li>
@@ -84,25 +84,25 @@
 	        		<a class="nav-link" href="/login"><i class="fas fa-address-card"></i>Login</a>
 	        		<a class="nav-link" href="/signup"><i class="fas fa-user-plus"></i>Sign Up</a>
 	        	</ul>
-			        
-			     
+
+
 
 	        {% endif %}
 
-		      
-		  </div>  
+
+		  </div>
 		</nav>
 
 			{% block content %}
 
-			{% endblock %}	
+			{% endblock %}
 			</div>
 						<div id="footer">
-							<p><a href="{% url 'contact' %}"</>Contact</a> | <a href="http://www.warrenhouse.com/" target="blank">Warren House</a> | <a href="{% url 'about' %}">About</a> </p>
+							<p><a href="{% url 'contact' %}"</>Contact</a> | <a href="/" target="blank">Warren House</a> | <a href="{% url 'about' %}">About</a> </p>
 						</div>
 
-					
-				
+
+
 
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
@@ -111,20 +111,5 @@
 		</div>
 
 </body>
-			   
+
 </html>
-
-
-
-
-
-
-
-
-	
-	
-	
-
-
-      
-   
