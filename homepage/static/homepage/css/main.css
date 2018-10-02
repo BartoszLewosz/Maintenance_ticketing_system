@@ -57,7 +57,7 @@ html {
 =============================================================================
 */
 
-.welcome {
+.welcome, .time {
 	text-align: center;
 	padding: 30px;
 }
@@ -74,7 +74,7 @@ html {
 .responsive-img {
 	padding: 10px;
 	border-radius: 15px;
-
+	
 }
 
 /*
@@ -159,9 +159,6 @@ html {
 =============================================================================
 */
 
-center {
-    padding-top: 50px;
-}
 .table {
 	width: 100%;
 }
@@ -176,6 +173,7 @@ h2, h3, h4, h5, h6 {
 	font-size: 16px;
 	padding: 20px;
 }
+
 .pagination {
 	padding: 0 0 10% 40%;
 

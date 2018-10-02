@@ -84,7 +84,7 @@ def garden_delete(request, pk):
 	return render(request, 'garden/garden_delete.html', {'problem': problem})
 
 def garden_print(request):
-	problems = Problem.objects.all()
+	problems = Problem.objects.order_by('-date')
 
 	html_string = render_to_string('garden/garden_print.html', {'problems': problems})
 

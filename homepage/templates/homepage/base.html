@@ -6,7 +6,7 @@
 
 		<title>
 			{% block title %}
-				Mr Slavosh
+				Desktop_Maintenance_Application
 			{%endblock title %}
 		</title>
 
@@ -23,7 +23,7 @@
 
 
 
-http
+
 	<body>
 
 		<center>
@@ -83,6 +83,7 @@ http
 	        		<a class="nav-link" href="/"><i class="fas fa-home"></i>Home</a>
 	        		<a class="nav-link" href="/login"><i class="fas fa-address-card"></i>Login</a>
 	        		<a class="nav-link" href="/signup"><i class="fas fa-user-plus"></i>Sign Up</a>
+	        		<a class="nav-link" href="{% url 'contact' %}"><i id="contact_color" class="fas fa-envelope"></i>Contact</a>
 	        	</ul>
 
 
@@ -95,14 +96,12 @@ http
 
 			{% block content %}
 
-
-
-
 			{% endblock %}
 			</div>
-	            <div id="footer">
-					<p><a href="{% url 'contact' %}"</>Contact</a> | <a href="/" target="blank">Warren House</a> | <a href="{% url 'about' %}">About</a> </p>
-				</div>
+						<div id="footer">
+							<p><a href="{% url 'contact' %}"</>Contact</a> | <a href="/" target="blank">Warren House</a> | <a href="{% url 'about' %}">About</a> </p>
+						</div>
+
 
 
 
@@ -112,22 +111,6 @@ http
 
 		</div>
 
-
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
