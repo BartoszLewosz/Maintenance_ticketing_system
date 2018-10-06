@@ -8,24 +8,28 @@
 
 
     <h4>
-    	<a href="#" onClick="history.go(-1);return true;"><span class="glyphicon glyphicon-arrow-left">Back</span></a>
+    	<a href="#", onClick="history.go(-1);return true;" button type="submit" class="btn btn-outline-dark",></button><i class="fas fa-angle-double-left"></i> Back</a>
     </h4>
 
 
 
-<div class="problem_title">
-<h3>{{plumbing.location}}</h3>
-</div>
+<h5>{{plumbing.location}}</h5>
+
+<h6 id="border">
     {{ plumbing.descr|safe|linebreaks }}
+</h6>
+    
     <div class="detail">
         <h6>on {{plumbing.date}}, posted by {{plumbing.author}}</h6>
-        <div>
-        	<a href="{% url 'plumbing_edit' pk=plumbing.pk %}"><span class="glyphicon glyphicon-edit"></span>Edit</a><br><a href="{% url 'plumbing_delete' pk=plumbing.pk %}"><span class="glyphicon glyphicon-trash"></span>Delete</a>
+    </div>
+
+        <div class="edit">
+        	<a href="{% url 'plumbing_edit' pk=plumbing.pk %}" button type="submit" class="btn btn-outline-dark"></button>Edit</a><br>
+            <a href="{% url 'plumbing_delete' pk=plumbing.pk %}" button type="submit" class="btn btn-outline-dark"></button>Delete</a>
 
 
         </div>
 
-    </div>
     
 
 

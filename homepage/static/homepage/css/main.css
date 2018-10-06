@@ -91,11 +91,14 @@ html {
 
 .detail {
 	font-variant: small-caps;
-	color: red;
+	color: grey;
 	text-align: center;
 }
 
-
+#border {
+	border: 2px solid lightgrey;
+	border-radius: 5px;
+}
 /*
 #############################################################################
 #############################################################################

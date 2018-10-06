@@ -11,19 +11,23 @@
     	<a href="#", onClick="history.go(-1);return true;" button type="submit" class="btn btn-outline-dark",></button><i class="fas fa-angle-double-left"></i> Back</a>
     </h4>
 
-<div class="problem_title">
-<h5>{{problem.location}}</h5>
-</div>
-    {{problem.descr|safe|linebreaks}}
+	<h5>{{problem.location}}</h5>
+   	
+   		<h6 id="border">
+   			{{problem.descr|safe}}
+   		</h6>
+
     <div class="detail">
 
         <h6>on {{problem.date}}, posted by {{problem.author}}</h6>
 
     </div>
     
+<div class="edit">
+	<a href="{% url 'garden_edit' pk=problem.pk %}" button type="submit" class="btn btn-outline-dark"></button>Edit</a>
+	<a href="{% url 'garden_delete' pk=problem.pk %}"button type="submit" class="btn btn-outline-dark",></button>Done</a>
 
-<a href="{% url 'garden_edit' pk=problem.pk %}"><i class="fas fa-edit"></i>Edit</a>
-<a href="{% url 'garden_delete' pk=problem.pk %}"><i class="fas fa-trash-alt"></i>Done</a>
+</div>
 
 
 
