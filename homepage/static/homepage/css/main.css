@@ -28,9 +28,13 @@ html {
 ================================================================ NAVBAR =====
 =============================================================================
 */
+<<<<<<< HEAD
 #nav-right {
 	text-align: right;
 }
+=======
+
+>>>>>>> 174aaa00a61b91a1b2552e3f41478006f238f4da
 .navbar {
 	border-radius: 10px;
 	text-align: center;
@@ -67,7 +71,7 @@ html {
 	text-align: center;
 	width: 100%;
 	padding-top: 50px;
-	padding-bottom: 450px;
+	padding-bottom: 250px;
 	font-variant: small-caps;
 }
 
@@ -93,11 +97,14 @@ html {
 
 .detail {
 	font-variant: small-caps;
-	color: red;
+	color: grey;
 	text-align: center;
 }
 
-
+#border {
+	border: 2px solid lightgrey;
+	border-radius: 5px;
+}
 /*
 #############################################################################
 #############################################################################
@@ -187,7 +194,7 @@ h2, h3, h4, h5, h6 {
   	right: 0;
   	left: 0;
   	padding: 50px;
-  	padding-top: 70px;
+  	padding-top: 110px;
   	background-color: white;
   	text-align: center;
 }
