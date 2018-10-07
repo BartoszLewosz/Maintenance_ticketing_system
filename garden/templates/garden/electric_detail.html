@@ -1,0 +1,38 @@
+{% extends 'homepage/base.html' %}
+{% load staticfiles %}
+{% block title %}
+    Detail - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+
+    <h4>
+    	<a href="#", onClick="history.go(-1);return true;" button type="submit" class="btn btn-outline-dark",></button><i class="fas fa-angle-double-left"></i> Back</a>
+    </h4>
+
+<h5>{{electric.location}}</h5>
+<!-- Need to change object name according to suitable model, but with lowercase!-->
+
+    <h6 id="border">{{electric.descr|safe|linebreaks}}</h6>
+
+    <div class="detail">
+
+        <p>on {{electric.date}}, posted by {{electric.author}}</p>
+
+    </div>
+
+    <div class="edit">
+        <a href="{% url 'electric_edit' pk=electric.pk %}"><button class="btn btn-outline-dark">Edit</button></a>
+        <a href="{% url 'electric_delete' pk=electric.pk %}"><span class="btn btn-outline-dark">Done</button></a>
+    </div>
+
+    	
+	
+	
+    
+
+    
+
+
+
+{% endblock content %}
