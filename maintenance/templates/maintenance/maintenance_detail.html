@@ -10,21 +10,22 @@
     	<a href="#", onClick="history.go(-1);return true;" button type="submit" class="btn btn-outline-dark",></button><i class="fas fa-angle-double-left"></i> Back</a>
     </h4>
 
-    
+	<h5>{{maintenance.location}}</h5>
 
-
-<div class="problem_title">
-	<h3>{{maintenance.location}}</h5>
-</div>
-
-    {{maintenance.descr|safe|linebreaks}}
+    <h6 id="border">
+        {{maintenance.descr|safe|linebreaks}}
+    </h6>
     <div class="detail">
 
         <h6>on {{maintenance.date}}, posted by {{maintenance.author}}</h6>
 
     </div>
-    <td><a href="{% url 'maintenance_edit' pk=maintenance.pk %}"><span class="glyphicon glyphicon-edit"></span>Edit</a></td>
-                    <td><a href="{% url 'maintenance_delete' pk=maintenance.pk %}"><span class="glyphicon glyphicon-trash"></span>Done</a></td>
+
+    <div class="edit">
+        <a href="{% url 'maintenance_edit' pk=maintenance.pk %}" button type="submit" class="btn btn-outline-dark"></button>Edit</a>
+        <a href="{% url 'maintenance_delete' pk=maintenance.pk %}" button type="submit" class="btn btn-outline-dark"></button>Done</a>
+    </div>
+    
     
 
 
