@@ -6,17 +6,17 @@ from django.db import models
 # Create your models here.
 class Problem(models.Model):
 
-	emergency = '!EMERGENCY'
+	emergency = 'EMERGENCY'
 	high = 'HIGH'
 	medium = 'MEDIUM'
 	low = 'LOW'
 	priority = (
-		(emergency, '!EMERGENCY'),
+		(emergency, 'EMERGENCY'),
 		(high, 'HIGH'),
 		(medium, 'MEDIUM'),
 		(low, 'LOW'),
 		)
-	status = models.CharField(max_length=10,choices=priority,default='high',)
+	status = models.CharField(max_length=10,choices=priority,default='',)
 
 	date = models.DateTimeField()
 
