@@ -32,6 +32,7 @@
                 <th>Who</th>
                 <th>Edit</th>
                 <th>Done</th>
+                <th>Status</th>
             </tr>
         </thead>
             <tbody>
@@ -44,6 +45,7 @@
                     <td>{{ problem.author }}</td>
                     <td><a href="{% url 'garden_edit' pk=problem.pk %}"><span class="fas fa-edit"></span></a></td>
                     <td><a href="{% url 'garden_delete' pk=problem.pk %}"><span class="far fa-trash-alt"></span></a></td>
+                    <td>{{ problem.status }}</td>
                 </tr>
                 {% endfor %}
             </tbody>

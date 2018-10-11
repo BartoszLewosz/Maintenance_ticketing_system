@@ -8,7 +8,7 @@ class Problem(models.Model):
 	date = models.DateTimeField()
 	location = models.CharField(max_length=30)
 	descr = models.TextField()
-	status = models.CharField(max_length=30, blank=True, default='')
+	status = models.CharField(max_length=30,default='')
 	author = models.CharField(max_length=5)
 
 	def __str__(self):
