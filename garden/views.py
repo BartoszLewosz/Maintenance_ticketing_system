@@ -29,8 +29,9 @@ from .forms import ProblemForm
 
 
 def garden(request):
-	problems = Problem.objects.order_by('-status')
+	problems = Problem.objects.filter(status__contains="E")
 
+	#problems = Problem.objects.filter(status__contains='01')
 	#Everything below except last line is Paginator
 	page = request.GET.get('page', 1)
 

@@ -11,10 +11,10 @@ class Problem(models.Model):
 	medium = 'MEDIUM'
 	low = 'LOW'
 	priority = (
-		(emergency, 'EMERGENCY'),
-		(high, 'HIGH'),
-		(medium, 'MEDIUM'),
-		(low, 'LOW'),
+		(u"EMERGENCY", u'1'),
+		(u"HIGH", u'2'),
+		(u"MEDIUM", u'3'),
+		(u"LOW", u'4'),
 		)
 	status = models.CharField(max_length=10,choices=priority,default='',)
 
@@ -30,6 +30,5 @@ class Problem(models.Model):
 	def __str__(self):
 		return self.location
 
-	def is_status(self):
-		return self.status in (self.emergency, self.high,
-		self.medium, self.low)
+	def __str__(self):
+		return self.status in (self.priority)
