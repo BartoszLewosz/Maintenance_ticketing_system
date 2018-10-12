@@ -6,15 +6,15 @@ from django.db import models
 # Create your models here.
 class Problem(models.Model):
 
-	emergency = 'EMERGENCY'
+	emergency = '!EMERGENCY'
 	high = 'HIGH'
 	medium = 'MEDIUM'
 	low = 'LOW'
 	priority = (
-		(u"EMERGENCY", u'1'),
-		(u"HIGH", u'2'),
-		(u"MEDIUM", u'3'),
-		(u"LOW", u'4'),
+		(emergency, '!EMERGENCY'),
+		(high, 'HIGH'),
+		(medium, 'MEDIUM'),
+		(low, 'LOW'),
 		)
 	status = models.CharField(max_length=10,choices=priority,default='',)
 

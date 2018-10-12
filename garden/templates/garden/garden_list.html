@@ -45,7 +45,7 @@
                     <td>{{ problem.author }}</td>
                     <td><a href="{% url 'garden_edit' pk=problem.pk %}"><span class="fas fa-edit"></span></a></td>
                     <td><a href="{% url 'garden_delete' pk=problem.pk %}"><span class="far fa-trash-alt"></span></a></td>
-                    {% if problem.status == 'EMERGENCY' %}
+                    {% if problem.status == '!EMERGENCY' %}
                         <td id="flag_0">{{ problem.status }}</td>
                     {% elif problem.status == 'HIGH' %}    
                         <td id=flag_1>{{ problem.status }}</td>
