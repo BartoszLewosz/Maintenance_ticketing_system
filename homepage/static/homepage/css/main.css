@@ -193,7 +193,7 @@ h2, h3, h4, h5, h6 {
 }
 .about_intro, .password_reset_done {
 	margin: 60px;
-	text-align: justify;
+	text-align: center;
 	line-height: 30px;
 }
 #footer {
