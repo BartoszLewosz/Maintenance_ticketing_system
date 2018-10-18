@@ -6,3 +6,6 @@ main corridor - Handle of banister is about to fall at: 11, September, 2018, 10,
 bedroom 41 - Doors are sqeeking at: 11, September, 2018, 10, 52, AM___
 First floor opp lift - Fire doors are not closing properly at: 11, September, 2018, 11, 00, AM___
 br 6 - door lock is not working proper. Required adjusting. at: 17, September, 2018, 20, 52, PM___
+delete option - checking delete option at: 21, September, 2018, 05, 52, AM___
+bedroom 5 - loose door knob at: 26, September, 2018, 11, 54, AM___
+Fountain - pressure of water is lowering everyday. pump has been checked. foollow edited at: 30, September, 2018, 12, 15, PM___

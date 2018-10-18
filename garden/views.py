@@ -76,7 +76,7 @@ def garden_delete(request, pk):
 	date = datetime.now()
 	formated_date = date.strftime("%d, %B, %Y, %H:%M %p")
 	if request.method == "POST":
-		file = open("garden/templates/garden/garden_done.txt", "a+")
+		file = open("/home/levi2/warren_app/warren_folder/garden/templates/garden/garden_done.txt", "a+")
 		file.write(str(problem) + " - " + str(problem.descr) + " at:" +
 			str(formated_date) + " _//")
 		file.close()
@@ -85,7 +85,7 @@ def garden_delete(request, pk):
 	return render(request, 'garden/garden_delete.html', {'problem': problem})
 
 def garden_print(request):
-	problems = Problem.objects.all()
+	problems = Problem.objects.order_by('-date')
 
 	html_string = render_to_string('garden/garden_print.html', {'problems': problems})
 

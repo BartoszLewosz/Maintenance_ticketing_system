@@ -14,11 +14,11 @@
     <div class="button-right">
 
         <a href="{% url 'garden_new' %}", button type="submit" class="btn btn-outline-dark"></button><span class="fas fa-plus-square"></span> New</a>
-   
+
         <a href="{% url 'garden_print' %}", button type="submit", class="btn btn-outline-dark"></button><span class="fas fa-print"></span> Print</a>
 
         <a href="{% url 'garden_done' %}", button type="submit", class="btn btn-outline-dark"></button><span class="fas fa-print"></span> Done list</a>
-        
+
 
 <div class="table-responsive">
         <table class="table">
@@ -101,7 +101,7 @@
                 {% else %}
                     <li><a href="?page={{ i }}">{{ i }}</a></li>
                 {% endif %}
-                
+
             {% endfor %}
 
             {% if problems.has_next %}
@@ -112,8 +112,8 @@
                 </ul>
         {% endif %}
         -->
-        
-            
+
+
 </div>
 
 

@@ -43,7 +43,7 @@ def electric_print(request):
 		response['Content-Disposition'] = 'inline; filename="mypdf.pdf"'
 		return response
 	return response
-	
+
 
 
 # Create your views here.
@@ -91,9 +91,9 @@ def electric_delete(request, pk):
 	date = datetime.now()
 	formated_date = date.strftime("%d, %B, %Y, %H:%M %p")
 	if request.method == "POST":
-		file = open("electric/templates/electric/electric_done.txt", "a+")
+		file = open("/home/levi2/warren_app/warren_folder/electric/templates/electric/electric_done.txt", "a+")
 		file.write(str(problem) + ' - ' + str(problem.descr) + " at: " +
-		str(formated_date) + ",\n__//")  
+		str(formated_date) + ",\n__//")
 		file.close()
 		problem.delete()
 		return redirect('electric')
