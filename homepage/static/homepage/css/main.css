@@ -7,7 +7,6 @@
 body {
     min-height: 100px;
     position: relative;
-    margin-bottom: 20px;
     font-family: 'Comfortaa', cursive, Arial, sans-serif;
 }
 html {
@@ -28,13 +27,6 @@ html {
 ================================================================ NAVBAR =====
 =============================================================================
 */
-<<<<<<< HEAD
-#nav-right {
-	text-align: right;
-}
-=======
-
->>>>>>> 174aaa00a61b91a1b2552e3f41478006f238f4da
 .navbar {
 	border-radius: 10px;
 	text-align: center;
@@ -67,17 +59,18 @@ html {
 }
 
 .row {
-	height: 75px;
 	text-align: center;
 	width: 100%;
 	padding-top: 50px;
-	padding-bottom: 250px;
+	padding-bottom: 50px;
 	font-variant: small-caps;
 }
 
 .responsive-img {
 	padding: 10px;
 	border-radius: 15px;
+	max-width: 100%;
+	height: auto;
 
 }
 
@@ -154,7 +147,19 @@ html {
 #electric_color {
 	color: #fcc01e;
 }
-
+#flag_0 {
+	color: red;
+	font-weight: bold;
+}
+#flag_1 {
+	color: orange;
+}
+#flag_2 {
+	color: blue;
+}
+#flag_3 {
+	color: green;
+}
 /*
 #############################################################################
 #############################################################################
@@ -187,20 +192,20 @@ h2, h3, h4, h5, h6 {
 }
 .about_intro, .password_reset_done {
 	margin: 60px;
-	text-align: justify;
+	text-align: center;
 	line-height: 30px;
 }
-#footer {
+.footer {
   	right: 0;
   	left: 0;
-  	padding: 50px;
-  	padding-top: 110px;
-  	background-color: white;
+  	padding: 20px;
+  	padding-top: 10px;
   	text-align: center;
+  	bottom: 0;
 }
 
 .card-body {
-	padding-bottom: 40px;
+	margin-bottom: 10px;
 	text-align: justify;
 }
 

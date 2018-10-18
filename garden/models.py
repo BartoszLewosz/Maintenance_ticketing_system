@@ -5,11 +5,30 @@ from django.db import models
 
 # Create your models here.
 class Problem(models.Model):
-	date = models.DateTimeField()
-	location = models.CharField(max_length=30)
-	descr = models.TextField()
-	status = models.CharField(max_length=30, blank=True, default='')
-	author = models.CharField(max_length=5)
 
+	emergency = '!EMERGENCY'
+	high = 'HIGH'
+	medium = 'MEDIUM'
+	low = 'LOW'
+	priority = (
+		(emergency, '!EMERGENCY'),
+		(high, 'HIGH'),
+		(medium, 'MEDIUM'),
+		(low, 'LOW'),
+		)
+	status = models.CharField(max_length=10,choices=priority,default='',)
+
+	date = models.DateTimeField()
+
+	location = models.CharField(max_length=30)
+
+	descr = models.TextField()
+
+	author = models.CharField(max_length=15)
+
+	
 	def __str__(self):
 		return self.location
+
+	def is_status(self):
+		return self.status in (self.priority)

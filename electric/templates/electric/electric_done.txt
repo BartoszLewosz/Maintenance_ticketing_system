@@ -6,13 +6,8 @@ test 28 - It's time for line 4 at: 06, September, 2018, 12:23 PM,
 test 27 - line nr three at: 06, September, 2018, 12:25 PM,
 test 30 - now maybe work again at: 09, September, 2018, 18:32 PM,
 test 31 - trying again and again at: 09, September, 2018, 22:58 PM,
-<<<<<<< HEAD
 
-=======
 Outside lights - None of the lights are working at: 19, September, 2018, 18:54 PM,
-__//
+__//test 36 - Another test at: 18, October, 2018, 13:32 PM,
 
-aaaaaaaaaaaaaah - there is a very scary flashing electric thingy......help Bartosz at: 20, September, 2018, 22:45 PM,
-__//back button - checking the back button at: 21, September, 2018, 19:34 PM,
-__//bedrrom 23 - Socket is not working, is loose at: 22, September, 2018, 08:07 AM,
 __//
