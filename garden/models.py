@@ -30,5 +30,5 @@ class Problem(models.Model):
 	def __str__(self):
 		return self.location
 
-	def __str__(self):
+	def is_status(self):
 		return self.status in (self.priority)

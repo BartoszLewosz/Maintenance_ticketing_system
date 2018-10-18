@@ -7,7 +7,7 @@
 body {
     min-height: 100px;
     position: relative;
-    margin-bottom: 20px;
+    margin: 60px;
     font-family: 'Comfortaa', cursive, Arial, sans-serif;
 }
 html {
@@ -61,11 +61,10 @@ html {
 }
 
 .row {
-	height: 75px;
 	text-align: center;
 	width: 100%;
 	padding-top: 50px;
-	padding-bottom: 250px;
+	padding-bottom: 50px;
 	font-variant: small-caps;
 }
 
@@ -196,17 +195,17 @@ h2, h3, h4, h5, h6 {
 	text-align: center;
 	line-height: 30px;
 }
-#footer {
+.footer {
   	right: 0;
   	left: 0;
-  	padding: 50px;
-  	padding-top: 110px;
-  	background-color: white;
+  	padding: 20px;
+  	padding-top: 10px;
   	text-align: center;
+  	bottom: 0;
 }
 
 .card-body {
-	padding-bottom: 40px;
+	margin-bottom: 10px;
 	text-align: justify;
 }
 

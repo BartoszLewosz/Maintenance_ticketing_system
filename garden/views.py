@@ -78,7 +78,7 @@ def garden_delete(request, pk):
 	if request.method == "POST":
 		file = open("garden/templates/garden/garden_done.txt", "a+")
 		file.write(str(problem) + " - " + str(problem.descr) + " at:" +
-			str(formated_date) + " __//")
+			str(formated_date) + " _//")
 		file.close()
 		problem.delete()
 		return redirect('garden')
