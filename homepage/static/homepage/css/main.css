@@ -175,6 +175,12 @@ html {
 .table {
 	width: 100%;
 }
+.table-responsive {
+	max-width: 100%;
+	height: auto;
+	padding: 50px;
+}
+
 h2, h3, h4, h5, h6 {
 	text-align: center;
 	padding: 20px;
