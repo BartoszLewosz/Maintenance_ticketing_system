@@ -7,7 +7,6 @@
 body {
     min-height: 100px;
     position: relative;
-    margin: 60px;
     font-family: 'Comfortaa', cursive, Arial, sans-serif;
 }
 html {
@@ -71,6 +70,8 @@ html {
 .responsive-img {
 	padding: 10px;
 	border-radius: 15px;
+	max-width: 100%;
+	height: auto;
 	
 }
 
