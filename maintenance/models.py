@@ -5,10 +5,23 @@ from django.db import models
 
 # Create your models here.
 class Maintenance(models.Model):
+
+	EMERGENCY_STATUS = 'EMERGENCY'
+	HIGH_STATUS = 'HIGH'
+	MEDIUM_STATUS = 'MEDIUM'
+	LOW_STATUS = 'LOW'
+
+	STATUS_CHOICES = (
+		(EMERGENCY_STATUS, 'EMERGENCY'),
+		(HIGH_STATUS, 'High'),
+		(MEDIUM_STATUS, 'Medium'),
+		(LOW_STATUS, 'Low'),
+	)
+
 	date = models.DateTimeField()
 	location = models.CharField(max_length=30)
 	descr = models.TextField()
-	status = models.CharField(max_length=30, blank=True, default='')
+	status = models.CharField(max_length=12,choices=STATUS_CHOICES, default=EMERGENCY_STATUS)
 	author = models.CharField(max_length=5)
 
 	def __str__(self):

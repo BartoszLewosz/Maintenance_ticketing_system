@@ -156,6 +156,7 @@ html {
 }
 #flag_1 {
 	color: orange;
+	font-weight: bold;
 }
 #flag_2 {
 	color: blue;

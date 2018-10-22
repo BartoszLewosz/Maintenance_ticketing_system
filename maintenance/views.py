@@ -30,7 +30,7 @@ from .forms import MaintenanceForm
 
 
 def maintenance(request):
-	problems = Maintenance.objects.order_by('-date')
+	problems = Maintenance.objects.order_by('status')
 	page = request.GET.get('page', 1)
 
 	paginator = Paginator(problems,5)
