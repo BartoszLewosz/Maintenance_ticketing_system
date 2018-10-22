@@ -29,7 +29,7 @@ from .forms import ProblemForm
 
 
 def garden(request):
-	problems = Problem.objects.order_by('status')
+	problems = Problem.objects.order_by('status', '-date')
 
 	#problems = Problem.objects.filter(status__contains='01')
 	#Everything below except last line is Paginator
