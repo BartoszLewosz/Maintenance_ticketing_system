@@ -29,7 +29,7 @@ from .forms import ProblemForm
 
 
 def plumbing(request):
-	problems = Plumbing.objects.order_by('-date')
+	problems = Plumbing.objects.order_by('status')
 	page = request.GET.get('page', 1)
 
 	paginator = Paginator(problems, 5)

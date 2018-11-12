@@ -5,7 +5,7 @@ class ElectricForm(forms.ModelForm):
 	
 	class Meta:
 		model = Electric
-		fields = ('location', 'descr',)
+		fields = ('location', 'descr','status',)
 		widgets = {
 		'descr': forms.Textarea(attrs={'rows':4, 'cols':25}),
 		}

@@ -29,12 +29,13 @@ from .forms import ProblemForm
 
 
 def garden(request):
-	problems = Problem.objects.order_by('-date')
+	problems = Problem.objects.order_by('status', '-date')
 
+	#problems = Problem.objects.filter(status__contains='01')
 	#Everything below except last line is Paginator
 	page = request.GET.get('page', 1)
 
-	paginator = Paginator(problems, 6)
+	paginator = Paginator(problems, 20)
 	try:
 		problems = paginator.page(page)
 	except PageNotAnInteger:
@@ -77,7 +78,7 @@ def garden_delete(request, pk):
 	if request.method == "POST":
 		file = open("garden/templates/garden/garden_done.txt", "a+")
 		file.write(str(problem) + " - " + str(problem.descr) + " at:" +
-			str(formated_date) + " __//")
+			str(formated_date) + " _//")
 		file.close()
 		problem.delete()
 		return redirect('garden')

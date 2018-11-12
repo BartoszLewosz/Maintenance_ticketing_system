@@ -7,8 +7,8 @@
 body {
     min-height: 100px;
     position: relative;
-    margin-bottom: 20px;
     font-family: 'Comfortaa', cursive, Arial, sans-serif;
+    margin: 0;
 }
 html {
 	-webkit-background-size: cover;
@@ -61,17 +61,18 @@ html {
 }
 
 .row {
-	height: 75px;
 	text-align: center;
 	width: 100%;
 	padding-top: 50px;
-	padding-bottom: 250px;
+	padding-bottom: 50px;
 	font-variant: small-caps;
 }
 
 .responsive-img {
 	padding: 10px;
 	border-radius: 15px;
+	max-width: 100%;
+	height: auto;
 	
 }
 
@@ -112,6 +113,7 @@ html {
 
 .button-right {
 	text-align: right;
+	padding: 50px;
 }
 
 .btn {
@@ -148,7 +150,20 @@ html {
 #electric_color {
 	color: #fcc01e;
 }
-
+#flag_0 {
+	color: red;
+	font-weight: bold;
+}
+#flag_1 {
+	color: orange;
+	font-weight: bold;
+}
+#flag_2 {
+	color: blue;
+}
+#flag_3 {
+	color: green;
+}
 /*
 #############################################################################
 #############################################################################
@@ -163,6 +178,12 @@ html {
 .table {
 	width: 100%;
 }
+.table-responsive {
+	max-width: 100%;
+	height: auto;
+	padding: 50px;
+}
+
 h2, h3, h4, h5, h6 {
 	text-align: center;
 	padding: 20px;
@@ -181,20 +202,21 @@ h2, h3, h4, h5, h6 {
 }
 .about_intro, .password_reset_done {
 	margin: 60px;
-	text-align: justify;
+	text-align: center;
 	line-height: 30px;
 }
-#footer {
+.footer {
   	right: 0;
   	left: 0;
-  	padding: 50px;
-  	padding-top: 110px;
-  	background-color: white;
+  	padding: 20px;
+  	padding-top: 10px;
   	text-align: center;
+  	bottom: 0;
+  	margin-bottom: -50px;
 }
 
 .card-body {
-	padding-bottom: 40px;
+	margin-bottom: 10px;
 	text-align: justify;
 }
 

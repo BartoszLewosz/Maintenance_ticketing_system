@@ -48,7 +48,7 @@ def electric_print(request):
 
 # Create your views here.
 def electric(request):
-	problems = Electric.objects.order_by('-date')
+	problems = Electric.objects.order_by('status')
 	page = request.GET.get('page', 1)
 
 	paginator = Paginator(problems,5)
