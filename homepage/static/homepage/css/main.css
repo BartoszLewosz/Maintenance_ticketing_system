@@ -5,7 +5,7 @@
 */
 
 body {
-    min-height: 100px;
+    min-height: 100%;
     position: relative;
     font-family: 'Comfortaa', cursive, Arial, sans-serif;
     margin: 0;
