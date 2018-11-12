@@ -100,4 +100,5 @@ def electric_delete(request, pk):
 	return render(request, 'electric/electric_delete.html', {'problem': problem })
 
 def electric_done(request):
-	return render(request, 'electric/electric_done.txt')
+	problems = Electric.objects.order_by('status')
+	return render(request, 'electric/electric_list_complete.html', {'problems': problems})
