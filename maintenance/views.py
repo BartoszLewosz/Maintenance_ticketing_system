@@ -97,4 +97,5 @@ def maintenance_print(request):
 	return response
 
 def maintenance_done(request):
-	return render(request, 'maintenance/maintenance_done.txt')
+	problems = Maintenance.objects.all()
+	return render(request, 'maintenance/maintenance_done.html', {'problems': problems})

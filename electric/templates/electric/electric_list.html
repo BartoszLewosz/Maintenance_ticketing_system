@@ -40,28 +40,32 @@
         </thead>
             <tbody>
                 {% for problem in problems %}
-                <tr>
-                    <td>{{ problem.id }}</td>
-                    <td><a href="{{problem.id}}">{{ problem.location }}</a></td>
-                    <td>{{ problem.descr }}</td>
-                    <td>{{ problem.date }}</td>
-                    <td>{{ problem.author }}</td>
-                    <td><a href="{% url 'electric_edit' pk=problem.pk %}"><span class="fas fa-edit"></span></a></td>
-                    <td><a href="{% url 'electric_delete' pk=problem.pk %}"><span class="far fa-trash-alt"></span></a></td>
-                    {% if problem.priority == "EMERGENCY" %}
-                        <td id="flag_0">{{ problem.priority }}</td>
-                    {% elif problem.priority == "HIGH" %}
-                        <td id="flag_1">{{ problem.priority }}</td>
-                    {% elif problem.priority == "MEDIUM" %}
-                        <td id="flag_2">{{ problem.priority }}</td>
-                    {% elif problem.priority == "LOW" %}
-                        <td id="flag_3">{{ problem.priority }}</td>
+                    {% if problem.status != "COMPLETED" %}
+
+                    <tr>
+                        <td>{{ problem.id }}</td>
+                        <td><a href="{{problem.id}}">{{ problem.location }}</a></td>
+                        <td><a href="{{problem.id}}">{{ problem.descr }}</a></td>
+                        <td>{{ problem.date }}</td>
+                        <td>{{ problem.author }}</td>
+                        <td><a href="{% url 'electric_edit' pk=problem.pk %}"><span class="fas fa-edit"></span></a></td>
+                        <td><a href="{% url 'electric_delete' pk=problem.pk %}"><span class="far fa-trash-alt"></span></a></td>
+                        {% if problem.priority == "EMERGENCY" %}
+                            <td id="flag_0">{{ problem.priority }}</td>
+                        {% elif problem.priority == "HIGH" %}
+                            <td id="flag_1">{{ problem.priority }}</td>
+                        {% elif problem.priority == "MEDIUM" %}
+                            <td id="flag_2">{{ problem.priority }}</td>
+                        {% elif problem.priority == "LOW" %}
+                            <td id="flag_3">{{ problem.priority }}</td>
+                        {% endif %}
+                        <td>{{ problem.status }}</td>
+                    </tr>
+
                     {% endif %}
-                    <td>{{ problem.status }}</td>
-                </tr>
                 {% endfor %}
-            </tbody>
-        </table>
+                </tbody>
+            </table>
        {% with problems as items %}
             {% if items.has_other_pages %}
                 <nav aria-label="Page navigation example">
