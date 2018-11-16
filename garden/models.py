@@ -30,8 +30,8 @@ class Problem(models.Model):
 		(COMPLETED_STATUS, 'COMPLETED'),
 		)
 
-	status = models.CharField(max_length=30,choices=STATUS_CHOICES,default=QUEUE)
-	priority = models.CharField(max_length=30, choices=PRIOR_CHOICES, default=EMERGENCY)
+	status = models.CharField(max_length=30,choices=STATUS_CHOICES,default=QUEUE_STATUS)
+	priority = models.CharField(max_length=30, choices=PRIOR_CHOICES, default=EMERGENCY_PRIOR)
 	date = models.DateTimeField()
 	location = models.CharField(max_length=30)
 	descr = models.TextField()

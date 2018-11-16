@@ -1,7 +1,7 @@
 {% extends 'homepage/base.html' %}
 {% load staticfiles %}
 {% block title %}
-    Maintenance - {{ block.super }}
+    Plumbing - {{ block.super }}
 {% endblock title %}
 
 {% block content %}
@@ -12,23 +12,28 @@
 
     <div class="button-right">
 
-        <a href="{% url 'maintenance_new' %}", button type="submit" class="btn btn-outline-dark"></button><span class="fas fa-plus-square"></span> New</a>
+        <a href="{% url 'plumbing_new' %}", button type="submit" class="btn btn-outline-dark"></button><span class="fas fa-plus-square"></span> New</a>
 
-        <a href="{% url 'maintenance_print' %}", button type="submit", class="btn btn-outline-dark"></button><span class="fas fa-print"></span> Print</a>
-        
-        <a href="{% url 'maintenance_done' %}", button type="submit", class="btn btn-outline-dark"></button><span class="fas fa-print"></span> Done list</a>
+        <a href="{% url 'plumbing_print' %}", button type="submit", class="btn btn-outline-dark"></button><span class="fas fa-print"></span> Print</a>
+
+        <a href="{% url 'plumbing_done' %}", button type="submit", class="btn btn-outline-dark"></button><span class="fas fa-print"></span> Done list</a>
 
     </div>
     
+    
+   
+
+    
+
             
 <div class="table-responsive">
         <table class="table">
-        <h2>Maintenance Completed</h2>
+        <h2>Plumbing Complete</h2>
         <thead>
             <tr>
                 <th>No. by date</th>
                 <th>Where</th>
-                <th>What</th>
+                <th>what</th>
                 <th>Edit</th>
                 <th>Done</th>
                 <th>Status</th>
@@ -39,18 +44,18 @@
                     {% if problem.status == 'COMPLETED' %}
                     <tr>
                         <td>{{ problem.id }}</td>
-                        <td><a href="{% url 'maintenance_detail' pk=problem.pk %}">{{ problem.location }}</a></td>
+                        <td><a href="{% url 'plumbing_detail' pk=problem.pk %}">{{ problem.location }}</a></td>
                         <td>{{ problem.descr }}</td>
-                        <td><a href="{% url 'maintenance_edit' pk=problem.pk %}"><span class="fas fa-edit"></span></a></td>
-                        <td><a href="{% url 'maintenance_delete' pk=problem.pk %}"><span class="far fa-trash-alt"></span></a></td>
+                        <td><a href="{% url 'plumbing_edit' pk=problem.pk %}"><span class="fas fa-edit"></span></a></td>
+                        <td><a href="{% url 'plumbing_delete' pk=problem.pk %}"><span class="far fa-trash-alt"></span></a></td>
                         <td>{{ problem.status }}</td>
                     </tr>
                     {% endif %}
                 {% endfor %}
             </tbody>
         </table>
-        <div class="pagination">
-            {% with problems as items %}
+
+        {% with problems as items %}
             {% if items.has_other_pages %}
                 <nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-left">
@@ -74,10 +79,7 @@
                     </ul>
                 </nav>
             {% endif %}
-        {% endwith %}            
-        </div>
-
-        
+        {% endwith %}
 </div>
 
 

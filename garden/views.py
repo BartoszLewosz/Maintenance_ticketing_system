@@ -71,6 +71,10 @@ def garden_edit(request, pk):
 		form = ProblemForm(instance=problem)
 	return render(request, 'garden/garden_edit.html', {'form': form})
 
+def garden_detail(request, pk):
+	problem = get_object_or_404(Problem, pk=pk)
+	return render(request, 'garden/garden_detail.html', {'problem': problem})
+
 def garden_delete(request, pk):
 	problem = get_object_or_404(Problem, pk=pk)
 	date = datetime.now()
@@ -100,4 +104,5 @@ def garden_print(request):
 	return response
 
 def garden_done(request):
-	return render(request, 'garden/garden_done.txt')
+	problems = Problem.objects.order_by('-date')
+	return render(request, 'garden/garden_list_complete.html', {'problems': problems})

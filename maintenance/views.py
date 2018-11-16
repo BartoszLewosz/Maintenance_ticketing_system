@@ -30,7 +30,7 @@ from .forms import MaintenanceForm
 
 
 def maintenance(request):
-	problems = Maintenance.objects.order_by('status')
+	problems = Maintenance.objects.order_by('priority')
 	page = request.GET.get('page', 1)
 
 	paginator = Paginator(problems,5)
@@ -68,6 +68,11 @@ def maintenance_edit(request, pk):
 	else:
 		form = MaintenanceForm(instance=problem)
 	return render(request, 'maintenance/maintenance_edit.html', {'form': form})
+
+def maintenance_detail(request, pk):
+	problem = get_object_or_404(Maintenance, pk=pk)
+	return render(request, 'maintenance/maintenance_detail.html', {'problem': problem })
+
 def maintenance_delete(request, pk):
 	problem = get_object_or_404(Maintenance, pk=pk)
 	date = datetime.now()
@@ -98,4 +103,13 @@ def maintenance_print(request):
 
 def maintenance_done(request):
 	problems = Maintenance.objects.all()
+	page = request.GET.get('page', 1)
+
+	paginator = Paginator(problems,5)
+	try:
+		problems = paginator.page(page)
+	except PageNotAnInteger:
+		problems = paginator.page(1)
+	except EmptyPage:
+		problems = paginator.page(paginator.num_pages)
 	return render(request, 'maintenance/maintenance_list_complete.html', {'problems': problems})

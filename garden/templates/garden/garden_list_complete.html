@@ -1,29 +1,33 @@
 {% extends 'homepage/base.html' %}
 {% load staticfiles %}
 {% block title %}
-    Maintenance - {{ block.super }}
+    Garden - {{ block.super }}
 {% endblock title %}
 
 {% block content %}
 
+
     <h4>
-        <a href="#", onClick="history.go(-1);return true;" button type="submit" class="btn btn-outline-dark",></button><i class="fas fa-angle-double-left"></i> Back</a>
+        <a href="/", button type="submit" class="btn btn-outline-dark",></button><i class="fas fa-angle-double-left"></i> Back</a>
     </h4>
 
     <div class="button-right">
 
-        <a href="{% url 'maintenance_new' %}", button type="submit" class="btn btn-outline-dark"></button><span class="fas fa-plus-square"></span> New</a>
+        <a href="{% url 'garden_new' %}", button type="submit" class="btn btn-outline-dark"></button><span class="fas fa-plus-square"></span> New</a>
 
-        <a href="{% url 'maintenance_print' %}", button type="submit", class="btn btn-outline-dark"></button><span class="fas fa-print"></span> Print</a>
-        
-        <a href="{% url 'maintenance_done' %}", button type="submit", class="btn btn-outline-dark"></button><span class="fas fa-print"></span> Done list</a>
+        <a href="{% url 'garden_print' %}", button type="submit", class="btn btn-outline-dark"></button><span class="fas fa-print"></span> Print</a>
+
+        <a href="{% url 'garden_done' %}", button type="submit", class="btn btn-outline-dark"></button><span class="fas fa-print"></span> Done list</a>
+
 
     </div>
+
     
-            
+        
+
 <div class="table-responsive">
         <table class="table">
-        <h2>Maintenance Completed</h2>
+        <h2>Completed tasks Garden</h2>
         <thead>
             <tr>
                 <th>No. by date</th>
@@ -39,18 +43,20 @@
                     {% if problem.status == 'COMPLETED' %}
                     <tr>
                         <td>{{ problem.id }}</td>
-                        <td><a href="{% url 'maintenance_detail' pk=problem.pk %}">{{ problem.location }}</a></td>
+                        <td><a href="{% url 'garden_detail' pk=problem.pk %}">{{ problem.location }}</a></td>
                         <td>{{ problem.descr }}</td>
-                        <td><a href="{% url 'maintenance_edit' pk=problem.pk %}"><span class="fas fa-edit"></span></a></td>
-                        <td><a href="{% url 'maintenance_delete' pk=problem.pk %}"><span class="far fa-trash-alt"></span></a></td>
+                        <td><a href="{% url 'garden_edit' pk=problem.pk %}"><span class="fas fa-edit"></span></a></td>
+                        <td><a href="{% url 'garden_delete' pk=problem.pk %}"><span class="far fa-trash-alt"></span></a></td>
                         <td>{{ problem.status }}</td>
                     </tr>
                     {% endif %}
                 {% endfor %}
             </tbody>
         </table>
-        <div class="pagination">
-            {% with problems as items %}
+
+
+
+        {% with problems as items %}
             {% if items.has_other_pages %}
                 <nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-left">
@@ -74,13 +80,8 @@
                     </ul>
                 </nav>
             {% endif %}
-        {% endwith %}            
-        </div>
-
-        
+        {% endwith %}  
+            
 </div>
 
-
-
 {% endblock content %}
-
