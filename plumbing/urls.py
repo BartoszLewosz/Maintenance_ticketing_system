@@ -9,6 +9,7 @@ urlpatterns = [
 		template_name='plumbing/plumbing_detail.html')),
 	url(r'^plumbing_new/', views.plumbing_new, name='plumbing_new'),
 	url(r'^(?P<pk>\d+)/edit/$', views.plumbing_edit, name='plumbing_edit'),
+	url(r'^(?P<pk>\d+)$', views.plumbing_detail, name='plumbing_detail'),
 	url(r'^(?P<pk>\d+)/delete/$', views.plumbing_delete, name='plumbing_delete'),
 	url(r'^plumbing_print/', views.plumbing_print, name='plumbing_print'),
 	url(r'^plumbing_done/', views.plumbing_done, name='plumbing_done'),

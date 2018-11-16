@@ -27,7 +27,7 @@
 
 <div class="table-responsive">
         <table class="table">
-        <h2>Garden</h2>
+        <h2>Completed tasks Garden</h2>
         <thead>
             <tr>
                 <th>No. by date</th>
@@ -35,29 +35,18 @@
                 <th>What</th>
                 <th>Edit</th>
                 <th>Done</th>
-                <th>Priority</th>
                 <th>Status</th>
             </tr>
         </thead>
             <tbody>
                 {% for problem in problems %}
-                    {% if problem.status != 'COMPLETED' %}
-
+                    {% if problem.status == 'COMPLETED' %}
                     <tr>
                         <td>{{ problem.id }}</td>
-                        <td><a href="{{problem.id}}">{{ problem.location }}</a></td>
+                        <td><a href="{% url 'garden_detail' pk=problem.pk %}">{{ problem.location }}</a></td>
                         <td>{{ problem.descr }}</td>
                         <td><a href="{% url 'garden_edit' pk=problem.pk %}"><span class="fas fa-edit"></span></a></td>
                         <td><a href="{% url 'garden_delete' pk=problem.pk %}"><span class="far fa-trash-alt"></span></a></td>
-                        {% if problem.priority == 'EMERGENCY' %}
-                            <td id="flag_0">{{ problem.priority }}</td>
-                        {% elif problem.priority == 'HIGH' %}    
-                            <td id=flag_1>{{ problem.priority }}</td>
-                        {% elif problem.priority == 'MEDIUM' %}    
-                            <td id=flag_2>{{ problem.priority }}</td>
-                        {% elif problem.priority == 'LOW' %}    
-                            <td id=flag_3>{{ problem.priority }}</td>
-                        {% endif %}
                         <td>{{ problem.status }}</td>
                     </tr>
                     {% endif %}
@@ -91,10 +80,8 @@
                     </ul>
                 </nav>
             {% endif %}
-        {% endwith %}        
+        {% endwith %}  
             
 </div>
-
-
 
 {% endblock content %}

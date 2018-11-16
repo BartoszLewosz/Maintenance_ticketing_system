@@ -1,33 +1,29 @@
 {% extends 'homepage/base.html' %}
 {% load staticfiles %}
 {% block title %}
-    Garden - {{ block.super }}
+    Maintenance - {{ block.super }}
 {% endblock title %}
 
 {% block content %}
 
-
     <h4>
-        <a href="/", button type="submit" class="btn btn-outline-dark",></button><i class="fas fa-angle-double-left"></i> Back</a>
+        <a href="#", onClick="history.go(-1);return true;" button type="submit" class="btn btn-outline-dark",></button><i class="fas fa-angle-double-left"></i> Back</a>
     </h4>
 
     <div class="button-right">
 
-        <a href="{% url 'garden_new' %}", button type="submit" class="btn btn-outline-dark"></button><span class="fas fa-plus-square"></span> New</a>
+        <a href="{% url 'maintenance_new' %}", button type="submit" class="btn btn-outline-dark"></button><span class="fas fa-plus-square"></span> New</a>
 
-        <a href="{% url 'garden_print' %}", button type="submit", class="btn btn-outline-dark"></button><span class="fas fa-print"></span> Print</a>
-
-        <a href="{% url 'garden_done' %}", button type="submit", class="btn btn-outline-dark"></button><span class="fas fa-print"></span> Done list</a>
-
+        <a href="{% url 'maintenance_print' %}", button type="submit", class="btn btn-outline-dark"></button><span class="fas fa-print"></span> Print</a>
+        
+        <a href="{% url 'maintenance_done' %}", button type="submit", class="btn btn-outline-dark"></button><span class="fas fa-print"></span> Done list</a>
 
     </div>
-
     
-        
-
+            
 <div class="table-responsive">
         <table class="table">
-        <h2>Garden</h2>
+        <h2>Maintenance Completed</h2>
         <thead>
             <tr>
                 <th>No. by date</th>
@@ -35,39 +31,26 @@
                 <th>What</th>
                 <th>Edit</th>
                 <th>Done</th>
-                <th>Priority</th>
                 <th>Status</th>
             </tr>
         </thead>
             <tbody>
                 {% for problem in problems %}
-                    {% if problem.status != 'COMPLETED' %}
-
+                    {% if problem.status == 'COMPLETED' %}
                     <tr>
                         <td>{{ problem.id }}</td>
-                        <td><a href="{{problem.id}}">{{ problem.location }}</a></td>
+                        <td><a href="{% url 'maintenance_detail' pk=problem.pk %}">{{ problem.location }}</a></td>
                         <td>{{ problem.descr }}</td>
-                        <td><a href="{% url 'garden_edit' pk=problem.pk %}"><span class="fas fa-edit"></span></a></td>
-                        <td><a href="{% url 'garden_delete' pk=problem.pk %}"><span class="far fa-trash-alt"></span></a></td>
-                        {% if problem.priority == 'EMERGENCY' %}
-                            <td id="flag_0">{{ problem.priority }}</td>
-                        {% elif problem.priority == 'HIGH' %}    
-                            <td id=flag_1>{{ problem.priority }}</td>
-                        {% elif problem.priority == 'MEDIUM' %}    
-                            <td id=flag_2>{{ problem.priority }}</td>
-                        {% elif problem.priority == 'LOW' %}    
-                            <td id=flag_3>{{ problem.priority }}</td>
-                        {% endif %}
+                        <td><a href="{% url 'maintenance_edit' pk=problem.pk %}"><span class="fas fa-edit"></span></a></td>
+                        <td><a href="{% url 'maintenance_delete' pk=problem.pk %}"><span class="far fa-trash-alt"></span></a></td>
                         <td>{{ problem.status }}</td>
                     </tr>
                     {% endif %}
                 {% endfor %}
             </tbody>
         </table>
-
-
-
-        {% with problems as items %}
+        <div class="pagination">
+            {% with problems as items %}
             {% if items.has_other_pages %}
                 <nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-left">
@@ -91,10 +74,13 @@
                     </ul>
                 </nav>
             {% endif %}
-        {% endwith %}        
-            
+        {% endwith %}            
+        </div>
+
+        
 </div>
 
 
 
 {% endblock content %}
+

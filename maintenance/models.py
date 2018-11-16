@@ -6,22 +6,35 @@ from django.db import models
 # Create your models here.
 class Maintenance(models.Model):
 
-	EMERGENCY_STATUS = 'EMERGENCY'
-	HIGH_STATUS = 'HIGH'
-	MEDIUM_STATUS = 'MEDIUM'
-	LOW_STATUS = 'LOW'
+	EMERGENCY_PRIOR = 'EMERGENCY'
+	HIGH_PRIOR = 'HIGH'
+	MEDIUM_PRIOR = 'MEDIUM'
+	LOW_PRIOR = "LOW"
+
+	PRIOR_CHOICES = (
+		(EMERGENCY_PRIOR, 'EMERGENCY'),
+		(HIGH_PRIOR, 'HIGH'),
+		(MEDIUM_PRIOR, 'MEDIUM'),
+		(LOW_PRIOR, 'LOW'),
+		)
+
+	IN_PROGRESS_STATUS = 'IN_PROGRESS'
+	QUEUE_STATUS = 'QUEUE'
+	CANCELED_STATUS = 'CANCELED'
+	COMPLETED_STATUS = 'COMPLETED'
 
 	STATUS_CHOICES = (
-		(EMERGENCY_STATUS, 'EMERGENCY'),
-		(HIGH_STATUS, 'High'),
-		(MEDIUM_STATUS, 'Medium'),
-		(LOW_STATUS, 'Low'),
+		(IN_PROGRESS_STATUS, 'IN PROGRESS'),
+		(QUEUE_STATUS, 'QUEUE'),
+		(CANCELED_STATUS, 'CANCELED'),
+		(COMPLETED_STATUS, 'COMPLETED'),
 	)
 
 	date = models.DateTimeField()
 	location = models.CharField(max_length=30)
 	descr = models.TextField()
-	status = models.CharField(max_length=12,choices=STATUS_CHOICES, default=EMERGENCY_STATUS)
+	status = models.CharField(max_length=30, choices=STATUS_CHOICES, default=QUEUE_STATUS)
+	priority = models.CharField(max_length=30, choices=PRIOR_CHOICES, default=EMERGENCY_PRIOR)
 	author = models.CharField(max_length=5)
 
 	def __str__(self):

@@ -48,7 +48,7 @@ def electric_print(request):
 
 # Create your views here.
 def electric(request):
-	problems = Electric.objects.order_by('status')
+	problems = Electric.objects.order_by('priority')
 	page = request.GET.get('page', 1)
 
 	paginator = Paginator(problems,5)
@@ -59,6 +59,11 @@ def electric(request):
 	except EmptyPage:
 		problems = paginator.page(paginator.num_pages)
 	return render(request, 'electric/electric_list.html', {'problems': problems})
+
+def electric_detail(request, pk):
+	problem = get_object_or_404(pk=pk)
+	return render(request, 'elecitrc_detail.html', {'problem': problem})
+
 def electric_new(request):
 	if request.method == "POST":
 		form = ElectricForm(request.POST)
@@ -70,6 +75,7 @@ def electric_new(request):
 	else:
 		form = ElectricForm()
 	return render(request, 'electric/electric_new.html', {'form': form})
+
 def electric_edit(request, pk):
 	problem = get_object_or_404(Electric, pk=pk)
 	#This line above makes problem edit!
@@ -100,4 +106,14 @@ def electric_delete(request, pk):
 	return render(request, 'electric/electric_delete.html', {'problem': problem })
 
 def electric_done(request):
-	return render(request, 'electric/electric_done.txt')
+	problems = Electric.objects.order_by('status')
+	page = request.GET.get('page', 1)
+
+	paginator = Paginator(problems,5)
+	try:
+		problems = paginator.page(page)
+	except PageNotAnInteger:
+		problems = paginator.page(1)
+	except EmptyPage:
+		problems = paginator.page(paginator.num_pages)
+	return render(request, 'electric/electric_list_complete.html', {'problems': problems})

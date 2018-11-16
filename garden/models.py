@@ -6,29 +6,37 @@ from django.db import models
 # Create your models here.
 class Problem(models.Model):
 
-	emergency = 'EMERGENCY'
-	high = 'HIGH'
-	medium = 'MEDIUM'
-	low = 'LOW'
-	priority = (
-		(emergency, '01_EMERGENCY'),
-		(high, '02_HIGH'),
-		(medium, '03_MEDIUM'),
-		(low, '04_LOW'),
+	EMERGENCY_PRIOR = 'EMERGENCY'
+	HIGH_PRIOR = 'HIGH'
+	MEDIUM_PRIOR = 'MEDIUM'
+	LOW_PRIOR = 'LOW'
+
+	PRIOR_CHOICES = (
+		(EMERGENCY_PRIOR, 'EMERGENCY'),
+		(HIGH_PRIOR, 'HIGH'),
+		(MEDIUM_PRIOR, 'MEDIUM'),
+		(LOW_PRIOR, 'LOW'),
 		)
-	status = models.CharField(max_length=12,choices=priority,default='',)
 
+	IN_PROGRESS_STATUS = 'IN PROGRESS'
+	QUEUE_STATUS = 'QUEUE'
+	CANCELED_STATUS = 'CANCELED'
+	COMPLETED_STATUS = 'COMPLETED'
+
+	STATUS_CHOICES = (
+		(IN_PROGRESS_STATUS, 'IN_PROGRESS'),
+		(QUEUE_STATUS, 'QUEUE'),
+		(CANCELED_STATUS, 'CANCELED'),
+		(COMPLETED_STATUS, 'COMPLETED'),
+		)
+
+	status = models.CharField(max_length=30,choices=STATUS_CHOICES,default=QUEUE_STATUS)
+	priority = models.CharField(max_length=30, choices=PRIOR_CHOICES, default=EMERGENCY_PRIOR)
 	date = models.DateTimeField()
-
 	location = models.CharField(max_length=30)
-
 	descr = models.TextField()
-
 	author = models.CharField(max_length=15)
 
 	
 	def __str__(self):
 		return self.location
-
-	def is_status(self):
-		return self.status in (self.priority)

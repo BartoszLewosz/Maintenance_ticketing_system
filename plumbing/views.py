@@ -29,7 +29,7 @@ from .forms import ProblemForm
 
 
 def plumbing(request):
-	problems = Plumbing.objects.order_by('status')
+	problems = Plumbing.objects.order_by('priority')
 	page = request.GET.get('page', 1)
 
 	paginator = Paginator(problems, 5)
@@ -43,7 +43,8 @@ def plumbing(request):
 
 
 def plumbing_detail(request):
-	return render(request, 'plumbing/plumbing_detail.html')
+	problem = get_object_or_404(Plumbing, pk=pk)
+	return render(request, 'plumbing/plumbing_detail.html', {'problem': problem})
 
 
 def plumbing_new(request):
@@ -72,6 +73,13 @@ def plumbing_edit(request, pk):
 	else:
 		form = ProblemForm(instance=problem)
 	return render(request, 'plumbing/plumbing_edit.html', {'form': form})
+
+def plumbing_detail(request, pk):
+	problem = get_object_or_404(Plumbing, pk=pk)
+	return render(request, 'plumbing/plumbing_detail.html', {'problem': problem})
+
+
+
 
 
 def plumbing_delete(request, pk):
@@ -104,4 +112,5 @@ def plumbing_print(request):
 	return response
 
 def plumbing_done(request):
-	return render(request, 'plumbing/plumbing_done.txt')
+	problems = Plumbing.objects.order_by('-date')
+	return render(request, 'plumbing/plumbing_list_complete.html', {'problems': problems})
