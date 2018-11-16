@@ -40,8 +40,8 @@
                 {% for problem in problems %}
                 <tr>
                     <td>{{ problem.id }}</td>
-                    <td><a href="{{problem.id}}">{{ problem.location }}</a></td>
-                    <td><a href="{{problem.id}}">{{ problem.descr }}</a></td>
+                    <td>{{ problem.location }}</td>
+                    <td>{{ problem.descr }}</td>
                     <td>{{ problem.date }}</td>
                     <td>{{ problem.author }}</td>
                     <td><a href="{% url 'maintenance_edit' pk=problem.pk %}"><span class="fas fa-edit"></span></a></td>

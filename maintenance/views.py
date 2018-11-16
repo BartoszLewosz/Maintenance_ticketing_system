@@ -98,4 +98,4 @@ def maintenance_print(request):
 
 def maintenance_done(request):
 	problems = Maintenance.objects.all()
-	return render(request, 'maintenance/maintenance_done.html', {'problems': problems})
+	return render(request, 'maintenance/maintenance_list_complete.html', {'problems': problems})

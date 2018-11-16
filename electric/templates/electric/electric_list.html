@@ -30,8 +30,6 @@
                 <th>No. by date</th>
                 <th>Where</th>
                 <th>What</th>
-                <th>When</th>
-                <th>Who</th>
                 <th>Edit</th>
                 <th>Done</th>
                 <th>Priority</th>
@@ -45,9 +43,7 @@
                     <tr>
                         <td>{{ problem.id }}</td>
                         <td><a href="{{problem.id}}">{{ problem.location }}</a></td>
-                        <td><a href="{{problem.id}}">{{ problem.descr }}</a></td>
-                        <td>{{ problem.date }}</td>
-                        <td>{{ problem.author }}</td>
+                        <td>{{ problem.descr }}</td>
                         <td><a href="{% url 'electric_edit' pk=problem.pk %}"><span class="fas fa-edit"></span></a></td>
                         <td><a href="{% url 'electric_delete' pk=problem.pk %}"><span class="far fa-trash-alt"></span></a></td>
                         {% if problem.priority == "EMERGENCY" %}
