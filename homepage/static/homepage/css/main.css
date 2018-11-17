@@ -199,6 +199,12 @@ h2, h3, h4, h5, h6 {
 	padding: 20px;
 }
 
+.signup {
+	text-align: left;
+	margin-left: 40px;
+	margin-top: 30px;
+}
+
 .pagination {
 	padding: 0 0 10% 40%;
 
