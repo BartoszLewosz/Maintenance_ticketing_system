@@ -29,7 +29,7 @@ from .forms import ProblemForm
 
 
 def garden(request):
-	problems = Problem.objects.order_by('status', '-date')
+	problems = Problem.objects.order_by('priority')
 
 	#problems = Problem.objects.filter(status__contains='01')
 	#Everything below except last line is Paginator
@@ -45,7 +45,7 @@ def garden(request):
 	return render(request, 'garden/garden_list.html', {'problems': problems})
 
 def garden_new(request):
-	if request.method == "POST":
+	if 'garden_test' in request.POST:
 		form = ProblemForm(request.POST)
 		if form.is_valid:
 			problem = form.save(commit=False)
@@ -53,9 +53,30 @@ def garden_new(request):
 			problem.date = timezone.now()
 			problem.save()
 			return redirect('garden')
+	elif 'another' in request.POST:
+		form = ProblemForm(request.POST)
+		if form.is_valid:
+			problem = form.save(commit=False)
+			problem.author = request.user
+			problem.date = timezone.now()
+			problem.save()
+			return redirect('garden_new')
 	else:
 		form = ProblemForm()
 	return render(request, 'garden/garden_new.html', {'form': form})
+
+#def garden_add_another(request):
+#	if 'another' in request.POST:
+#		form = ProblemForm(request.POST)
+#		if form.is_valid:
+#			problem = form.save(commit=False)
+#			problem.author = request.user
+#			problem.date = timezone.now()
+#			problem.save()
+#			return redirect('garden_print')
+#		else:
+#			form = ProblemForm()
+#		return render(request, 'garden/garden_new.html', {'form': form})
 
 def garden_edit(request, pk):
 	problem = get_object_or_404(Problem, pk=pk)
