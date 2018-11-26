@@ -87,8 +87,8 @@ def plumbing_delete(request, pk):
 	date = datetime.now()
 	formated_date = date.strftime("%d, %B, %Y, %H:%M %p")
 	if request.method == "POST":
-		file = open("plumbing/templates/plumbing/plumbing_done.txt", "a+")
-		file.write(str(problem) + " - " + str(problem.descr) + " at:" + 
+		file = open("warren_folder/plumbing/templates/plumbing/plumbing_done.txt", "a+")
+		file.write(str(problem) + " - " + str(problem.descr) + " at:" +
 			str(formated_date) + ", \n__//")
 		file.close()
 		problem.delete()

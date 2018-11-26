@@ -78,14 +78,15 @@ def maintenance_delete(request, pk):
 	date = datetime.now()
 	formated_date = date.strftime("%d, %B, %Y, %H, %M, %p")
 	if request.method == "POST":
-		file = open("maintenance/templates/maintenance/maintenance_done.txt", "a+")
+		file = open("warren_folder/maintenance/templates/maintenance/maintenance_done.txt", "a+")
 		file.write(str(problem) + ' - ' + str(problem.descr) + " at: " +
-		str(formated_date) + "___\n")  
+		str(formated_date) + "___\n")
 		file.close()
 
 		problem.delete()
 		return redirect('maintenance')
 	return render(request, 'maintenance/maintenance_delete.html', {'problem': problem })
+
 def maintenance_print(request):
 	problems = Maintenance.objects.all()
 
