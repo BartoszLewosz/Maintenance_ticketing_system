@@ -43,10 +43,8 @@ def electric_print(request):
 		response['Content-Disposition'] = 'inline; filename="mypdf.pdf"'
 		return response
 	return response
-	
 
 
-# Create your views here.
 def electric(request):
 	problems = Electric.objects.order_by('priority')
 	page = request.GET.get('page', 1)
@@ -65,13 +63,20 @@ def electric_detail(request, pk):
 	return render(request, 'elecitrc_detail.html', {'problem': problem})
 
 def electric_new(request):
-	if request.method == "POST":
+	if 'add_new' in request.POST:
 		form = ElectricForm(request.POST)
 		problem = form.save(commit=False)
 		problem.author = str(request.user)
 		problem.date = timezone.now()
 		problem.save()
 		return redirect('electric')
+	elif 'add_another' in request.POST:
+		form = ElectricForm(request.POST)
+		problem = form.save(commit=False)
+		problem.author = str(request.user)
+		problem.date = timezone.now()
+		problem.save()
+		return redirect('electric_new')
 	else:
 		form = ElectricForm()
 	return render(request, 'electric/electric_new.html', {'form': form})

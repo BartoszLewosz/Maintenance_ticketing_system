@@ -43,16 +43,24 @@ def maintenance(request):
 	return render(request, 'maintenance/maintenance_list.html', {'problems': problems})
 
 def maintenance_new(request):
-	if request.method == "POST":
+	if 'add_new' in request.POST:
 		form = MaintenanceForm(request.POST)
 		problem = form.save(commit=False)
 		problem.author = str(request.user)
 		problem.date = timezone.now()
 		problem.save()
 		return redirect('maintenance')
+	elif 'add_another' in request.POST:
+		form = MaintenanceForm(request.POST)
+		problem = form.save(commit=False)
+		problem.author = str(request.user)
+		problem.date = datetime.now()
+		problem.save()
+		return redirect('maintenance_new')
 	else:
 		form = MaintenanceForm()
 	return render(request, 'maintenance/maintenance_new.html', {'form': form})
+
 def maintenance_edit(request, pk):
 	problem = get_object_or_404(Maintenance, pk=pk)
 	#This line above makes problem edit!

@@ -47,23 +47,23 @@ def garden(request):
 def garden_new(request):
 	if 'garden_test' in request.POST:
 		form = ProblemForm(request.POST)
-		if form.is_valid:
-			problem = form.save(commit=False)
-			problem.author = request.user
-			problem.date = timezone.now()
-			problem.save()
-			return redirect('garden')
+		problem = form.save(commit=False)
+		problem.author = request.user
+		problem.date = timezone.now()
+		problem.save()
+		return redirect('garden')
 	elif 'another' in request.POST:
 		form = ProblemForm(request.POST)
-		if form.is_valid:
-			problem = form.save(commit=False)
-			problem.author = request.user
-			problem.date = timezone.now()
-			problem.save()
-			return redirect('garden_new')
+		problem = form.save(commit=False)
+		problem.author = request.user
+		problem.date = timezone.now()
+		problem.save()
+		return redirect('garden_new')
 	else:
 		form = ProblemForm()
 	return render(request, 'garden/garden_new.html', {'form': form})
+
+
 
 #def garden_add_another(request):
 #	if 'another' in request.POST:

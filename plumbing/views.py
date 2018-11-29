@@ -48,13 +48,20 @@ def plumbing_detail(request):
 
 
 def plumbing_new(request):
-	if request.method == "POST":
+	if 'add_new' in request.POST:
 		form = ProblemForm(request.POST)
 		problem = form.save(commit=False)
 		problem.author = str(request.user)
 		problem.date = timezone.now()
 		problem.save()
 		return redirect('plumbing')
+	elif 'add_another' in request.POST:
+		form = ProblemForm(request.POST)
+		problem = form.save(commit=False)
+		problem.author = str(request.user)
+		problem.date = timezone.now()
+		problem.save()
+		return redirect('plumbing_new')
 	else:
 		form = ProblemForm()
 	return render(request, 'plumbing/plumbing_new.html', {'form': form})
