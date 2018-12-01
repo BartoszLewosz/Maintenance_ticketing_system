@@ -6,21 +6,15 @@
 
 {% block content %}
 
-<<<<<<< HEAD
-<div class="signup">    
-        <center>
-            <p>Please fill the form below:</p>
-        </center>
-=======
-    
->>>>>>> e532601fd725de9483e5dd0b997a011b2243567e
-        
-            
+
+<div class="signup">
 
         <div class="signup">
             <center>
                 <p>Please fill the form below:</p>
             </center>
+
+
             <form method="post">
             {% csrf_token %}
             {% for field in form %}
@@ -34,24 +28,13 @@
                     <p style="color: red">{{ error }}</p>
                     {% endfor %}
                 </p>
-                {% endfor %}
-<<<<<<< HEAD
-            </p>
             {% endfor %}
+
+
         <button type="submit" class="btn btn-outline-dark">Sign Up</button>
         </form>
 </div>
-=======
-                <button type="submit" class="btn btn-outline-dark">Sign Up</button>
-            </form>
-        </div>
 
-        
->>>>>>> e532601fd725de9483e5dd0b997a011b2243567e
-    
-
-   
-    
 
 
 {% endblock content %}

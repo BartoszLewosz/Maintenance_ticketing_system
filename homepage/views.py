@@ -16,11 +16,11 @@ from django.contrib.auth.forms import UserCreationForm
 ###================================================================================================
 from garden.models import Problem
 from electric.models import Electric
-from maintenance.models import Maintenance 
+from maintenance.models import Maintenance
 from plumbing.models import Plumbing
 ###================================================================================================
 
-# 
+#
 
  # This function has been created to display 1 to 3 included problems from every section.
 	# Ready to use.
@@ -56,9 +56,8 @@ def signup(request):
 			login(request, user)
 			return redirect('home')
 
-		
+
 	else:
 		form = SignUpForm()
 	return render(request, 'homepage/signup.html', {'form': form})
 
-	
