@@ -6,7 +6,7 @@
 
 {% block content %}
 <div class="new-form">
-	<h3>New problem</h3>
+	<h3>Add new garden problem</h3>
 	<form method="POST" class="post-form">{% csrf_token %}
 		{{ form.as_p }}
 		<button type="submit" name="garden_test" class="btn btn-outline-dark">Save</button>

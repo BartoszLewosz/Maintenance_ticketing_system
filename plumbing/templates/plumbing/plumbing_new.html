@@ -8,10 +8,11 @@
 
 <div class="new-form">
 
-	<h3>New problem</h3>
+	<h3>Add new plumbing problem</h3>
 		<form method="POST" class="post-form">{% csrf_token %}
 		{{ form.as_p }}
-		<button type="submit" class="btn btn-outline-dark">Save</button></form>
+		<button type="submit" name="add_new" class="btn btn-outline-dark">Save</button>
+		<button type="submit" name="add_another" class="btn btn-outline-dark">Save & add another</button></form>
 
 <!--To trigger submit button pressing enter use JS-->
 </div>
