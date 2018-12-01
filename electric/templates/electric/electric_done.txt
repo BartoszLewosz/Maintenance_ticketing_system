@@ -11,4 +11,5 @@ __//test 36 - Another test at: 18, October, 2018, 13:32 PM,
 __//test - try delete and back at: 26, November, 2018, 22:14 PM,
 __//test - online delete and back at: 26, November, 2018, 22:28 PM,
 __//test - online delete and back at: 26, November, 2018, 22:28 PM,
+__//reception - Socket is flashing. Very dangerous and risky!!! at: 01, December, 2018, 20:49 PM,
 __//
