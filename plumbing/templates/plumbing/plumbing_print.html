@@ -20,12 +20,14 @@
           </thead>
               <tbody>
                   {% for problem in problems %}
-                  <tr>
-                      <td>{{ problem.id }}</td>
-                      <td>{{ problem.location }}</a></td>
-                      <td>{{ problem.descr }}</td>
-                      <td>{{ problem.author }}</td>
-                  </tr>
+                    {% if problem.status != 'COMPLETED' %}
+                      <tr>
+                          <td>{{ problem.id }}</td>
+                          <td>{{ problem.location }}</a></td>
+                          <td>{{ problem.descr }}</td>
+                          <td>{{ problem.author }}</td>
+                      </tr>
+                    {% endif %}
                   {% endfor %}
               </tbody>
           </table>
