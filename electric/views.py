@@ -43,10 +43,6 @@ def electric_print(request):
 		response['Content-Disposition'] = 'inline; filename="mypdf.pdf"'
 		return response
 	return response
-<<<<<<< HEAD
-
-=======
->>>>>>> b57c3557b864b4f037bf55b1d2a1a0e7911b1b50
 
 
 def electric(request):

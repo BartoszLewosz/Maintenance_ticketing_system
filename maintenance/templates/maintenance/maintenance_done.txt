@@ -7,3 +7,4 @@ bedroom 41 - Doors are sqeeking at: 11, September, 2018, 10, 52, AM___
 First floor opp lift - Fire doors are not closing properly at: 11, September, 2018, 11, 00, AM___
 br 6 - door lock is not working proper. Required adjusting. at: 17, September, 2018, 20, 52, PM___
 test - online delete and back at: 26, November, 2018, 22, 20, PM___
+Gym - Holder for fire extinguisher at: 05, December, 2018, 15, 53, PM___

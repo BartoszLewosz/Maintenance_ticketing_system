@@ -33,7 +33,7 @@ def maintenance(request):
 	problems = Maintenance.objects.order_by('priority')
 	page = request.GET.get('page', 1)
 
-	paginator = Paginator(problems,5)
+	paginator = Paginator(problems,10)
 	try:
 		problems = paginator.page(page)
 	except PageNotAnInteger:
