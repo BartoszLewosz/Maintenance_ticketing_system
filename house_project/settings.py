@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 #Checking if this file would be changed if I put it in gitignore
+#This time .gitignore has been uploaded
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
