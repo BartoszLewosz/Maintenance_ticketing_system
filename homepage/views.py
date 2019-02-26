@@ -42,6 +42,9 @@ def index(request):
 def about(request):
 	return render(request, 'homepage/about.html')
 
+def my_cv(request):
+	return render(request, 'homepage/cv.html')
+
 def contact(request):
 	return render(request, 'homepage/contact.html')
 
