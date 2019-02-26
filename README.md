@@ -1,6 +1,6 @@
 # warren_folder
 
-###Hi!
+### Hi!
 Purpose of making this project is to make my worklife a bit more organised. **It is a simple Web Application to keep the record of issues at my workplace.** All of 60 emplotees can report technical problem, that occured.
 Currently I'm working in conference centre and
 One of my duties is to control state of the building from guests point of view.  
