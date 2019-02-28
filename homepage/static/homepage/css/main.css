@@ -100,8 +100,7 @@ body {
 }
 
 #border {
-	margin-left: 50px;
-	margin-right: 50px;
+    margin: 10% 20% 20%;
 	border: 2px solid orange;
 	border-radius: 5px;
 }

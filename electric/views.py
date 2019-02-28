@@ -32,7 +32,7 @@ from .forms import ElectricForm
 def electric_print(request):
 	problems = Electric.objects.all()
 
-	html_string = render_to_string('electric/print_pdf.html', {'problems': problems})
+	html_string = render_to_string('electric/electric_print.html', {'problems': problems})
 
 	html = HTML(string=html_string)
 	html.write_pdf(target='/tmp/mypdf.pdf');
