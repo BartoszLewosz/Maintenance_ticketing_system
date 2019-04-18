@@ -16,4 +16,15 @@ __//reception - Socket is flashing. Very dangerous and risky!!! at: 01, December
 =======
 __//Last one - testing status option at: 29, November, 2018, 14:18 PM,
 >>>>>>> b57c3557b864b4f037bf55b1d2a1a0e7911b1b50
+__//Bedroom 6 - Side lamp is stuck. Fixed for now, but switch replacement needed at: 27, March, 2019, 15:24 PM,
+__//2nd floor - Socket in corridor is not working at: 04, April, 2019, 14:35 PM,
+__//2nd floor hoover - Henry numatic has broken wire. Waiting for delivery. Eventually ask electrician to attach it. Bare wires!! at: 04, April, 2019, 14:36 PM,
+__//bedroom 4 - Bathroom lamp is not working (4pin) at: 10, April, 2019, 14:10 PM,
+__//Bedroom 10 - In the bathroom, above bath, fitting is missing at: 10, April, 2019, 14:15 PM,
+__//Bedroom 16 - Transformer need replacing at: 10, April, 2019, 14:15 PM,
+__//bedroom 21 - transformer needs replacing at: 10, April, 2019, 14:15 PM,
+__//Bedroom 39 - Free standing tall lamp in left corner is not working. Lightbulb  checked at: 10, April, 2019, 14:16 PM,
+__//Bedroom 29 - Spotlight above bed. Fitting at: 10, April, 2019, 14:18 PM,
+__//Bedroom 31 - Spotlight above toilet. Funny wire. Light is flashing for a while and then lightbulb is getting burnt at: 10, April, 2019, 14:19 PM,
+__//Basement - Door blocker is not working at: 10, April, 2019, 14:40 PM,
 __//
