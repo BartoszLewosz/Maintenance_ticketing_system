@@ -7,4 +7,4 @@ venv/
 /static
 .DS_Store
 /node modules
-/house_project/settings.py
+
