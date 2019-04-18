@@ -30,7 +30,7 @@ from .forms import ProblemForm
 
 def plumbing(request):
 	problems = Plumbing.objects.order_by('priority')
-	page = request.GET.get('page', 1)
+	page = request.GET.get('page', 0)
 
 	paginator = Paginator(problems, 10)
 	try:
@@ -42,7 +42,7 @@ def plumbing(request):
 	return render(request, 'plumbing/plumbing_list.html', {'problems': problems})
 
 
-def plumbing_detail(request):
+def plumbing_detail(request, pk):
 	problem = get_object_or_404(Plumbing, pk=pk)
 	return render(request, 'plumbing/plumbing_detail.html', {'problem': problem})
 
@@ -81,10 +81,6 @@ def plumbing_edit(request, pk):
 		form = ProblemForm(instance=problem)
 	return render(request, 'plumbing/plumbing_edit.html', {'form': form})
 
-def plumbing_detail(request, pk):
-	problem = get_object_or_404(Plumbing, pk=pk)
-	return render(request, 'plumbing/plumbing_detail.html', {'problem': problem})
-
 
 
 
@@ -94,8 +90,8 @@ def plumbing_delete(request, pk):
 	date = datetime.now()
 	formated_date = date.strftime("%d, %B, %Y, %H:%M %p")
 	if request.method == "POST":
-		file = open("plumbing/templates/plumbing/plumbing_done.txt", "a+")
-		file.write(str(problem) + " - " + str(problem.descr) + " at:" + 
+		file = open("warren_folder/plumbing/templates/plumbing/plumbing_done.txt", "a+")
+		file.write(str(problem) + " - " + str(problem.descr) + " at:" +
 			str(formated_date) + ", \n__//")
 		file.close()
 		problem.delete()
