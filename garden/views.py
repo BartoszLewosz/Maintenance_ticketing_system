@@ -35,7 +35,7 @@ def garden(request):
 	#Everything below except last line is Paginator
 	page = request.GET.get('page', 1)
 
-	paginator = Paginator(problems, 20)
+	paginator = Paginator(problems, 50)
 	try:
 		problems = paginator.page(page)
 	except PageNotAnInteger:
