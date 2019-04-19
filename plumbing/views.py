@@ -30,9 +30,9 @@ from .forms import ProblemForm
 
 def plumbing(request):
 	problems = Plumbing.objects.order_by('priority')
-	page = request.GET.get('page', 0)
+	page = request.GET.get('page', 1)
 
-	paginator = Paginator(problems, 10)
+	paginator = Paginator(problems, 50)
 	try:
 		problems = paginator.page(page)
 	except PageNotAnInteger:
