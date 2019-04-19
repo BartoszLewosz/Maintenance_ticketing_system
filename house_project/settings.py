@@ -131,7 +131,7 @@ DATE_FORMAT = 'd-M-Y'
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/BartoszLewosz/warren_folder/homepage/static/homepage/css/'
+STATIC_ROOT = '/home/BartoszLewosz/warren_folder/static/homepage/'
 
 
 LOGIN_REDIRECT_URL = 'home'
