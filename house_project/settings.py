@@ -132,4 +132,11 @@ STATIC_URL = '/static/'
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+LOGIN_EXEMPT_URL = (
+    r'^logout/$',
+    r'^contact/$',
+    r'^signup/$',
+    r'^about/$',
+    r'^$'
+    )
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
