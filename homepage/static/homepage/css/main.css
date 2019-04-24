@@ -15,7 +15,7 @@ html {
 body {
 	min-height: 100%;
     font-family: 'Comfortaa', cursive, Arial, sans-serif;
-    font-size: 24px;
+    font-size: 18px;
     position: relative;
     margin: 0;
 }
@@ -218,8 +218,6 @@ h2, h3, h4, h5, h6 {
 	line-height: 30px;
 }
 .footer {
-  	right: 0;
-  	left: 0;
   	padding: 20px;
   	padding-top: 10px;
   	text-align: center;

@@ -20,15 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-
-with open('/www/BartoszLewosz/secret_key.txt') as f:
+with open('/etc/secret_key.txt') as f:
     SECRET_KEY = f.read().strip()
-
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = [u'www.bartoszlewosz.pythonanywhere.com', 'bartoszlewosz.pythonanywhere.com']
-
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -56,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'house_project.my_middleware.LoginRequiredMiddleware',
 ]
 
 ROOT_URLCONF = 'house_project.urls'
@@ -129,9 +127,14 @@ DATE_FORMAT = 'd-M-Y'
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/levi2/warren_app/warren_folder/homepage/static/'
-
-
+LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+LOGIN_EXEMPT_URL = (
+    r'^logout/$',
+    r'^contact/$',
+    r'^signup/$',
+    r'^about/$',
+    r'^$'
+    )
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True

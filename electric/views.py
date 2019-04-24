@@ -27,7 +27,7 @@ from weasyprint import HTML
 from .models import Electric
 from .forms import ElectricForm
 ###================================================================================================
-
+from django.contrib.auth.decorators import login_required
 
 def electric_print(request):
 	problems = Electric.objects.all()
@@ -44,7 +44,7 @@ def electric_print(request):
 		return response
 	return response
 
-
+@login_required
 def electric(request):
 	problems = Electric.objects.order_by('priority')
 	page = request.GET.get('page', 1)
