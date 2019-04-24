@@ -26,23 +26,27 @@ from weasyprint import HTML
 from .models import Problem
 from .forms import ProblemForm
 ###================================================================================================
+from django.conf import settings
 
 
 def garden(request):
-	problems = Problem.objects.order_by('priority')
+	if not request.user.is_authenticated:
+		return render(request, 'garden/login_error.html')
+	else:
+		problems = Problem.objects.order_by('priority')
 
-	#problems = Problem.objects.filter(status__contains='01')
-	#Everything below except last line is Paginator
-	page = request.GET.get('page', 1)
+		#problems = Problem.objects.filter(status__contains='01')
+		#Everything below except last line is Paginator
+		page = request.GET.get('page', 1)
 
-	paginator = Paginator(problems, 20)
-	try:
-		problems = paginator.page(page)
-	except PageNotAnInteger:
-		problems = paginator.page(1)
-	except EmptyPage:
-		problems = paginator.page(paginator.num_pages)
-	return render(request, 'garden/garden_list.html', {'problems': problems})
+		paginator = Paginator(problems, 20)
+		try:
+			problems = paginator.page(page)
+		except PageNotAnInteger:
+			problems = paginator.page(1)
+		except EmptyPage:
+			problems = paginator.page(paginator.num_pages)
+		return render(request, 'garden/garden_list.html', {'problems': problems})
 
 def garden_new(request):
 	if 'garden_test' in request.POST:
