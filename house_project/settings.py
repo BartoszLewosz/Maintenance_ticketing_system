@@ -58,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'house_project.my_middleware.LoginRequiredMiddleware',
 ]
 
 ROOT_URLCONF = 'house_project.urls'
