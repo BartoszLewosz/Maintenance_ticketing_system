@@ -30,7 +30,7 @@ from django.conf import settings
 
 
 def garden(request):
-<<<<<<< HEAD
+
 	if not request.user.is_authenticated:
 		return render(request, 'garden/login_error.html')
 	else:
@@ -48,7 +48,6 @@ def garden(request):
 		except EmptyPage:
 			problems = paginator.page(paginator.num_pages)
 		return render(request, 'garden/garden_list.html', {'problems': problems})
-=======
 	problems = Problem.objects.order_by('priority')
 
 	#problems = Problem.objects.filter(status__contains='01')
@@ -63,7 +62,6 @@ def garden(request):
 	except EmptyPage:
 		problems = paginator.page(paginator.num_pages)
 	return render(request, 'garden/garden_list.html', {'problems': problems})
->>>>>>> e6d6c6c6ea0daf3b2d9a5e5882231f6b59d5c115
 
 def garden_new(request):
 	if 'garden_test' in request.POST:
