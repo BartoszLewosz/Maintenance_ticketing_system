@@ -133,7 +133,7 @@ DATE_FORMAT = 'd-M-Y'
 STATIC_URL = '/static/'
 STATIC_ROOT = '/home/BartoszLewosz/warren_folder/static/homepage/'
 
-
+#/home/BartoszLewosz/warren_folder/homepage/static/homepage/css/main.css
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
