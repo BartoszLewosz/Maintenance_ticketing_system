@@ -30,6 +30,7 @@ from django.conf import settings
 
 
 def garden(request):
+<<<<<<< HEAD
 	if not request.user.is_authenticated:
 		return render(request, 'garden/login_error.html')
 	else:
@@ -47,6 +48,22 @@ def garden(request):
 		except EmptyPage:
 			problems = paginator.page(paginator.num_pages)
 		return render(request, 'garden/garden_list.html', {'problems': problems})
+=======
+	problems = Problem.objects.order_by('priority')
+
+	#problems = Problem.objects.filter(status__contains='01')
+	#Everything below except last line is Paginator
+	page = request.GET.get('page', 1)
+
+	paginator = Paginator(problems, 50)
+	try:
+		problems = paginator.page(page)
+	except PageNotAnInteger:
+		problems = paginator.page(1)
+	except EmptyPage:
+		problems = paginator.page(paginator.num_pages)
+	return render(request, 'garden/garden_list.html', {'problems': problems})
+>>>>>>> e6d6c6c6ea0daf3b2d9a5e5882231f6b59d5c115
 
 def garden_new(request):
 	if 'garden_test' in request.POST:
@@ -105,7 +122,7 @@ def garden_delete(request, pk):
 	date = datetime.now()
 	formated_date = date.strftime("%d, %B, %Y, %H:%M %p")
 	if request.method == "POST":
-		file = open("garden/templates/garden/garden_done.txt", "a+")
+		file = open("warren_folder/garden/templates/garden/garden_done.txt", "a+")
 		file.write(str(problem) + " - " + str(problem.descr) + " at:" +
 			str(formated_date) + " _//")
 		file.close()

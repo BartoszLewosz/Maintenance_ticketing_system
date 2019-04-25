@@ -6,14 +6,15 @@
 
 {% block content %}
 
-    
-        
-            
+
+<div class="signup">
 
         <div class="signup">
             <center>
                 <p>Please fill the form below:</p>
             </center>
+
+
             <form method="post">
             {% csrf_token %}
             {% for field in form %}
@@ -27,16 +28,13 @@
                     <p style="color: red">{{ error }}</p>
                     {% endfor %}
                 </p>
-                {% endfor %}
-                <button type="submit" class="btn btn-outline-dark">Sign Up</button>
-            </form>
-        </div>
+            {% endfor %}
 
-        
-    
 
-   
-    
+        <button type="submit" class="btn btn-outline-dark">Sign Up</button>
+        </form>
+</div>
+
 
 
 {% endblock content %}

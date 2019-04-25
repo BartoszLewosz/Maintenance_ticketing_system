@@ -31,7 +31,7 @@ from .forms import ElectricForm
 def electric_print(request):
 	problems = Electric.objects.all()
 
-	html_string = render_to_string('electric/print_pdf.html', {'problems': problems})
+	html_string = render_to_string('electric/electric_print.html', {'problems': problems})
 
 	html = HTML(string=html_string)
 	html.write_pdf(target='/tmp/mypdf.pdf');
@@ -47,7 +47,7 @@ def electric(request):
 	problems = Electric.objects.order_by('priority')
 	page = request.GET.get('page', 1)
 
-	paginator = Paginator(problems,5)
+	paginator = Paginator(problems,50)
 	try:
 		problems = paginator.page(page)
 	except PageNotAnInteger:
@@ -100,9 +100,9 @@ def electric_delete(request, pk):
 	date = datetime.now()
 	formated_date = date.strftime("%d, %B, %Y, %H:%M %p")
 	if request.method == "POST":
-		file = open("electric/templates/electric/electric_done.txt", "a+")
+		file = open("warren_folder/electric/templates/electric/electric_done.txt", "a+")
 		file.write(str(problem) + ' - ' + str(problem.descr) + " at: " +
-		str(formated_date) + ",\n__//")  
+		str(formated_date) + ",\n__//")
 		file.close()
 		problem.delete()
 		return redirect('electric')

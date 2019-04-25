@@ -2,9 +2,10 @@
 *.pyc
 *~
 __pycache__
-venv/
+/venv/
 *.sqlite3
 /static
 .DS_Store
 /node modules
 house_project/settings.py
+
