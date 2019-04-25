@@ -47,7 +47,6 @@ def garden(request):
 		except EmptyPage:
 			problems = paginator.page(paginator.num_pages)
 		return render(request, 'garden/garden_list.html', {'problems': problems})
->>>>>>> cbdcdd27... Change the color of background
 	problems = Problem.objects.order_by('priority')
 
 	#problems = Problem.objects.filter(status__contains='01')
