@@ -134,9 +134,19 @@ DATE_FORMAT = 'd-M-Y'
 STATIC_URL = '/static/'
 STATIC_ROOT = '/home/BartoszLewosz/warren_folder/homepage/static/'
 
+STATIC_URL = '/static/'
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
+LOGIN_EXEMPT_URL = (
+    r'^logout/$',
+    r'^contact/$',
+    r'^signup/$',
+    r'^about/$',
+    r'^$'
+    )
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
 
 #/home/BartoszLewosz/warren_folder/homepage/static/homepage/css
 #/home/BartoszLewosz/warren_folder/homepage/static/homepage/css/main.css
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
-SESSION_EXPIRE_AT_BROWSER_CLOSE = True
