@@ -149,4 +149,4 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 
 #/home/BartoszLewosz/warren_folder/homepage/static/homepage/css
-#/home/BartoszLewosz/warren_folder/homepage/static/homepage/css/main.css
+#/home/BartoszLewosz/warren_folder/homepage/static/homepage/css/main.css 
