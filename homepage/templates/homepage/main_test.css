@@ -17,3 +17,9 @@
 	height: 2.5rem;
 	text-align: center;
 }
+
+.responsive-img {
+	max-width: 55%;
+	height: auto;
+	padding: 10px;
+}
