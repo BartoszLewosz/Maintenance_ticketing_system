@@ -19,7 +19,14 @@
 }
 
 .responsive-img {
-	max-width: 55%;
+	display: block;
+	margin: auto;
+	max-width: 50%;
 	height: auto;
 	padding: 10px;
+}
+
+.navbar {
+	text-align: center;
+	border-radius: 5%;
 }
