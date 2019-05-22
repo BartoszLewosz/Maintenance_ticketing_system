@@ -1,4 +1,9 @@
 
+html {
+	min-height: 100%;
+}
+
+
 #page-container {
 	position: relative;
 	background-color: orange;
