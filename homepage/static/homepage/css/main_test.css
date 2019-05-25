@@ -7,12 +7,14 @@ html {
 	position: relative;
 	min-height: 100vh;
 	font-family: 'Kanit', sans-serif;
+	line-height: 1.6;
 }
 
 .row {
-	width: 95%;
+	width: 90%;
 	font-variant: small-caps;
 	text-align: center;	
+	padding-top: 2rem;
 }
 
 .btn {
