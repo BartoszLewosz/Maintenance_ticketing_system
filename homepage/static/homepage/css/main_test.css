@@ -22,6 +22,11 @@ html {
 	cursor: pointer;
 	margin: 0.2rem;
 }
+/*
+=============================================================================
+================================================== ALIGNMENT & HEADINGS =====
+=============================================================================
+*/
 
 #page_title, .time, .welcome {
 	text-align: center;
@@ -30,6 +35,29 @@ html {
 }
 h1, h2, h3, h4, h5, h6, p {
 	text-align: center;
+}
+
+.signup, .login, .contact, .edit {
+	text-align: center;
+}
+
+.responsive-img {
+	display: block;
+	margin: auto;
+	max-width: 50%;
+	height: auto;
+	padding: 10px;
+}
+
+.table {
+	display: block;
+	padding: 1vw;
+}
+
+@media only screen and (max-width: 375px) {
+	.table-mobile {
+		display: none;
+	}
 }
 
 /*
@@ -53,17 +81,7 @@ h1, h2, h3, h4, h5, h6, p {
 #############################################################################
 */
 
-.signup, .login, .contact, .edit {
-	text-align: center;
-}
 
-.responsive-img {
-	display: block;
-	margin: auto;
-	max-width: 50%;
-	height: auto;
-	padding: 10px;
-}
 
 .navbar {
 	text-align: center;
