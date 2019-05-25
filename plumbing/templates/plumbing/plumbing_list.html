@@ -31,12 +31,12 @@
         <h2>Plumbing</h2>
         <thead>
             <tr>
-                <th>No. by date</th>
+                <th class="table-mobile">No. by date</th>
                 <th>Where</th>
-                <th>what</th>
+                <th class="table-mobile">what</th>
                 <th>Edit</th>
-                <th>Done</th>
-                <th>Status</th>
+                <th class="table-mobile">Done</th>
+                <th class="table-mobile">Status</th>
                 <th>Priority</th>
             </tr>
         </thead>
@@ -44,11 +44,11 @@
                 {% for problem in problems %}
                     {% if problem.status != 'COMPLETED' %}
                     <tr>
-                        <td>{{ problem.id }}</td>
+                        <td class="table-mobile">{{ problem.id }}</td>
                         <td><a href="{{problem.id}}">{{ problem.location }}</a></td>
-                        <td>{{ problem.descr }}</td>
+                        <td class="table-mobile">{{ problem.descr }}</td>
                         <td><a href="{% url 'plumbing_edit' pk=problem.pk %}"><span class="fas fa-edit"></span></a></td>
-                        <td><a href="{% url 'plumbing_delete' pk=problem.pk %}"><span class="far fa-trash-alt"></span></a></td>
+                        <td class="table-mobile"><a href="{% url 'plumbing_delete' pk=problem.pk %}"><span class="far fa-trash-alt"></span></a></td>
                         {% if problem.priority == 'EMERGENCY' %}
                             <td id="flag_0">{{ problem.priority }}</td>
                         {% elif problem.priority == 'HIGH' %}
@@ -58,7 +58,7 @@
                         {% elif problem.priority == 'LOW' %}
                             <td id="flag_3">{{ problem.priority }}</td>
                         {% endif %}
-                        <td>{{ problem.status }}</td>
+                        <td class="table-mobile">{{ problem.status }}</td>
                     </tr>
                     {% endif %}
                 {% endfor %}
