@@ -28,6 +28,34 @@ html {
 	margin: 0.2rem;
 	padding: 1rem;
 }
+h1, h2, h3, h4, h5, h6, p {
+	text-align: center;
+}
+
+/*
+=============================================================================
+======================================================== PROBLEM DETAIL =====
+=============================================================================
+*/
+
+.detail {
+	font-variant: small-caps;
+	color: grey;
+	text-align: center;
+}
+
+#border {
+    margin: 5% 5% 5% 5%;
+	border: 2px solid orange;
+	border-radius: 5px;
+}
+/*
+#############################################################################
+*/
+
+.signup, .login, .contact, .edit {
+	text-align: center;
+}
 
 .responsive-img {
 	display: block;
@@ -50,6 +78,7 @@ html {
 	height: 2.5rem;
 	text-align: center;
 	font-variant: small-caps;
+	background-color: inherit;
 }
 
 /*
