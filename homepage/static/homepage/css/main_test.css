@@ -1,12 +1,12 @@
-body {
+html {
+	background-color: rgb(232, 243, 250);
+	font-size: 18px;
 }
 
 #page-container {
 	position: relative;
-	background-color: rgb(232, 243, 250);
 	min-height: 100vh;
 	font-family: 'Kanit', sans-serif;
-	font-size: 18px;
 }
 
 .row {
