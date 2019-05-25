@@ -48,3 +48,41 @@ body {
 	height: 2.5rem;
 	text-align: center;
 }
+
+/*
+=============================================================================
+=============================================================== COLOURS =====
+=============================================================================
+*/
+#contact_color {
+	color: orange;
+}
+#garden_color {
+	color: green;
+}
+#maintenance_color {
+	color: black;
+}
+#plumbing_color {
+	color: lightblue;
+}
+#electric_color {
+	color: #fcc01e;
+}
+#flag_0 {
+	color: red;
+	font-weight: bold;
+}
+#flag_1 {
+	color: orange;
+	font-weight: bold;
+}
+#flag_2 {
+	color: blue;
+}
+#flag_3 {
+	color: green;
+}
+/*
+#############################################################################
+*/
