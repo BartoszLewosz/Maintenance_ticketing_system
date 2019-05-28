@@ -1,0 +1,138 @@
+html {
+	background-color: rgb(232, 243, 250);
+	font-size: 18px;
+}
+
+#page-container {
+	position: relative;
+	min-height: 100vh;
+	font-family: 'Kanit', sans-serif;
+	line-height: 1.6;
+}
+
+.row {
+	width: 90%;
+	font-variant: small-caps;
+	text-align: center;	
+	padding-top: 2rem;
+}
+
+.btn {
+	white-space: nowrap;
+	cursor: pointer;
+	margin: 0.2rem;
+}
+/*
+=============================================================================
+================================================== ALIGNMENT & HEADINGS =====
+=============================================================================
+*/
+
+#page_title, .time, .welcome {
+	text-align: center;
+	margin: 0.2rem;
+	padding: 1rem;
+}
+h1, h2, h3, h4, h5, h6, p {
+	text-align: center;
+}
+
+.signup, .login, .contact, .edit {
+	text-align: center;
+}
+
+.responsive-img {
+	display: block;
+	margin: auto;
+	max-width: 50%;
+	height: auto;
+	padding: 10px;
+}
+
+.table {
+	display: block;
+	padding: 1vw;
+}
+
+@media only screen and (max-width: 375px) {
+	.table-mobile {
+		display: none;
+	}
+}
+
+/*
+=============================================================================
+======================================================== PROBLEM DETAIL =====
+=============================================================================
+*/
+
+.detail {
+	font-variant: small-caps;
+	color: grey;
+	text-align: center;
+}
+
+#border {
+    margin: 5% 5% 5% 5%;
+	border: 2px solid orange;
+	border-radius: 5px;
+}
+/*
+#############################################################################
+*/
+
+
+
+.navbar {
+	text-align: center;
+	margin: 1% 1%;
+	border-radius: 5px;
+}
+
+#footer {
+	position: absolute;
+	margin-bottom: 80px;
+	width: 100%;
+	height: 2.5rem;
+	text-align: center;
+	font-variant: small-caps;
+	background-color: inherit;
+}
+
+/*
+=============================================================================
+=============================================================== COLOURS =====
+=============================================================================
+*/
+#contact_color {
+	color: orange;
+}
+#garden_color {
+	color: green;
+}
+#maintenance_color {
+	color: black;
+}
+#plumbing_color {
+	color: lightblue;
+}
+#electric_color {
+	color: #fcc01e;
+}
+#flag_0 {
+	color: red;
+	font-weight: bold;
+}
+#flag_1 {
+	color: orange;
+	font-weight: bold;
+}
+#flag_2 {
+	color: blue;
+}
+#flag_3 {
+	color: green;
+}
+/*
+#############################################################################
+*/
