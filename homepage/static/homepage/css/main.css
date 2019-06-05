@@ -187,7 +187,7 @@ body {
 .table-responsive {
 	max-width: 100%;
 	height: auto;
-	padding: 25%;
+	padding: 90vw;
 }
 
 h2, h3, h4, h5, h6 {
@@ -218,8 +218,6 @@ h2, h3, h4, h5, h6 {
 	line-height: 30px;
 }
 .footer {
-  	right: 0;
-  	left: 0;
   	padding: 20px;
   	padding-top: 10px;
   	text-align: center;

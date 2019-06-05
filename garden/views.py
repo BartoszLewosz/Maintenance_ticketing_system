@@ -26,6 +26,7 @@ from weasyprint import HTML
 from .models import Problem
 from .forms import ProblemForm
 ###================================================================================================
+from django.conf import settings
 
 
 def garden(request):

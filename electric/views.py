@@ -28,7 +28,6 @@ from .models import Electric
 from .forms import ElectricForm
 ###================================================================================================
 
-
 def electric_print(request):
 	problems = Electric.objects.all()
 
@@ -43,7 +42,6 @@ def electric_print(request):
 		response['Content-Disposition'] = 'inline; filename="mypdf.pdf"'
 		return response
 	return response
-
 
 def electric(request):
 	problems = Electric.objects.order_by('priority')
