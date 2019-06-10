@@ -49,12 +49,13 @@ h1, h2, h3, h4, h5, h6, p {
 	padding: 10px;
 }
 
-.table {
-	display: block;
-	padding: 1vw;
+table {
+	border: 2px solid #ccc;
+	border-collapse: collapse;
+	padding: 2vw;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
 	.table-mobile {
 		display: none;
 	}
