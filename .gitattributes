@@ -1,1 +1,5 @@
-static/* linguist-vendored
+homepage/* linguist-vendored
+/homepage/static/* linguist-vendored
+homepage/*.css linguist-vendored
+*.css linguist-vendored
+
