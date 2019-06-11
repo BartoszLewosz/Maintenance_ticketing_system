@@ -1,24 +1,26 @@
 {% extends 'homepage/base.html' %}
 {% load staticfiles %}
 {% block title %}
-    Electric - {{ block.super }}
+Electric - {{ block.super }}
 {% endblock title %}
 
 {% block content %}
 
 <h4>
-	<a href="#", onClick="history.go(-1);return true;" button type="submit" class="btn btn-outline-dark",></button><i class="fas fa-angle-double-left"></i> Back</a>
+    <a href="#" , onClick="history.go(-1);return true;" button type="submit" class="btn btn-outline-dark" ,></button><i
+            class="fas fa-angle-double-left"></i> Back</a>
 </h4>
 
 <div class="button-right">
 
 
-	<a href="{% url 'electric_print' %}", button type="submit", class="btn btn-outline-dark"></button><span class="fas fa-print"></span> Print</a>
-	
+    <a href="{% url 'electric_print' %}" , button type="submit" , class="btn btn-outline-dark"></button><span
+            class="fas fa-print"></span> Print</a>
+
 </div>
 
 <div class="table-responsive">
-        <table class="table">
+    <table>
         <h2>Electric - Completed</h2>
         <thead>
             <tr>
