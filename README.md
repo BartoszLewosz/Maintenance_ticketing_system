@@ -1,16 +1,39 @@
-# warren_folder
+# Maintenance Web Application
 
-### Hi!
-Purpose of making this project is to make my worklife a bit more organised. **It is a simple Web Application to keep the record of issues at my workplace.** All of 60 emplotees can report technical problem, that occured.
-Currently I'm working in conference centre and
-One of my duties is to control state of the building from guests point of view.  
-Another reason is, what I really hope and what is my real goal of doing this project, 
-To open the gate for my first Junior developer job. 
+![Logo](https://github.com/BartoszLewosz/warren_folder/blob/master/homepage/static/homepage/img/blue_logo.svg)
 
-This is my first project. I've practiced with two tutorial earlier:
-1. DjangoGirls
-2. HelloWebApp
+## Usage
 
-I'll try to develop this project as deep as my knowledge let me. Please feel free to make any suggestions. Thank you:)
+[Try it!](https://bartoszlewosz.pythonanywhere.com)
+Simply fill the form and log in.
+
+## Description
+
+This is my first live **Web Application**. I use it on daily basis to keep the record of issues at my current workplace. All of 60 employees can report technical problem, that occured. There are four sections:
+- Garden
+- Maintenance
+- Electric
+- Plumbing
+
+Each section stores specific problems. If you are not sure which section your problem belongs, please add to *Maintenance*
+
+
+### What's behind?
+
+To create this simple app I used:
+
+**Backend:**
+- Python, Django
+- function-based views
+- SQLite3 database
+- pythonanywhere.com as a web hosting service
+- GIT 
+
+**Frontend:**
+- Basic HTML & CSS 
+- bootstrap 4 adjusted with stylesheet 
+
+
+
 
 
