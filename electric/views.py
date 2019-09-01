@@ -81,7 +81,6 @@ def electric_new(request):
 
 def electric_edit(request, pk):
 	problem = get_object_or_404(Electric, pk=pk)
-	#This line above makes problem edit!
 
 	if request.method == "POST":
 		form = ElectricForm(request.POST, instance=problem)
