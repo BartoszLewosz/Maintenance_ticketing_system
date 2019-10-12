@@ -1,18 +1,24 @@
 {% extends 'homepage/base.html' %}
 {% load staticfiles %}
 {% block title %}
-    Add New - {{ block.super }}
+Add New - {{ block.super }}
 {% endblock title %}
 
 {% block content %}
 <div class="new-form">
-	<h3>Add new maintenance problem</h3>
-	<form method="POST" class="post-form">{% csrf_token %}
-		{{ form.as_p }}
-		<button type="submit" name="add_new" class="btn btn-outline-dark">Save</button>
-		<button type="submit" name="add_another" class="btn btn-outline-dark">Save & add another</button></form>
-	<!--To trigger submit button pressing enter use JS-->
-</div>
+		<h3>Add new maintenance problem</h3>
+		<form method="POST" class="post-form">{% csrf_token %}
+			{{ form.as_p }}
+			<div class="button">
+				<button type="submit" name="garden_test" class="btn btn-outline-dark">Save</button>
+				<button type="submit" name="another" class="btn btn-outline-dark">Save and Add another</button>
+			</div>
+		</form>
+	
+	
+		<!--To trigger submit button pressing enter use JS-->
+	
+	</div>
 	
 
 
