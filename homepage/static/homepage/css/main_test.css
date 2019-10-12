@@ -22,6 +22,12 @@ html {
 	cursor: pointer;
 	margin: 0.2rem;
 }
+
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 /*
 =============================================================================
 ================================================== ALIGNMENT & HEADINGS =====
