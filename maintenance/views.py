@@ -50,6 +50,7 @@ def maintenance_new(request):
 		problem.date = timezone.now()
 		problem.save()
 		return redirect('maintenance')
+
 	elif 'add_another' in request.POST:
 		form = MaintenanceForm(request.POST)
 		problem = form.save(commit=False)
