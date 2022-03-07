@@ -1,105 +1,156 @@
 <!DOCTYPE html>
-	<html lang="en">
-		{% load staticfiles %}
-		
-		<head>
+<html lang="en">
+  {% load staticfiles %}
 
-			<title>
-				{% block title %}
-					Desktop Maintenance Application
-				{% endblock title %}
-			</title>
-			<meta charset="utf-8">
-			<meta name="viewport" content="width=device-width, initial-scale=1">
-			<link rel="stylesheet" href="{% static 'homepage/css/main_test.css' %}">
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-			<!-- <link rel="stylesheet" href="{% static 'homepage/css/mains.css' %}"> -->
-			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">			<link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
-			<link rel="icon" href="{% static 'homepage/img/favicon.jpg' %}">
-		</head>
+  <head>
+    <title>
+      {% block title %} Desktop Maintenance Application {% endblock title %}
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'homepage/css/main_test.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <!-- <link rel="stylesheet" href="{% static 'homepage/css/mains.css' %}"> -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Kanit&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="{% static 'homepage/img/favicon.jpg' %}" />
+    <meta name="description" content="Maintenance Web Application" />
+    <meta
+      name="title"
+      property="og:title"
+      content="Maintenance Web Application"
+    />
+    <meta property="og:type" content="Web App" />
+    <meta
+      name="image"
+      property="og:image"
+      content="https://github.com/BartoszLewosz/warren_folder/blob/master/homepage/static/homepage/img/blue_logo.svg"
+    />
+    <meta
+      name="description"
+      property="og:description"
+      content="As an aide to the company, I created this web application, as a solution to log and manage maintenance issues on the premises"
+    />
+    <meta name="author" content="Bartek" />
+  </head>
 
-	<body>
+  <body>
+    <div id="page-container">
+      <a href="/" target="blank">
+        <img
+          src="{% static 'homepage/img/blue_logo.svg' %}"
+          class="responsive-img"
+          alt="blue-logo"
+      /></a>
+      <p id="page_title">Maintenance__Web__Application</p>
 
-		<div id="page-container">
-		
-			<a href="/" target="blank">
-					<img src="{% static 'homepage/img/blue_logo.svg' %}" class="responsive-img" alt="blue-logo"></a>
-			<p id="page_title">Maintenance__Web__Application</p>
+      <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <a class="navbar-brand" href="{% url 'about' %}">Start</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapsibleNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          {% if user.is_authenticated %}
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/"><i class="fas fa-home"></i> Home</a>
+            </li>
 
-			<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-				<a class="navbar-brand" href="{% url 'about' %}">Start</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"><span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'garden' %}"
+                ><i id="garden_color" class="fas fa-tree"></i> Garden</a
+              >
+            </li>
 
-					{% if user.is_authenticated %}
-						<ul class="navbar-nav">
-							
-							<li class="nav-item">
-								<a class="nav-link" href="/"><i class="fas fa-home"></i> Home</a>
-							</li>
-							
-							<li class="nav-item">
-								<a class="nav-link" href="{% url 'garden' %}"><i id="garden_color" class="fas fa-tree"></i> Garden</a>
-							</li>
-							
-							<li class="nav-item">
-								<a class="nav-link" href="{% url 'maintenance' %}"><i id="maintenance_color" class="fas fa-wrench"></i> Maintenance</a>
-							</li>
-							
-							<li class="nav-item">
-								<a class="nav-link" href="{% url 'electric' %}"><i id="electric_color" class="fas fa-bolt"></i> Electric</a>
-							</li>
-							
-							<li class="nav-item">
-								<a class="nav-link" href="{% url 'plumbing' %}"><i id="plumbing_color" class="fas fa-tint"></i> Plumbing</a>
-							</li>
-							
-							<li class="nav-item">
-								<a class="nav-link" href="{% url 'contact' %}"><i id="contact_color" class="fas fa-envelope"></i> Contact</a>
-							</li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'maintenance' %}"
+                ><i id="maintenance_color" class="fas fa-wrench"></i>
+                Maintenance</a
+              >
+            </li>
 
-							<li class="nav-item">
-								<a class="nav-link" href="/logout"><i class="fas fa-sign-out-alt"></i> Log out</a>
-							</li>
-						</ul>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'electric' %}"
+                ><i id="electric_color" class="fas fa-bolt"></i> Electric</a
+              >
+            </li>
 
-					{% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'plumbing' %}"
+                ><i id="plumbing_color" class="fas fa-tint"></i> Plumbing</a
+              >
+            </li>
 
-						<ul class="navbar-nav">
-							<li class="nav-item">
-								<a class="nav-link" href="/"><i class="fas fa-home"></i> Home</a>
-							</li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contact' %}"
+                ><i id="contact_color" class="fas fa-envelope"></i> Contact</a
+              >
+            </li>
 
-							<li class="nav-item">
-								<a class="nav-link" href="/signup"><i class="fas fa-user-plus"></i> Sign up</a>
-							</li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout"
+                ><i class="fas fa-sign-out-alt"></i> Log out</a
+              >
+            </li>
+          </ul>
 
-							<li class="nav-item">
-								<a class="nav-link" href="/login"><i class="fas fa-address-card"></i> Log in</a>
-							</li>
+          {% else %}
 
-							<li class="nav-item">
-								<a class="nav-link" href="{% url 'contact' %}"><i id="contact_color" class="fas fa-envelope"></i> Contact</a>
-							</li>
-						</ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/"><i class="fas fa-home"></i> Home</a>
+            </li>
 
-					{% endif %}
-				</div>
-			</nav>
-			{% block content %}
-			{% endblock %}
+            <li class="nav-item">
+              <a class="nav-link" href="/signup"
+                ><i class="fas fa-user-plus"></i> Sign up</a
+              >
+            </li>
 
-			
-		</div>
-		
-			<footer id="footer">
-				<p><a href="{% url 'contact' %}">Contact </a>
-				<a href="/" target="_blank">| Warren House </a>
-				<a href="{% url 'about' %}">| About</a></p>
-			</footer>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	</body>
-	</html>
+            <li class="nav-item">
+              <a class="nav-link" href="/login"
+                ><i class="fas fa-address-card"></i> Log in</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contact' %}"
+                ><i id="contact_color" class="fas fa-envelope"></i> Contact</a
+              >
+            </li>
+          </ul>
+
+          {% endif %}
+        </div>
+      </nav>
+      {% block content %} {% endblock %}
+    </div>
+
+    <footer id="footer">
+      <p>
+        <a href="{% url 'contact' %}">Contact </a>
+        <a href="/" target="_blank">| Warren House </a>
+        <a href="{% url 'about' %}">| About</a>
+      </p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
